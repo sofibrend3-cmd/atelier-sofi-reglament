@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Клиент до этапа технического задания в производство | Ателье Софи</title>
+  <meta name="description" content="Обучение менеджеров Ателье Софи: первичный и повторный клиент до этапа технического задания в производство.">
+  <meta property="og:title" content="Клиент до этапа технического задания в производство">
+  <meta property="og:description" content="Первичный и повторный клиент: как правильно заполнить данные клиента, собаки и текущего заказа.">
+  <meta property="og:image" content="https://sofibrend3-cmd.github.io/atelier-sofi-reglament/primary-client/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Клиент до этапа технического задания в производство — обучение Ателье Софи">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --ink: #2d2926;
+      --muted: #746b64;
+      --cream: #f5efe5;
+      --paper: #fffdf9;
+      --line: #ddd2c3;
+      --brand: #983e2c;
+      --brand-dark: #6f291e;
+      --contact: #627d68;
+      --contact-soft: #edf2eb;
+      --deal: #536b86;
+      --deal-soft: #edf2f7;
+      --gold: #b98945;
+      --lock: #72536f;
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3, .serif { font-family: Georgia, 'Times New Roman', serif; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(255,253,249,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .topbar-inner { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--brand-dark); font: 700 22px Georgia, serif; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--brand); border-radius: 50%; }
+    .nav { display: flex; align-items: center; gap: 26px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    .lesson { display: flex; align-items: center; gap: 9px; font-size: 13px; }
+    .lesson b { display: grid; place-items: center; width: 34px; height: 34px; color: white; background: var(--brand); border-radius: 50%; }
+    .hero { min-height: 680px; display: grid; grid-template-columns: 1.03fr .97fr; background: var(--paper); }
+    .hero-photo { min-height: 680px; background: linear-gradient(180deg, rgba(54,37,25,.04), rgba(54,37,25,.2)), url('hero.jpg') center/cover; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 72px clamp(42px, 7vw, 110px); overflow: hidden; }
+    .eyebrow { margin-bottom: 22px; color: var(--brand); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { margin-bottom: 25px; color: var(--brand); font-size: clamp(56px, 6.4vw, 94px); font-weight: 400; line-height: .88; letter-spacing: -.045em; }
+    .hero h1.long-title { max-width: 760px; font-size: clamp(42px, 4.6vw, 70px); line-height: .96; letter-spacing: -.035em; }
+    .hero-audience { margin: -8px 0 24px; color: var(--brand-dark); font: 700 17px Georgia, serif; }
+    .hero-lead { max-width: 620px; margin-bottom: 30px; font-size: 20px; line-height: 1.55; }
+    .goal { padding: 20px 22px; border-left: 4px solid var(--brand); background: var(--cream); font-size: 15px; }
+    .route-strip { background: var(--brand-dark); color: white; }
+    .route { display: flex; align-items: center; gap: 12px; min-height: 114px; overflow-x: auto; scrollbar-width: none; }
+    .route span { flex: 0 0 auto; padding: 12px 15px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; font-size: 13px; letter-spacing: .03em; }
+    .route i { opacity: .45; font-style: normal; }
+    .section { padding: 96px 0; }
+    .section-head { display: grid; grid-template-columns: .78fr 1.22fr; gap: 60px; align-items: end; margin-bottom: 44px; }
+    .section-head h2 { margin-bottom: 0; font-size: clamp(42px, 5vw, 68px); font-weight: 400; line-height: .98; }
+    .section-head .lead { max-width: 610px; margin-bottom: 4px; color: var(--muted); font-size: 19px; }
+    .principle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .entity { position: relative; min-height: 345px; padding: 38px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); overflow: hidden; }
+    .entity::after { content: ''; position: absolute; inset: auto -60px -80px auto; width: 210px; height: 210px; border-radius: 50%; opacity: .12; }
+    .entity.contact { border-top: 7px solid var(--contact); }
+    .entity.correspondence { border-top: 7px solid var(--gold); }
+    .entity.deal { border-top: 7px solid var(--deal); }
+    .entity.contact::after { background: var(--contact); }
+    .entity.correspondence::after { background: var(--gold); }
+    .entity.deal::after { background: var(--deal); }
+    .entity .tag { display: inline-flex; padding: 7px 11px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .contact .tag { color: var(--contact); background: var(--contact-soft); }
+    .correspondence .tag { color: #795a2d; background: #f7eedc; }
+    .deal .tag { color: var(--deal); background: var(--deal-soft); }
+    .entity h3 { margin: 24px 0 14px; font-size: 44px; font-weight: 400; }
+    .entity p { max-width: 470px; color: var(--muted); font-size: 18px; }
+    .formula { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 14px 17px; border: 1px solid currentColor; border-radius: 12px; font-weight: 700; }
+    .contact .formula { color: var(--contact); }
+    .correspondence .formula { color: #8a6734; }
+    .deal .formula { color: var(--deal); }
+    .rule-banner { margin-top: 24px; padding: 34px; border-radius: var(--radius); color: white; background: var(--ink); text-align: center; }
+    .rule-banner p { margin: 0; font: 400 clamp(24px, 3vw, 38px) Georgia, serif; }
+    .rule-banner span { color: #e9c39a; }
+    @media (max-width: 820px) {
+      .nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 48vh; }
+      .hero-copy { padding: 58px 24px 66px; }
+      .section { padding: 70px 0; }
+      .section-head, .principle-grid { grid-template-columns: 1fr; gap: 24px; }
+      .entity { min-height: auto; padding: 28px; }
+    }
+  </style>
+  <style>
+    .conversion-section { background: var(--paper); }
+    .conversion { display: grid; grid-template-columns: .7fr .35fr 1.65fr; gap: 22px; align-items: stretch; }
+    .conversion-node, .conversion-result { min-height: 180px; border-radius: var(--radius); }
+    .conversion-node { display: flex; flex-direction: column; justify-content: center; padding: 34px; color: white; background: var(--brand); }
+    .conversion small { display: block; margin-bottom: 10px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .72; }
+    .conversion strong { font: 400 40px Georgia, serif; }
+    .conversion-arrow { display: flex; align-items: center; justify-content: center; gap: 9px; color: var(--muted); }
+    .conversion-arrow span { font-size: 12px; font-weight: 700; text-transform: uppercase; writing-mode: vertical-rl; }
+    .conversion-result { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 18px; padding: 22px; border: 1px solid var(--line); background: var(--cream); }
+    .conversion-result > div { min-height: 132px; display: flex; flex-direction: column; justify-content: center; padding: 25px; border-radius: 16px; }
+    .mini-contact { color: #fff; background: var(--contact); }
+    .mini-deal { color: #fff; background: var(--deal); }
+    .conversion-result > b { font-size: 28px; }
+    .parallel-note { display: flex; flex-wrap: wrap; gap: 20px 34px; align-items: center; margin-top: 24px; padding: 22px 26px; border: 1px solid var(--line); border-radius: 16px; }
+    .parallel-note span { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+    .repeat-conversion-note { margin-top: 12px; padding: 18px 22px; border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; color: var(--muted); background: #fff8e8; }
+    .repeat-conversion-note strong { color: var(--ink); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .contact-dot { background: var(--contact); }.deal-dot { background: var(--deal); }
+    .contact-section { background: var(--cream); }
+    .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+    .legend span, .card-label { padding: 7px 10px; border: 1px solid; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .legend-required, .required-label { color: var(--brand); background: #fbebe7; }
+    .legend-optional { color: #7e704c; background: #f5f0df; }
+    .legend-auto { color: var(--deal); background: var(--deal-soft); }
+    .legend-lock, .lock-label { color: var(--lock); background: #f2eaf1; }
+    .field-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .field-panel { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
+    .required-panel { box-shadow: inset 0 5px 0 var(--brand); }
+    .optional-panel { box-shadow: inset 0 5px 0 var(--gold); }
+    .panel-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 22px; border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 700; }
+    .panel-top b { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: white; background: var(--ink); }
+    .field-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin: 25px 0 0; padding: 0; list-style: none; }
+    .field-list li { position: relative; padding-left: 18px; }
+    .field-list li::before { content: '•'; position: absolute; left: 0; color: var(--brand); }
+    .do-not-wait { margin: 16px 0 0; padding: 17px 20px; border: 1px dashed var(--gold); border-radius: 14px; color: var(--muted); background: #fff9e9; }
+    .special-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 52px; }
+    .partner-card, .referral-card { padding: 32px; border-radius: var(--radius); }
+    .partner-card { border: 1px solid #ddb9af; background: #fff5f1; }
+    .referral-card { border: 1px solid #cdbdcb; background: #f7f0f6; }
+    .special-grid h3 { margin: 22px 0 12px; font-size: 36px; font-weight: 400; }
+    .special-grid p { color: var(--muted); }
+    .card-foot { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(45,41,38,.14); font-size: 14px; font-weight: 700; }
+    .contact-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+    .contact-details article { padding: 29px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); }
+    .detail-number { color: var(--brand); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+    .contact-details h3 { margin: 20px 0 12px; font-size: 28px; font-weight: 400; }
+    .contact-details p { color: var(--muted); }
+    .contact-details strong { color: var(--contact); font-size: 13px; }
+    .quote-strip { display: grid; grid-template-columns: .36fr 1.64fr; gap: 25px; margin-top: 20px; padding: 28px 32px; border-radius: 18px; color: white; background: var(--contact); }
+    .quote-strip span { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
+    .quote-strip p { margin: 0; font: 24px Georgia, serif; }
+    .dog-section { color: white; background: #282d29; }
+    .light-head .lead { color: rgba(255,255,255,.66); }
+    .dog-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+    .dog-tab { padding: 15px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; color: white; background: transparent; cursor: pointer; }
+    .dog-tab.active { border-color: #b7d1ba; color: #243127; background: #c8dcc9; }
+    .dog-card { display: grid; grid-template-columns: .42fr 1.58fr; gap: 34px; padding: 38px; border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius); background: #343a35; }
+    .dog-id { padding-right: 30px; border-right: 1px solid rgba(255,255,255,.16); }
+    .dog-id > span { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; opacity: .58; }
+    .dog-id strong { display: block; margin: 18px 0 12px; font: 400 42px Georgia, serif; }
+    .dog-id p { color: rgba(255,255,255,.62); }
+    .dog-fields { display: grid; grid-template-columns: 1.2fr 1fr; gap: 34px; }
+    .field-group > span { color: #b7d1ba; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .field-group ul { margin: 16px 0 0; padding: 0; list-style: none; }
+    .field-group li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .feature-card { display: grid; grid-template-columns: auto 1fr; gap: 24px; margin-top: 20px; padding: 30px; border-radius: 20px; color: var(--ink); background: #c8dcc9; }
+    .feature-icon { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%; color: white; background: var(--contact); font-size: 24px; }
+    .feature-card h3 { margin: 0 0 10px; font-size: 34px; font-weight: 400; }
+    .feature-card p:last-child { margin: 0; color: #48544b; }
+    .no-pattern { display: grid; grid-template-columns: .65fr 1.35fr; gap: 26px; margin-top: 18px; padding: 24px 28px; border: 1px dashed rgba(255,255,255,.32); border-radius: 16px; }
+    .no-pattern span { color: rgba(255,255,255,.66); }
+    .deal-section { background: #f1f4f7; }
+    .deal-header-card { display: grid; grid-template-columns: 1.5fr .7fr; gap: 26px; padding: 36px; border: 1px solid #cdd7e1; border-radius: var(--radius); background: white; }
+    .critical-fields { padding-right: 30px; border-right: 1px solid #dce4eb; }
+    .critical-fields h3, .known-fields h3 { margin-bottom: 24px; font-size: 34px; font-weight: 400; }
+    .critical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .critical-grid span { padding: 16px; border-radius: 12px; color: white; background: var(--deal); font-weight: 700; }
+    .critical-grid .auto-field { display: flex; align-items: center; justify-content: space-between; background: #6f7d8c; }
+    .auto-field small { padding: 4px 7px; border-radius: 999px; background: rgba(255,255,255,.18); font-size: 9px; text-transform: uppercase; }
+    .known-fields ul { margin: 22px 0 0; padding: 0; list-style: none; }
+    .known-fields li { padding: 10px 0; border-bottom: 1px solid #e1e7ed; color: var(--muted); }
+    .category-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: stretch; margin-top: 22px; }
+    .category-compare article { padding: 30px; border-radius: 20px; color: white; }
+    .client-category { background: var(--contact); }.deal-category { background: var(--deal); }
+    .category-compare article > span { font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; opacity: .7; }
+    .category-compare h3 { margin: 20px 0 10px; font-size: 32px; font-weight: 400; }
+    .category-compare p { margin-bottom: 0; opacity: .78; }
+    .not-equal { display: grid; place-items: center; font-size: 34px; color: var(--muted); }
+    .order-data { display: grid; grid-template-columns: .65fr 1.35fr; gap: 30px; margin-top: 22px; padding: 34px; border-radius: var(--radius); background: white; }
+    .order-title h3 { font-size: 34px; font-weight: 400; }
+    .order-tags { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 10px; }
+    .order-tags span { padding: 10px 13px; border: 1px solid #cbd6e1; border-radius: 999px; color: var(--deal); background: var(--deal-soft); font-size: 13px; }
+    .order-file-note { grid-column: 1 / -1; margin: 4px 0 0; padding-top: 18px; border-top: 1px solid #dce4eb; color: var(--muted); }
+    .order-file-note strong { color: var(--deal); }
+    .gpt-card { display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: start; margin-top: 22px; padding: 34px; border: 1px solid #cdd7e1; border-radius: var(--radius); background: white; }
+    .gpt-badge { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; color: white; background: var(--ink); font: 700 18px Georgia, serif; }
+    .gpt-card h3 { margin-bottom: 12px; font-size: 34px; font-weight: 400; }
+    .gpt-card > div:last-child > p:first-of-type { color: var(--muted); }
+    .gpt-prompt { margin-top: 20px; padding: 20px; border-left: 4px solid var(--deal); border-radius: 0 12px 12px 0; background: var(--deal-soft); }
+    .gpt-prompt-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .gpt-prompt span { display: block; color: var(--deal); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .gpt-prompt p { margin: 0; color: var(--ink); font: 21px Georgia, serif; }
+    .copy-prompt { flex: 0 0 auto; padding: 9px 13px; border: 1px solid var(--deal); border-radius: 9px; color: white; background: var(--deal); font-size: 12px; font-weight: 700; cursor: pointer; transition: transform .15s ease, background .15s ease; }
+    .copy-prompt:hover { background: #40566f; }
+    .copy-prompt:active { transform: translateY(1px); }
+    .copy-prompt.copied { border-color: var(--contact); background: var(--contact); }
+    .copy-prompt:focus-visible { outline: 3px solid rgba(83,107,134,.25); outline-offset: 3px; }
+    .gpt-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .gpt-steps li { padding: 17px; border-radius: 12px; background: var(--deal-soft); }
+    .gpt-steps b { display: block; margin-bottom: 7px; color: var(--deal); font-size: 12px; }
+    .gpt-app-note { margin: 14px 0 0; padding: 16px 18px; border: 1px dashed var(--gold); border-radius: 12px; color: var(--muted); background: #fff9e9; }
+    .gpt-app-note strong { color: var(--ink); }
+    .gpt-update-note { margin: 10px 0 0; padding: 16px 18px; border-left: 4px solid var(--contact); border-radius: 0 12px 12px 0; color: #48544b; background: var(--contact-soft); }
+    .gpt-update-note strong { color: var(--contact); }
+    .gpt-card > div:last-child > p.gpt-purpose-note { margin: 10px 0 0; padding: 20px; border-radius: 12px; color: #fff; background: var(--lock); line-height: 1.65; }
+    .gpt-purpose-note strong { color: #fff; }
+    .sorting-game { margin-top: 22px; padding: 34px; border-radius: var(--radius); color: white; background: var(--deal); }
+    .sorting-game h3 { margin-bottom: 8px; font-size: 36px; font-weight: 400; }
+    .sorting-head > p:last-child { color: rgba(255,255,255,.7); }
+    .sorting-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .sort-card { padding: 24px; border-radius: 16px; color: var(--ink); background: white; }
+    .sort-card p { min-height: 52px; font: 21px Georgia, serif; }
+    .sort-card > div { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .sort-card button { padding: 10px; border: 1px solid #cbd6e1; border-radius: 9px; color: var(--deal); background: white; cursor: pointer; }
+    .sort-card button.right { color: white; border-color: var(--contact); background: var(--contact); }
+    .sort-card button.wrong { color: white; border-color: var(--brand); background: var(--brand); }
+    .sort-result { display: block; min-height: 23px; margin-top: 14px; font-size: 12px; }
+    .sort-result.ok { color: var(--contact); }.sort-result.retry { color: var(--brand); }
+    .stop-section { color: white; background: var(--brand-dark); }
+    .stop-shell { display: grid; grid-template-columns: .72fr 1.28fr; gap: 60px; align-items: center; }
+    .stop-title > span { display: inline-grid; place-items: center; width: 76px; height: 76px; border: 2px solid white; border-radius: 50%; font-weight: 800; }
+    .stop-title h2 { margin: 25px 0 14px; font-size: 52px; font-weight: 400; }
+    .stop-title p { color: rgba(255,255,255,.66); }
+    .stop-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .stop-list li { position: relative; padding: 18px 18px 18px 47px; border: 1px solid rgba(255,255,255,.2); border-radius: 12px; background: rgba(255,255,255,.06); }
+    .stop-list li::before { content: '×'; position: absolute; left: 18px; color: #efb4a7; font-weight: 800; }
+    .repeat-section { background: var(--paper); }
+    .repeat-card { display: grid; grid-template-columns: .75fr 1.25fr; gap: 55px; padding: 48px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--cream); }
+    .repeat-intro h2 { font-size: 46px; font-weight: 400; line-height: 1.02; }
+    .repeat-intro p:last-child { color: var(--muted); }
+    .repeat-card ol { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .repeat-card li { display: flex; align-items: center; gap: 13px; padding: 15px; border-radius: 12px; background: white; }
+    .repeat-card li span { display: grid; flex: 0 0 auto; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: white; background: var(--brand); font-size: 12px; }
+    .checklist-section { background: #e9e0d2; }
+    .checklist-head { display: flex; justify-content: space-between; gap: 35px; align-items: flex-end; margin-bottom: 36px; }
+    .checklist-head h2 { max-width: 690px; margin: 0; font-size: 58px; font-weight: 400; line-height: 1; }
+    .progress-box { width: 250px; padding: 20px; border-radius: 16px; background: var(--paper); }
+    .progress-box strong { font: 40px Georgia, serif; }.progress-box > span { margin-left: 6px; color: var(--muted); font-size: 12px; }
+    .progress-track { height: 7px; margin-top: 13px; border-radius: 99px; background: var(--line); overflow: hidden; }
+    .progress-track i { display: block; width: 0; height: 100%; background: var(--brand); transition: width .25s ease; }
+    .check-columns { display: grid; grid-template-columns: .85fr 1.15fr 1fr; gap: 16px; align-items: start; }
+    .check-group { padding: 25px; border-radius: 20px; background: var(--paper); }
+    .check-group h3 { display: flex; justify-content: space-between; margin-bottom: 18px; font-size: 28px; font-weight: 400; }
+    .check-group h3 span { font: 700 11px Arial, sans-serif; }
+    .contact-check { border-top: 6px solid var(--contact); }.dog-check { border-top: 6px solid var(--gold); }.deal-check { border-top: 6px solid var(--deal); }
+    .check-group label { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; padding: 10px 0; border-bottom: 1px solid #eee7dc; font-size: 13px; cursor: pointer; }
+    .check-group label:last-child { border-bottom: 0; }
+    .check-group input { width: 18px; height: 18px; margin: 0; accent-color: var(--brand); }
+    .finish-status { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; margin-top: 20px; padding: 34px; border: 1px solid #c9bfae; border-radius: var(--radius); background: rgba(255,255,255,.48); opacity: .55; transition: .3s ease; }
+    .finish-status.complete { color: white; border-color: var(--contact); background: var(--contact); opacity: 1; transform: translateY(-2px); }
+    .finish-check { display: grid; place-items: center; width: 70px; height: 70px; border: 2px solid currentColor; border-radius: 50%; font-size: 34px; }
+    .finish-status span { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .finish-status h3 { margin: 7px 0 8px; font-size: 38px; font-weight: 400; text-transform: uppercase; }
+    .finish-status p { margin: 0; max-width: 800px; }
+    .next-step { margin-top: 16px; padding: 24px 28px; border-left: 5px solid var(--brand); background: var(--paper); }
+    .next-step > span { display: block; margin-bottom: 6px; color: var(--brand); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .next-step strong { font: 23px Georgia, serif; }
+    .next-step p { margin: 7px 0 0; color: var(--muted); }
+    .process-branches { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+    .process-branches.single { grid-template-columns: 1fr; }
+    .process-branch { padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--cream); }
+    .process-branch span { display: block; margin-bottom: 8px; color: var(--brand); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .process-branch strong { display: block; font-size: 21px; line-height: 1.25; }
+    .process-branch p { margin-bottom: 0; }
+    .next-lesson-note { margin: 34px 0 0; padding-top: 24px; border-top: 1px solid rgba(45,41,38,.18); color: var(--muted); font: 21px Georgia, serif; text-align: center; }
+    .next-lesson-note strong { color: var(--brand-dark); }
+    footer { color: white; background: var(--ink); }
+    .footer-inner { min-height: 110px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-inner .brand { color: white; }.footer-inner p { margin: 0; color: rgba(255,255,255,.58); font-size: 13px; }
+    @media (max-width: 980px) {
+      .conversion { grid-template-columns: 1fr; }.conversion-arrow { min-height: 44px; }.conversion-arrow span { writing-mode: initial; }
+      .contact-details, .check-columns { grid-template-columns: 1fr; }
+      .dog-card, .deal-header-card, .order-data, .stop-shell, .repeat-card { grid-template-columns: 1fr; }
+      .dog-id, .critical-fields { padding-right: 0; border-right: 0; }
+      .quote-strip, .no-pattern { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 28px, 1180px); }
+      .lesson span { display: none; }
+      .field-columns, .special-grid, .category-compare, .sorting-list, .repeat-card ol, .gpt-steps { grid-template-columns: 1fr; }
+      .not-equal { min-height: 36px; }
+      .field-list, .dog-fields, .stop-list { grid-template-columns: 1fr; }
+      .dog-tabs { grid-template-columns: 1fr 1fr; }
+      .conversion-result { grid-template-columns: 1fr; }.conversion-result > b { text-align: center; }
+      .checklist-head { display: grid; }.progress-box { width: 100%; }
+      .checklist-head h2 { font-size: 44px; }
+      .contact-details article, .field-panel, .deal-header-card, .sorting-game, .repeat-card, .gpt-card { padding: 24px; }
+      .gpt-card { grid-template-columns: 1fr; }
+      .finish-status, .process-branches { grid-template-columns: 1fr; }.footer-inner { padding: 25px 0; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark">✦</span> Ателье Софи</a>
+      <nav class="nav" aria-label="Разделы урока"><a href="#principle">Принцип</a><a href="#contact">Контакт</a><a href="#dog">Собака</a><a href="#deal">Сделка</a><a href="#checklist">Проверка</a></nav>
+      <div class="lesson"><b>02</b><span>Обучение</span></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-photo" role="img" aria-label="Собаки в одежде Ателье Софи"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Урок 02 · Работа с клиентом</p>
+        <h1 class="long-title">Клиент до этапа технического задания в производство</h1>
+        <p class="hero-audience">Первичный и повторный</p>
+        <p class="hero-lead">Как правильно проверить и заполнить Контакт и Сделку, собрать данные клиента, собаки и текущего заказа.</p>
+        <div class="goal"><strong>Финальная точка:</strong> менеджер знает клиента и собаку, получил необходимые мерки, понял пожелания и правильно разместил данные в Контакте, переписке и Сделке.</div>
+      </div>
+    </section>
+
+    <section class="route-strip" id="flow">
+      <div class="shell route" aria-label="Маршрут обучения">
+        <span>Лид</span><i>→</i><span>Контакт + Сделка</span><i>→</i><span>Клиент</span><i>→</i><span>Собака</span><i>→</i><span>Мерки</span><i>→</i><span>Изделие</span><i>→</i><span>Пожелания</span><i>→</i><span>Данные собраны</span>
+      </div>
+    </section>
+
+    <section class="section" id="principle">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">01 · Главное различие</p><h2>Куда что записывать?</h2></div>
+          <p class="lead">Один вопрос помогает принять решение: информация постоянная или относится только к изделию, которое клиент заказывает сейчас?</p>
+        </div>
+        <div class="principle-grid">
+          <article class="entity contact">
+            <span class="tag">Постоянная информация</span>
+            <h3>Контакт</h3>
+            <p>Кто наш клиент и что мы знаем о нём и его собаке. Эти сведения понадобятся и в следующих заказах.</p>
+            <div class="formula">Клиент <span>+</span> Собака</div>
+          </article>
+          <article class="entity correspondence">
+            <span class="tag">Информация об изделии</span>
+            <h3>Переписка</h3>
+            <p>Материалы, слойность, подклад, модель и пожелания по изделию собираем в переписке. Эти сведения понадобятся для формирования бланка изготовления изделия.</p>
+            <div class="formula">Изделие <span>+</span> Пожелания</div>
+          </article>
+          <article class="entity deal">
+            <span class="tag">Рабочие поля</span>
+            <h3>Сделка</h3>
+            <p>В Сделке заполняем предусмотренные рабочие поля. Отдельных полей для комплектации изделия пока нет; после формирования бланка готовый файл прикрепляется к Сделке.</p>
+            <div class="formula">Поля <span>+</span> Файл</div>
+          </article>
+        </div>
+        <div class="rule-banner"><p><span>Постоянные данные → Контакт.</span> Данные об изделии → переписка. Рабочие поля и готовый файл → Сделка.</p></div>
+      </div>
+    </section>
+
+    <section class="section conversion-section">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">02 · Конвертация лида</p><h2>Создаём одновременно</h2></div>
+          <p class="lead">Не нужно сначала полностью оформлять Контакт и только потом создавать Сделку. После квалификации появляются сразу две связанные карточки.</p>
+        </div>
+        <div class="conversion" aria-label="Схема конвертации лида">
+          <div class="conversion-node lead-node"><small>Исходная точка</small><strong>Лид</strong></div>
+          <div class="conversion-arrow"><span>Перевод</span>→</div>
+          <div class="conversion-result">
+            <div class="mini-contact"><small>Постоянное</small><strong>Контакт</strong></div><b>+</b><div class="mini-deal"><small>Текущий заказ</small><strong>Сделка</strong></div>
+          </div>
+        </div>
+        <div class="parallel-note"><b>Дальше работаем параллельно:</b><span><i class="dot contact-dot"></i> в Контакте — клиент и собака</span><span>в переписке — изделие и пожелания</span><span><i class="dot deal-dot"></i> в Сделке — предусмотренные поля</span></div>
+        <div class="repeat-conversion-note"><strong>Повторный клиент:</strong> Контакт уже есть, а новая Сделка уже создана. Повторно ничего не создаём — проверяем и обновляем данные.</div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">03 · Карточка Контакта</p><h2>Кто наш клиент?</h2></div>
+          <p class="lead">Заполняем постоянные сведения, которые помогут вести отношения с клиентом сейчас и в следующих сделках.</p>
+        </div>
+        <div class="legend" aria-label="Обозначения полей">
+          <span class="legend-required">Обязательно</span><span class="legend-optional">При наличии</span><span class="legend-auto">Автоматически</span><span class="legend-lock">Заполняет руководитель</span>
+        </div>
+        <div class="field-columns">
+          <article class="field-panel required-panel">
+            <div class="panel-top"><span>Обязательные поля</span><b>13</b></div>
+            <ul class="field-list"><li>Имя</li><li>Фамилия</li><li>Телефон</li><li>Город</li><li>Откуда узнал о нас</li><li>Категория клиента</li><li>Ответственный за клиента</li><li>Комментарий</li><li>Способ доставки</li><li>Адрес доставки</li><li>Удобный канал общения</li><li>Тип контакта</li><li>Делал заказ ранее</li></ul>
+          </article>
+          <article class="field-panel optional-panel">
+            <div class="panel-top"><span>Заполняем при наличии</span><b>4</b></div>
+            <ul class="field-list"><li>Отчество</li><li>E-mail</li><li>Дата рождения</li><li>Ссылка на аккаунт</li></ul>
+          </article>
+        </div>
+        <p class="do-not-wait"><strong>Не задерживаем работу:</strong> отсутствие даты рождения, e-mail или другого дополнительного поля не мешает двигаться дальше.</p>
+
+        <div class="special-grid">
+          <article class="partner-card">
+            <span class="card-label required-label">Обязательно</span><h3>Партнёр</h3><p>Указываем партнёра, от которого пришёл клиент. Поле обязательно для заполнения.</p><div class="card-foot">Партнёра нет → «Ателье Софи». Партнёр ещё выясняется → «вопрос партнер».</div>
+          </article>
+          <article class="referral-card">
+            <span class="card-label lock-label">🔒 Заполняет руководитель</span><h3>Реферальная ссылка</h3><p>Используется только у блогеров и партнёров. Обычный менеджер самостоятельно поле не заполняет и не изменяет.</p><div class="card-foot">Заполняет Софья — только при наличии ссылки.</div>
+          </article>
+        </div>
+
+        <div class="contact-details">
+          <article><span class="detail-number">01</span><h3>Категория клиента</h3><p>Показывает отношение клиента к бренду и степень прогрева: сомневающийся, тёплый, постоянник, фанат, амбассадор или другая утверждённая категория.</p><strong>Характеризует самого клиента.</strong></article>
+          <article><span class="detail-number">02</span><h3>Комментарий</h3><p>Фиксируем страхи, ожидания, важные пожелания, прошлый негативный опыт и договорённости — только то, что поможет следующему сотруднику продолжить общение.</p><strong>Не пересказываем всю переписку.</strong></article>
+          <article><span class="detail-number">03</span><h3>Ответственный</h3><p>Менеджер, к которому попал клиент и который ведёт отношения с ним. Поле заполняется сразу и обозначает постоянную связь клиента с менеджером.</p><strong>Не путать с ответственным за Сделку.</strong></article>
+        </div>
+        <div class="quote-strip"><span>Пример комментария</span><p>«Клиент переживает, что ткань будет сильно шуршать. Не любит толстые и тяжёлые материалы».</p></div>
+      </div>
+    </section>
+
+    <section class="section dog-section" id="dog">
+      <div class="shell">
+        <div class="section-head light-head">
+          <div><p class="eyebrow">04 · Данные собаки</p><h2>До четырёх собак</h2></div>
+          <p class="lead">У каждой собаки — отдельный набор постоянных данных. Выберите карточку, которую заполняете сейчас.</p>
+        </div>
+        <div class="dog-tabs" role="tablist" aria-label="Карточки собак">
+          <button class="dog-tab active" data-dog="1" role="tab" aria-selected="true">Собака 1</button><button class="dog-tab" data-dog="2" role="tab">Собака 2</button><button class="dog-tab" data-dog="3" role="tab">Собака 3</button><button class="dog-tab" data-dog="4" role="tab">Собака 4</button>
+        </div>
+        <div class="dog-card">
+          <div class="dog-id"><span>Карточка</span><strong id="dog-card-title">Собака 1</strong><p>Постоянная информация о конкретном питомце.</p></div>
+          <div class="dog-fields">
+            <div class="field-group"><span>Основное</span><ul><li>Порода</li><li>Кличка</li><li>Пол</li><li>Возраст</li><li>Вес</li><li>Размер обуви</li><li>Ориентируемся на лекало</li></ul></div>
+            <div class="field-group measurements"><span>Исходные мерки</span><ul><li>Обхват шеи</li><li>Обхват груди</li><li>Обхват талии</li><li>Обхват запястья</li></ul></div>
+          </div>
+        </div>
+        <div class="feature-card"><div class="feature-icon">✦</div><div><p class="eyebrow">Ключевое поле</p><h3>Особенности собаки</h3><p>Записываем особенности телосложения и движения, чувствительность, нестандартную посадку прошлой одежды, пожелания по длине и важные наблюдения клиента. Эта информация остаётся для будущих заказов.</p></div></div>
+        <div class="no-pattern"><strong>На этом этапе окончательного лекала ещё нет.</strong><span>Не выбираем тип лекала, не формируем его и не прикрепляем файл. Формирование технического задания на лекала станет следующим этапом для первичного клиента и для повторного клиента, у которого такого ТЗ ещё нет.</span></div>
+      </div>
+    </section>
+
+    <section class="section deal-section" id="deal">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">05 · Карточка Сделки</p><h2>Что заказывают сейчас?</h2></div>
+          <p class="lead">В Сделке заполняем предусмотренные рабочие поля. Комплектацию изделия собираем в переписке, потому что отдельных полей для неё пока нет.</p>
+        </div>
+        <div class="deal-header-card">
+          <div class="critical-fields"><p class="eyebrow">Заполняем в самом начале</p><h3>Опорные поля Сделки</h3><div class="critical-grid"><span>Клиент</span><span>Ответственный за сделку</span><span>Партнёр</span><span>Дата начала</span><span>Дата завершения</span><span>Ответственный за клиента</span></div></div>
+          <div class="known-fields"><p class="eyebrow">По мере появления</p><ul><li>Сумма и валюта</li><li>Доставка</li><li>Номер трека</li><li>Категория сделки</li></ul></div>
+        </div>
+
+        <div class="category-compare">
+          <article class="client-category"><span>В Контакте</span><h3>Категория клиента</h3><p>Характеризует клиента и его отношение к бренду.</p></article>
+          <div class="not-equal">≠</div>
+          <article class="deal-category"><span>В Сделке</span><h3>Категория сделки</h3><p>Определяет приоритет текущей сделки и скорость возвращения к ней в очереди.</p></article>
+        </div>
+
+        <div class="order-data">
+          <div class="order-title"><p class="eyebrow">Что собираем в переписке</p><h3>Данные для будущего бланка изготовления изделия</h3></div>
+          <div class="order-tags"><span>Вид изделия</span><span>Модель</span><span>Материалы</span><span>Ткань</span><span>Слойность</span><span>Подклад</span><span>Утепление</span><span>Конструктивные особенности</span><span>Пожелания по модели</span><span>Другие договорённости</span></div>
+          <p class="order-file-note"><strong>В Сделке не будет отдельных полей для этих данных.</strong> После формирования бланка изготовления изделия эти сведения будут находиться в готовом файле, который прикрепляется к Сделке.</p>
+        </div>
+
+        <div class="gpt-card">
+          <div class="gpt-badge">GPT</div>
+          <div>
+            <p class="eyebrow">Длинная или сложная переписка</p>
+            <h3>Как собрать досье клиента с помощью GPT-чата</h3>
+            <p>Когда в переписке много сообщений и деталей, сначала собираем всю информацию в отдельное досье, а затем продолжаем работу в персональном чате клиента.</p>
+            <ol class="gpt-steps">
+              <li><b>01 · Открыть рабочий чат</b>Зайти в чат «Работа с клиентами, Ателье Софи».</li>
+              <li><b>02 · Перейти в раздел</b>Открыть чат «Досье клиентов».</li>
+              <li><b>03 · Отправить запрос</b>Указать имя и номер клиента и попросить собрать полную информацию в файл.</li>
+              <li><b>04 · Получить досье</b>В приложении нажать кнопку «Работа / Work» и дождаться готового файла.</li>
+              <li><b>05 · Создать чат клиента</b>Создать отдельный чат с названием: номер клиента и его имя.</li>
+              <li><b>06 · Начать работу</b>Загрузить готовый файл досье в новый чат. Дальше вся работа и информация по клиенту ведутся в этом чате.</li>
+            </ol>
+            <div class="gpt-prompt"><div class="gpt-prompt-head"><span>Текст запроса</span><button class="copy-prompt" id="copy-prompt" type="button">Скопировать</button></div><p id="gpt-prompt-text">Сделай досье на клиента [имя клиента], номер клиента [номер]. Собери полную информацию в файл.</p></div>
+            <p class="gpt-app-note"><strong>Важно:</strong> кнопка «Работа / Work» действует только в приложении. Если приложение не загружено, попросите выгрузить досье у того, кто пользуется приложением: Софьи, Ангелины или Юлии.</p>
+            <p class="gpt-update-note"><strong>При последующих заказах:</strong> досье клиента необходимо обновлять. После новой долгой переписки добавляем свежую информацию в существующее досье, загружаем обновлённый файл в отдельный чат клиента и продолжаем работу там.</p>
+            <p class="gpt-purpose-note"><strong>Зачем нужен чат клиента:</strong> GPT-чат помогает собрать и упорядочить нужные данные для технического задания на лекало и примерочный образец, а также для бланка изготовления каждого изделия. Он также помогает в переписке с клиентом: готовить ответы на сложные вопросы в соответствии с нашими правилами, офертой и другими действующими документами.</p>
+          </div>
+        </div>
+
+        <div class="sorting-game">
+          <div class="sorting-head"><p class="eyebrow">Закрепим правило</p><h3>Куда записать?</h3><p>Нажмите на вариант и проверьте себя.</p></div>
+          <div class="sorting-list">
+            <article class="sort-card" data-answer="contact"><p>«Собака чувствительна к плотным материалам»</p><div><button data-choice="contact">Контакт</button><button data-choice="correspondence">Переписка</button></div><span class="sort-result" aria-live="polite"></span></article>
+            <article class="sort-card" data-answer="correspondence"><p>«В этом заказе нужен комбинезон на флисовом подкладе»</p><div><button data-choice="contact">Контакт</button><button data-choice="correspondence">Переписка</button></div><span class="sort-result" aria-live="polite"></span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stop-section">
+      <div class="shell stop-shell">
+        <div class="stop-title"><span>СТОП</span><h2>Пока не требуется</h2><p>Сейчас менеджер собирает и правильно размещает исходную информацию.</p></div>
+        <ul class="stop-list"><li>Окончательное лекало</li><li>Выбор типа окончательного лекала</li><li>Прикрепление файла лекала</li><li>Техническое задание на лекало и на примерочный образец</li><li>Бланк изготовления изделия</li><li>Производственные данные по меркам, которых ещё нет</li></ul>
+      </div>
+    </section>
+
+    <section class="section repeat-section">
+      <div class="shell">
+        <div class="repeat-card">
+          <div class="repeat-intro"><p class="eyebrow">Если клиент уже есть в CRM</p><h2>Контакт повторно не создаём</h2><p>Новая Сделка уже создана. Проверяем и обновляем существующий Контакт, затем убеждаемся, что актуальные данные отражены в этой Сделке.</p></div>
+          <ol><li><span>1</span>Найти существующий Контакт</li><li><span>2</span>Проверить и обновить данные клиента</li><li><span>3</span>Проверить данные нужной собаки</li><li><span>4</span>Сохранить изменения в Контакте</li><li><span>5</span>Открыть уже созданную новую Сделку</li><li><span>6</span>Проверить, что актуальные данные отражены в Сделке</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section checklist-section" id="checklist">
+      <div class="shell">
+        <div class="checklist-head"><div><p class="eyebrow">06 · Финальная проверка</p><h2>Все исходные данные собраны?</h2></div><div class="progress-box"><strong id="progress-value">0%</strong><span>выполнено</span><div class="progress-track"><i id="progress-bar"></i></div></div></div>
+        <div class="check-columns">
+          <article class="check-group contact-check"><h3>Контакт <span id="contact-count">0/11</span></h3><label><input type="checkbox">Основные данные клиента заполнены</label><label><input type="checkbox">Указано, откуда клиент узнал о нас</label><label><input type="checkbox">Указана категория клиента</label><label><input type="checkbox">Указан партнёр</label><label><input type="checkbox">Назначен ответственный за клиента</label><label><input type="checkbox">Особенности клиента внесены в комментарий</label><label><input type="checkbox">Указан способ доставки</label><label><input type="checkbox">Указан адрес доставки</label><label><input type="checkbox">Указан удобный канал общения</label><label><input type="checkbox">Указан тип контакта</label><label><input type="checkbox">Отмечено, делал ли клиент заказ ранее</label></article>
+          <article class="check-group dog-check"><h3>Собака <span id="dog-count">0/14</span></h3><label><input type="checkbox">Выбрана или заведена нужная собака</label><label><input type="checkbox">Указана кличка</label><label><input type="checkbox">Указана порода</label><label><input type="checkbox">Указан пол</label><label><input type="checkbox">Указан возраст</label><label><input type="checkbox">Указан вес</label><label><input type="checkbox">Указан размер обуви</label><label><input type="checkbox">Указано, на какое лекало ориентируемся</label><label><input type="checkbox">Особенности зафиксированы</label><label><input type="checkbox">Получены необходимые обхваты</label><label><input type="checkbox">Внесён обхват шеи</label><label><input type="checkbox">Внесён обхват груди</label><label><input type="checkbox">Внесён обхват талии</label><label><input type="checkbox">Внесён обхват запястья</label></article>
+          <article class="check-group deal-check"><h3>Переписка и Сделка <span id="deal-count">0/18</span></h3><label><input type="checkbox">Уже созданная Сделка открыта</label><label><input type="checkbox">Клиент привязан</label><label><input type="checkbox">Ответственный за сделку назначен</label><label><input type="checkbox">Партнёр указан</label><label><input type="checkbox">Дата начала указана</label><label><input type="checkbox">Дата завершения указана</label><label><input type="checkbox">Ответственный за клиента указан</label><label><input type="checkbox">В переписке понятно, какое изделие нужно</label><label><input type="checkbox">Материалы собраны в переписке</label><label><input type="checkbox">Слойность собрана в переписке</label><label><input type="checkbox">Подклад собран в переписке</label><label><input type="checkbox">Модель и особенности собраны в переписке</label><label><input type="checkbox">Пожелания по изделию собраны в переписке</label><label><input type="checkbox">Сумма внесена, когда стала известна</label><label><input type="checkbox">Доставка внесена, когда стала известна</label><label><input type="checkbox">Номер трека внесён после появления</label><label><input type="checkbox">Категория сделки указана по мере появления</label><label><input type="checkbox">Счёт выставлен, Сделка на этапе «Выставлен счёт»</label></article>
+        </div>
+        <div class="finish-status" id="finish-status"><div class="finish-check">✓</div><div><span>Финальная точка</span><h3>Исходные данные собраны</h3><p>Менеджер знает клиента и собаку, получил необходимые мерки, а материалы, слойность, подклад, модель и пожелания по изделию собрал в переписке. Карточка Контакта заполнена, рабочие поля Сделки внесены, Сделка находится на этапе «Выставлен счёт» — можно принимать оплату.</p></div></div>
+        <p class="next-lesson-note"><strong>Продолжение следует.</strong> Следующий урок — формирование технического задания на лекало и на примерочный образец.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><a class="brand" href="#top"><span class="brand-mark">✦</span> Ателье Софи</a><p>Внутреннее обучение отдела продаж · Урок 02</p><a href="#top">Наверх ↑</a></div></footer>
+
+  <script>
+    const dogTabs = [...document.querySelectorAll('.dog-tab')];
+    const dogTitle = document.querySelector('#dog-card-title');
+    dogTabs.forEach(tab => tab.addEventListener('click', () => {
+      dogTabs.forEach(item => { item.classList.remove('active'); item.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active'); tab.setAttribute('aria-selected', 'true');
+      dogTitle.textContent = `Собака ${tab.dataset.dog}`;
+    }));
+
+    document.querySelectorAll('.sort-card').forEach(card => {
+      card.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
+        const correct = button.dataset.choice === card.dataset.answer;
+        card.querySelectorAll('button').forEach(item => item.classList.remove('right', 'wrong'));
+        button.classList.add(correct ? 'right' : 'wrong');
+        const result = card.querySelector('.sort-result');
+        result.textContent = correct
+          ? (card.dataset.answer === 'contact' ? 'Верно: это постоянная особенность собаки.' : 'Верно: сведения об изделии собираем в переписке.')
+          : 'Посмотрите на правило выше и попробуйте ещё раз.';
+        result.className = `sort-result ${correct ? 'ok' : 'retry'}`;
+      }));
+    });
+
+    const copyPromptButton = document.querySelector('#copy-prompt');
+    const promptText = document.querySelector('#gpt-prompt-text');
+    copyPromptButton.addEventListener('click', async () => {
+      const text = promptText.textContent.trim();
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.setAttribute('readonly', '');
+          textArea.style.position = 'fixed';
+          textArea.style.opacity = '0';
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          textArea.remove();
+        }
+        copyPromptButton.textContent = 'Скопировано ✓';
+        copyPromptButton.classList.add('copied');
+        setTimeout(() => {
+          copyPromptButton.textContent = 'Скопировать';
+          copyPromptButton.classList.remove('copied');
+        }, 1800);
+      } catch (error) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(promptText);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyPromptButton.textContent = 'Текст выделен';
+      }
+    });
+
+    const checkboxes = [...document.querySelectorAll('.check-group input')];
+    const groups = [
+      ['.contact-check', '#contact-count'], ['.dog-check', '#dog-count'], ['.deal-check', '#deal-count']
+    ];
+    function updateProgress() {
+      const done = checkboxes.filter(item => item.checked).length;
+      const percent = Math.round(done / checkboxes.length * 100);
+      document.querySelector('#progress-value').textContent = `${percent}%`;
+      document.querySelector('#progress-bar').style.width = `${percent}%`;
+      groups.forEach(([groupSelector, countSelector]) => {
+        const groupChecks = [...document.querySelectorAll(`${groupSelector} input`)];
+        document.querySelector(countSelector).textContent = `${groupChecks.filter(item => item.checked).length}/${groupChecks.length}`;
+      });
+      document.querySelector('#finish-status').classList.toggle('complete', done === checkboxes.length);
+    }
+    checkboxes.forEach(item => item.addEventListener('change', updateProgress));
+  </script>
+</body>
+</html>
