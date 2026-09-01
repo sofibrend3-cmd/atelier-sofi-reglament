@@ -118,7 +118,6 @@
     .legend span, .card-label { padding: 7px 10px; border: 1px solid; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
     .legend-required, .required-label { color: var(--brand); background: #fbebe7; }
     .legend-optional { color: #7e704c; background: #f5f0df; }
-    .legend-auto { color: var(--deal); background: var(--deal-soft); }
     .legend-lock, .lock-label { color: var(--lock); background: #f2eaf1; }
     .field-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     .field-panel { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
@@ -172,8 +171,6 @@
     .critical-fields h3, .known-fields h3 { margin-bottom: 24px; font-size: 34px; font-weight: 400; }
     .critical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .critical-grid span { padding: 16px; border-radius: 12px; color: white; background: var(--deal); font-weight: 700; }
-    .critical-grid .auto-field { display: flex; align-items: center; justify-content: space-between; background: #6f7d8c; }
-    .auto-field small { padding: 4px 7px; border-radius: 999px; background: rgba(255,255,255,.18); font-size: 9px; text-transform: uppercase; }
     .known-fields ul { margin: 22px 0 0; padding: 0; list-style: none; }
     .known-fields li { padding: 10px 0; border-bottom: 1px solid #e1e7ed; color: var(--muted); }
     .category-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: stretch; margin-top: 22px; }
@@ -193,6 +190,8 @@
     .gpt-badge { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; color: white; background: var(--ink); font: 700 18px Georgia, serif; }
     .gpt-card h3 { margin-bottom: 12px; font-size: 34px; font-weight: 400; }
     .gpt-card > div:last-child > p:first-of-type { color: var(--muted); }
+    .gpt-instruction-title { margin-top: 28px; padding-top: 26px; border-top: 1px solid #dce4eb; }
+    .gpt-instruction-title .eyebrow { margin-bottom: 12px; }
     .gpt-prompt { margin-top: 20px; padding: 20px; border-left: 4px solid var(--deal); border-radius: 0 12px 12px 0; background: var(--deal-soft); }
     .gpt-prompt-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
     .gpt-prompt span { display: block; color: var(--deal); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
@@ -209,6 +208,8 @@
     .gpt-app-note strong { color: var(--ink); }
     .gpt-update-note { margin: 10px 0 0; padding: 16px 18px; border-left: 4px solid var(--contact); border-radius: 0 12px 12px 0; color: #48544b; background: var(--contact-soft); }
     .gpt-update-note strong { color: var(--contact); }
+    .gpt-call-note { margin: 10px 0 0; padding: 16px 18px; border-left: 4px solid var(--deal); border-radius: 0 12px 12px 0; color: #40566f; background: var(--deal-soft); }
+    .gpt-call-note strong { color: var(--deal); }
     .gpt-card > div:last-child > p.gpt-purpose-note { margin: 10px 0 0; padding: 20px; border-radius: 12px; color: #fff; background: var(--lock); line-height: 1.65; }
     .gpt-purpose-note strong { color: #fff; }
     .sorting-game { margin-top: 22px; padding: 34px; border-radius: var(--radius); color: white; background: var(--deal); }
@@ -334,7 +335,7 @@
         <h1 class="long-title">Клиент до этапа технического задания в производство</h1>
         <p class="hero-audience">Первичный и повторный</p>
         <p class="hero-lead">Как правильно проверить и заполнить Контакт и Сделку, собрать данные клиента, собаки и текущего заказа.</p>
-        <div class="goal"><strong>Финальная точка:</strong> менеджер знает клиента и собаку, получил необходимые мерки, понял пожелания и правильно разместил данные в Контакте, переписке и Сделке.</div>
+        <div class="goal"><strong>Финальная точка:</strong> менеджер знает клиента и собаку, получил необходимые мерки, понял пожелания и правильно разместил данные в Контакте, переписке, звонках и Сделке.</div>
       </div>
     </section>
 
@@ -359,8 +360,8 @@
           </article>
           <article class="entity correspondence">
             <span class="tag">Информация об изделии</span>
-            <h3>Переписка</h3>
-            <p>Материалы, слойность, подклад, модель и пожелания по изделию собираем в переписке. Эти сведения понадобятся для формирования бланка изготовления изделия.</p>
+            <h3>Переписка и звонки</h3>
+            <p>Материалы, слойность, подклад, модель и пожелания по изделию собираем из переписки и звонков. Эти сведения понадобятся для формирования бланка изготовления изделия.</p>
             <div class="formula">Изделие <span>+</span> Пожелания</div>
           </article>
           <article class="entity deal">
@@ -370,7 +371,7 @@
             <div class="formula">Поля <span>+</span> Файл</div>
           </article>
         </div>
-        <div class="rule-banner"><p><span>Постоянные данные → Контакт.</span> Данные об изделии → переписка. Рабочие поля и готовый файл → Сделка.</p></div>
+        <div class="rule-banner"><p><span>Постоянные данные → Контакт.</span> Данные об изделии → переписка и звонки. Поля для статистики и готовый файл → Сделка.</p></div>
       </div>
     </section>
 
@@ -387,7 +388,7 @@
             <div class="mini-contact"><small>Постоянное</small><strong>Контакт</strong></div><b>+</b><div class="mini-deal"><small>Текущий заказ</small><strong>Сделка</strong></div>
           </div>
         </div>
-        <div class="parallel-note"><b>Дальше работаем параллельно:</b><span><i class="dot contact-dot"></i> в Контакте — клиент и собака</span><span>в переписке — изделие и пожелания</span><span><i class="dot deal-dot"></i> в Сделке — предусмотренные поля</span></div>
+        <div class="parallel-note"><b>Дальше работаем параллельно:</b><span><i class="dot contact-dot"></i> в Контакте — клиент и собака</span><span>в переписке и звонках — изделие и пожелания</span><span><i class="dot deal-dot"></i> в Сделке — поля для статистики</span></div>
         <div class="repeat-conversion-note"><strong>Повторный клиент:</strong> Контакт уже есть, а новая Сделка уже создана. Повторно ничего не создаём — проверяем и обновляем данные.</div>
       </div>
     </section>
@@ -399,7 +400,7 @@
           <p class="lead">Заполняем постоянные сведения, которые помогут вести отношения с клиентом сейчас и в следующих сделках.</p>
         </div>
         <div class="legend" aria-label="Обозначения полей">
-          <span class="legend-required">Обязательно</span><span class="legend-optional">При наличии</span><span class="legend-auto">Автоматически</span><span class="legend-lock">Заполняет руководитель</span>
+          <span class="legend-required">Обязательно</span><span class="legend-optional">При наличии</span><span class="legend-lock">Заполняет руководитель</span>
         </div>
         <div class="field-columns">
           <article class="field-panel required-panel">
@@ -424,7 +425,7 @@
 
         <div class="contact-details">
           <article><span class="detail-number">01</span><h3>Категория клиента</h3><p>Показывает отношение клиента к бренду и степень прогрева: сомневающийся, тёплый, постоянник, фанат, амбассадор или другая утверждённая категория.</p><strong>Характеризует самого клиента.</strong></article>
-          <article><span class="detail-number">02</span><h3>Комментарий</h3><p>Фиксируем страхи, ожидания, важные пожелания, прошлый негативный опыт и договорённости — только то, что поможет следующему сотруднику продолжить общение.</p><strong>Не пересказываем всю переписку.</strong></article>
+          <article><span class="detail-number">02</span><h3>Комментарий</h3><p>Фиксируем страхи, ожидания, важные пожелания, прошлый негативный опыт и договорённости — только то, что поможет следующему сотруднику продолжить общение.</p><strong>Не пересказываем целиком переписку и звонки.</strong></article>
           <article><span class="detail-number">03</span><h3>Ответственный</h3><p>Менеджер, к которому попал клиент и который ведёт отношения с ним. Поле заполняется сразу и обозначает постоянную связь клиента с менеджером.</p><strong>Не путать с ответственным за Сделку.</strong></article>
         </div>
         <div class="quote-strip"><span>Пример комментария</span><p>«Клиент переживает, что ткань будет сильно шуршать. Не любит толстые и тяжёлые материалы».</p></div>
@@ -456,7 +457,7 @@
       <div class="shell">
         <div class="section-head">
           <div><p class="eyebrow">05 · Карточка Сделки</p><h2>Что заказывают сейчас?</h2></div>
-          <p class="lead">В Сделке заполняем поля, важные для статистики. Комплектацию изделия и остальные подробности собираем в переписке для будущего бланка изготовления.</p>
+          <p class="lead">В Сделке заполняем поля, важные для статистики. Комплектацию изделия и остальные подробности собираем из переписки и звонков для будущего бланка изготовления.</p>
         </div>
         <div class="deal-header-card">
           <div class="critical-fields"><p class="eyebrow">Заполняем в самом начале</p><h3>Опорные поля Сделки</h3><div class="critical-grid"><span>Клиент</span><span>Ответственный за сделку</span><span>Партнёр</span><span>Дата начала</span><span>Дата завершения</span><span>Ответственный за клиента</span></div></div>
@@ -470,7 +471,7 @@
         </div>
 
         <div class="order-data">
-          <div class="order-title"><p class="eyebrow">Что собираем в переписке</p><h3>Данные для будущего бланка изготовления изделия</h3></div>
+          <div class="order-title"><p class="eyebrow">Что собираем из переписки и звонков</p><h3>Данные для будущего бланка изготовления изделия</h3></div>
           <div class="order-tags"><span>Вид изделия</span><span>Модель</span><span>Материалы</span><span>Ткань</span><span>Слойность</span><span>Подклад</span><span>Утепление</span><span>Конструктивные особенности</span><span>Пожелания по модели</span><span>Другие договорённости</span></div>
           <p class="order-file-note"><strong>В Сделке будут не все отдельные поля для этих данных — только поля, важные для статистики.</strong> Остальные сведения для бланка изготовления изделия будут находиться в готовом файле, который прикрепляется к Сделке.</p>
         </div>
@@ -478,29 +479,30 @@
         <div class="gpt-card">
           <div class="gpt-badge">GPT</div>
           <div>
-            <p class="eyebrow">Длинная или сложная переписка</p>
-            <h3>Как собрать досье клиента с помощью GPT-чата</h3>
-            <p>Когда в переписке много сообщений и деталей, сначала собираем всю информацию в отдельное досье, а затем продолжаем работу в персональном чате клиента.</p>
+            <p class="eyebrow">Единое досье клиента</p>
+            <h3>Зачем нужен GPT-чат</h3>
+            <p class="gpt-purpose-note">GPT-чат собирает и упорядочивает информацию из всех лидов, сделок, звонков и переписок клиента. Эти данные нужны для технического задания на лекало и примерочный образец, а также для бланка изготовления каждого изделия. Чат также помогает готовить ответы на сложные вопросы клиента в соответствии с нашими правилами, офертой и другими действующими документами.</p>
+            <div class="gpt-instruction-title"><p class="eyebrow">Пошаговая инструкция</p><h3>Как собрать досье клиента с помощью GPT-чата</h3><p>Запрашиваем полную историю клиента и выгружаем её в единый файл, а затем продолжаем работу в персональном чате клиента.</p></div>
             <ol class="gpt-steps">
               <li><b>01 · Открыть рабочий чат</b>Зайти в чат «Работа с клиентами, Ателье Софи».</li>
               <li><b>02 · Перейти в раздел</b>Открыть чат «Досье клиентов».</li>
-              <li><b>03 · Отправить запрос</b>Указать имя и номер клиента и попросить собрать полную информацию в файл.</li>
+              <li><b>03 · Отправить запрос</b>Указать имя и номер клиента и попросить собрать все лиды, сделки, звонки и переписки.</li>
               <li><b>04 · Получить досье</b>В приложении нажать кнопку «Работа / Work» и дождаться готового файла.</li>
               <li><b>05 · Создать чат клиента</b>Создать отдельный чат с названием: номер клиента и его имя.</li>
               <li><b>06 · Начать работу</b>Загрузить готовый файл досье в новый чат. Дальше вся работа и информация по клиенту ведутся в этом чате.</li>
             </ol>
-            <div class="gpt-prompt"><div class="gpt-prompt-head"><span>Текст запроса</span><button class="copy-prompt" id="copy-prompt" type="button">Скопировать</button></div><p id="gpt-prompt-text">Сделай досье на клиента [имя клиента], номер клиента [номер]. Собери полную информацию в файл. Выгрузи файл на рабочий стол в папку «Досье клиентов».</p></div>
+            <div class="gpt-prompt"><div class="gpt-prompt-head"><span>Текст запроса</span><button class="copy-prompt" id="copy-prompt" type="button">Скопировать</button></div><p id="gpt-prompt-text">Сделай полное досье на клиента [имя клиента], номер клиента [номер]. Собери всю информацию по клиенту: все лиды, сделки, звонки и переписки. Выгрузи полное досье в файл на рабочий стол в папку «Досье клиентов».</p></div>
             <p class="gpt-app-note"><strong>Важно:</strong> кнопка «Работа / Work» действует только в приложении. Если приложение не загружено, попросите выгрузить досье у того, кто пользуется приложением: Софьи, Ангелины или Юлии.</p>
-            <p class="gpt-update-note"><strong>При последующих заказах:</strong> досье клиента необходимо обновлять. После новой долгой переписки добавляем свежую информацию в существующее досье, загружаем обновлённый файл в отдельный чат клиента и продолжаем работу там.</p>
-            <p class="gpt-purpose-note"><strong>Зачем нужен чат клиента:</strong> GPT-чат помогает собрать и упорядочить нужные данные для технического задания на лекало и примерочный образец, а также для бланка изготовления каждого изделия. Он также помогает в переписке с клиентом: готовить ответы на сложные вопросы в соответствии с нашими правилами, офертой и другими действующими документами.</p>
+            <p class="gpt-call-note"><strong>Что входит в досье:</strong> GPT-чат выгружает полную найденную информацию по клиенту — лиды, сделки, звонки и переписки.</p>
+            <p class="gpt-update-note"><strong>При последующих заказах:</strong> досье клиента необходимо обновлять. После новой долгой переписки или содержательного звонка добавляем свежую информацию в существующее досье, загружаем обновлённый файл в отдельный чат клиента и продолжаем работу там.</p>
           </div>
         </div>
 
         <div class="sorting-game">
           <div class="sorting-head"><p class="eyebrow">Закрепим правило</p><h3>Куда записать?</h3><p>Нажмите на вариант и проверьте себя.</p></div>
           <div class="sorting-list">
-            <article class="sort-card" data-answer="contact"><p>«Собака чувствительна к плотным материалам»</p><div><button data-choice="contact">Контакт</button><button data-choice="correspondence">Переписка</button></div><span class="sort-result" aria-live="polite"></span></article>
-            <article class="sort-card" data-answer="correspondence"><p>«В этом заказе нужен комбинезон на флисовом подкладе»</p><div><button data-choice="contact">Контакт</button><button data-choice="correspondence">Переписка</button></div><span class="sort-result" aria-live="polite"></span></article>
+            <article class="sort-card" data-answer="contact"><p>«Собака чувствительна к плотным материалам»</p><div><button data-choice="contact">Контакт</button><button data-choice="correspondence">Переписка и звонки</button></div><span class="sort-result" aria-live="polite"></span></article>
+            <article class="sort-card" data-answer="correspondence"><p>«Во время звонка клиент выбрал комбинезон на флисовом подкладе»</p><div><button data-choice="contact">Контакт</button><button data-choice="correspondence">Переписка и звонки</button></div><span class="sort-result" aria-live="polite"></span></article>
           </div>
         </div>
       </div>
@@ -528,18 +530,18 @@
         <div class="check-columns">
           <article class="check-group contact-check"><h3>Контакт <span id="contact-count">0/11</span></h3><label><input type="checkbox">Основные данные клиента заполнены</label><label><input type="checkbox">Указано, откуда клиент узнал о нас</label><label><input type="checkbox">Указана категория клиента</label><label><input type="checkbox">Указан партнёр</label><label><input type="checkbox">Назначен ответственный за клиента</label><label><input type="checkbox">Особенности клиента внесены в комментарий</label><label><input type="checkbox">Указан способ доставки</label><label><input type="checkbox">Указан адрес доставки</label><label><input type="checkbox">Указан удобный канал общения</label><label><input type="checkbox">Указан тип контакта</label><label><input type="checkbox">Отмечено, делал ли клиент заказ ранее</label></article>
           <article class="check-group dog-check"><h3>Собака <span id="dog-count">0/14</span></h3><label><input type="checkbox">Выбрана или заведена нужная собака</label><label><input type="checkbox">Указана кличка</label><label><input type="checkbox">Указана порода</label><label><input type="checkbox">Указан пол</label><label><input type="checkbox">Указан возраст</label><label><input type="checkbox">Указан вес</label><label><input type="checkbox">Указан размер обуви</label><label><input type="checkbox">Указано, на какое лекало ориентируемся</label><label><input type="checkbox">Особенности зафиксированы</label><label><input type="checkbox">Получены необходимые обхваты</label><label><input type="checkbox">Внесён обхват шеи</label><label><input type="checkbox">Внесён обхват груди</label><label><input type="checkbox">Внесён обхват талии</label><label><input type="checkbox">Внесён обхват запястья</label></article>
-          <article class="check-group deal-check"><h3>Переписка и Сделка <span id="deal-count">0/18</span></h3><label><input type="checkbox">Уже созданная Сделка открыта</label><label><input type="checkbox">Клиент привязан</label><label><input type="checkbox">Ответственный за сделку назначен</label><label><input type="checkbox">Партнёр указан</label><label><input type="checkbox">Дата начала указана</label><label><input type="checkbox">Дата завершения указана</label><label><input type="checkbox">Ответственный за клиента указан</label><label><input type="checkbox">В переписке понятно, какое изделие нужно</label><label><input type="checkbox">Материалы собраны в переписке</label><label><input type="checkbox">Слойность собрана в переписке</label><label><input type="checkbox">Подклад собран в переписке</label><label><input type="checkbox">Модель и особенности собраны в переписке</label><label><input type="checkbox">Пожелания по изделию собраны в переписке</label><label><input type="checkbox">Сумма внесена, когда стала известна</label><label><input type="checkbox">Доставка внесена, когда стала известна</label><label><input type="checkbox">Номер трека внесён после появления</label><label><input type="checkbox">Категория сделки указана по мере появления</label><label><input type="checkbox">Счёт выставлен, Сделка на этапе «Выставлен счёт»</label></article>
+          <article class="check-group deal-check"><h3>Общение и Сделка <span id="deal-count">0/18</span></h3><label><input type="checkbox">Уже созданная Сделка открыта</label><label><input type="checkbox">Клиент привязан</label><label><input type="checkbox">Ответственный за сделку назначен</label><label><input type="checkbox">Партнёр указан</label><label><input type="checkbox">Дата начала указана</label><label><input type="checkbox">Дата завершения указана</label><label><input type="checkbox">Ответственный за клиента указан</label><label><input type="checkbox">Из переписки и звонков понятно, какое изделие нужно</label><label><input type="checkbox">Материалы собраны из переписки и звонков</label><label><input type="checkbox">Слойность собрана из переписки и звонков</label><label><input type="checkbox">Подклад собран из переписки и звонков</label><label><input type="checkbox">Модель и особенности собраны из переписки и звонков</label><label><input type="checkbox">Пожелания по изделию собраны из переписки и звонков</label><label><input type="checkbox">Сумма внесена, когда стала известна</label><label><input type="checkbox">Доставка внесена, когда стала известна</label><label><input type="checkbox">Номер трека внесён после появления</label><label><input type="checkbox">Категория сделки указана по мере появления</label><label><input type="checkbox">Счёт выставлен, Сделка на этапе «Выставлен счёт»</label></article>
         </div>
-        <div class="finish-status" id="finish-status"><div class="finish-check">✓</div><div><span>Финальная точка</span><h3>Исходные данные собраны</h3><p>Менеджер знает клиента и собаку, получил необходимые мерки, а материалы, слойность, подклад, модель и пожелания по изделию собрал в переписке. Карточка Контакта заполнена, рабочие поля Сделки внесены, Сделка находится на этапе «Выставлен счёт» — можно принимать оплату.</p></div></div>
+        <div class="finish-status" id="finish-status"><div class="finish-check">✓</div><div><span>Финальная точка</span><h3>Исходные данные собраны</h3><p>Менеджер знает клиента и собаку, получил необходимые мерки, а материалы, слойность, подклад, модель и пожелания по изделию собрал из переписки и звонков. Карточка Контакта заполнена, поля Сделки для статистики внесены, Сделка находится на этапе «Выставлен счёт» — можно принимать оплату.</p></div></div>
         <div class="final-quiz" id="final-quiz">
           <div class="final-quiz-head"><div><p class="eyebrow">Проверьте себя</p><h2>Шесть ключевых ситуаций</h2></div><div class="quiz-score"><strong id="quiz-score">0 из 6</strong><span>правильных ответов</span></div></div>
           <div class="knowledge-grid">
-            <article class="knowledge-card" data-correct="1" data-explanation="Контакт повторно не создаём. Обновляем существующий Контакт и проверяем уже созданную новую Сделку."><span>Ситуация 01</span><h3>Повторный клиент уже есть в CRM. Что делаем?</h3><div class="knowledge-answers"><button type="button" data-option="0">Создаём новый Контакт</button><button type="button" data-option="1">Обновляем Контакт и проверяем уже созданную Сделку</button><button type="button" data-option="2">Работаем только в переписке</button></div><span class="knowledge-result" aria-live="polite"></span></article>
-            <article class="knowledge-card" data-correct="2" data-explanation="Материалы, слойность, подклад, модель и пожелания собираем в переписке. В Сделке остаются поля для статистики, а остальные сведения попадут в прикреплённый файл бланка."><span>Ситуация 02</span><h3>Где собираем комплектацию изделия?</h3><div class="knowledge-answers"><button type="button" data-option="0">Только в статистических полях Сделки</button><button type="button" data-option="1">В комментарии Контакта</button><button type="button" data-option="2">В переписке с клиентом</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="1" data-explanation="Контакт повторно не создаём. Обновляем существующий Контакт и проверяем уже созданную новую Сделку."><span>Ситуация 01</span><h3>Повторный клиент уже есть в CRM. Что делаем?</h3><div class="knowledge-answers"><button type="button" data-option="0">Создаём новый Контакт</button><button type="button" data-option="1">Обновляем Контакт и проверяем уже созданную Сделку</button><button type="button" data-option="2">Работаем только в переписке и звонках</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="2" data-explanation="Материалы, слойность, подклад, модель и пожелания собираем из переписки и звонков. В Сделке остаются поля для статистики, а остальные сведения попадут в прикреплённый файл бланка."><span>Ситуация 02</span><h3>Где собираем комплектацию изделия?</h3><div class="knowledge-answers"><button type="button" data-option="0">Только в статистических полях Сделки</button><button type="button" data-option="1">В комментарии Контакта</button><button type="button" data-option="2">В переписке и звонках с клиентом</button></div><span class="knowledge-result" aria-live="polite"></span></article>
             <article class="knowledge-card" data-correct="1" data-explanation="Указываем партнёра, который привёл клиента. Если партнёра нет — «Ателье Софи». Если партнёр пока не выяснен — «вопрос партнер»."><span>Ситуация 03</span><h3>Что указываем в обязательном поле «Партнёр»?</h3><div class="knowledge-answers"><button type="button" data-option="0">Оставляем поле пустым</button><button type="button" data-option="1">Партнёра, который привёл клиента; если его нет — «Ателье Софи»; если выясняется — «вопрос партнер»</button><button type="button" data-option="2">Имя ответственного менеджера</button></div><span class="knowledge-result" aria-live="polite"></span></article>
             <article class="knowledge-card" data-correct="0" data-explanation="Адрес доставки — обязательное поле Контакта, как и способ доставки и удобный канал общения."><span>Ситуация 04</span><h3>Адрес доставки обязателен?</h3><div class="knowledge-answers"><button type="button" data-option="0">Да, это обязательное поле</button><button type="button" data-option="1">Нет, только при наличии</button><button type="button" data-option="2">Только после изготовления</button></div><span class="knowledge-result" aria-live="polite"></span></article>
-            <article class="knowledge-card" data-correct="2" data-explanation="При последующем заказе и после новой долгой переписки существующее досье обновляем и загружаем свежий файл в чат клиента."><span>Ситуация 05</span><h3>Что делать с GPT-досье при повторном заказе?</h3><div class="knowledge-answers"><button type="button" data-option="0">Ничего — старого файла достаточно</button><button type="button" data-option="1">Создать досье на другого клиента</button><button type="button" data-option="2">Обновить досье и файл в чате клиента</button></div><span class="knowledge-result" aria-live="polite"></span></article>
-            <article class="knowledge-card" data-correct="0" data-explanation="В самом начале заполняем клиента, ответственных, партнёра и даты. Сумма, доставка, трек и категория Сделки появляются позже, а подробности изделия собираются в переписке."><span>Ситуация 06</span><h3>Какие поля Сделки заполняем в самом начале?</h3><div class="knowledge-answers"><button type="button" data-option="0">Клиент, ответственный за Сделку, партнёр, даты начала и завершения, ответственный за клиента</button><button type="button" data-option="1">Сумма, доставка, номер трека и категория Сделки</button><button type="button" data-option="2">Материалы, слойность, подклад и модель изделия</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="2" data-explanation="При последующем заказе, после новой долгой переписки или содержательного звонка существующее досье обновляем и загружаем свежий файл в чат клиента."><span>Ситуация 05</span><h3>Что делать с GPT-досье при повторном заказе?</h3><div class="knowledge-answers"><button type="button" data-option="0">Ничего — старого файла достаточно</button><button type="button" data-option="1">Создать досье на другого клиента</button><button type="button" data-option="2">Обновить досье данными из переписки и звонков</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="0" data-explanation="В самом начале заполняем клиента, ответственных, партнёра и даты. Сумма, доставка, трек и категория Сделки появляются позже, а подробности изделия собираются из переписки и звонков."><span>Ситуация 06</span><h3>Какие поля Сделки заполняем в самом начале?</h3><div class="knowledge-answers"><button type="button" data-option="0">Клиент, ответственный за Сделку, партнёр, даты начала и завершения, ответственный за клиента</button><button type="button" data-option="1">Сумма, доставка, номер трека и категория Сделки</button><button type="button" data-option="2">Материалы, слойность, подклад и модель изделия</button></div><span class="knowledge-result" aria-live="polite"></span></article>
           </div>
           <div class="quiz-summary" id="quiz-summary" aria-live="polite"></div>
         </div>
@@ -566,7 +568,7 @@
         button.classList.add(correct ? 'right' : 'wrong');
         const result = card.querySelector('.sort-result');
         result.textContent = correct
-          ? (card.dataset.answer === 'contact' ? 'Верно: это постоянная особенность собаки.' : 'Верно: сведения об изделии собираем в переписке.')
+          ? (card.dataset.answer === 'contact' ? 'Верно: это постоянная особенность собаки.' : 'Верно: сведения об изделии собираем из переписки и звонков.')
           : 'Посмотрите на правило выше и попробуйте ещё раз.';
         result.className = `sort-result ${correct ? 'ok' : 'retry'}`;
       }));
