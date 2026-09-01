@@ -259,6 +259,25 @@
     .finish-status span { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     .finish-status h3 { margin: 7px 0 8px; font-size: 38px; font-weight: 400; text-transform: uppercase; }
     .finish-status p { margin: 0; max-width: 800px; }
+    .final-quiz { margin-top: 54px; padding: 34px; border-radius: var(--radius); color: white; background: var(--ink); }
+    .final-quiz-head { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 24px; }
+    .final-quiz-head h2 { margin: 0; font-size: 44px; font-weight: 400; }
+    .quiz-score { flex: 0 0 auto; padding: 14px 18px; border: 1px solid rgba(255,255,255,.2); border-radius: 14px; text-align: center; }
+    .quiz-score strong { display: block; font: 30px Georgia, serif; }
+    .quiz-score span { color: rgba(255,255,255,.58); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .knowledge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .knowledge-card { padding: 24px; border: 1px solid rgba(255,255,255,.16); border-radius: 18px; background: rgba(255,255,255,.06); }
+    .knowledge-card > span:first-child { color: #e9c39a; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .knowledge-card h3 { min-height: 58px; margin: 12px 0 18px; font: 24px Georgia, serif; }
+    .knowledge-answers { display: grid; gap: 8px; }
+    .knowledge-answers button { padding: 12px 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; color: white; background: transparent; text-align: left; cursor: pointer; }
+    .knowledge-answers button:hover:not(:disabled) { border-color: white; background: rgba(255,255,255,.08); }
+    .knowledge-answers button.correct { border-color: #a9cbaa; background: var(--contact); }
+    .knowledge-answers button.wrong { border-color: #efb4a7; background: var(--brand); }
+    .knowledge-answers button:disabled { cursor: default; }
+    .knowledge-result { display: block; min-height: 38px; margin-top: 14px; color: rgba(255,255,255,.7); font-size: 13px; }
+    .quiz-summary { display: none; margin-top: 18px; padding: 20px; border-radius: 14px; color: var(--ink); background: #e9c39a; text-align: center; font: 22px Georgia, serif; }
+    .quiz-summary.show { display: block; }
     .next-step { margin-top: 16px; padding: 24px 28px; border-left: 5px solid var(--brand); background: var(--paper); }
     .next-step > span { display: block; margin-bottom: 6px; color: var(--brand); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
     .next-step strong { font: 23px Georgia, serif; }
@@ -276,7 +295,7 @@
     .footer-inner .brand { color: white; }.footer-inner p { margin: 0; color: rgba(255,255,255,.58); font-size: 13px; }
     @media (max-width: 980px) {
       .conversion { grid-template-columns: 1fr; }.conversion-arrow { min-height: 44px; }.conversion-arrow span { writing-mode: initial; }
-      .contact-details, .check-columns { grid-template-columns: 1fr; }
+      .contact-details, .check-columns, .knowledge-grid { grid-template-columns: 1fr; }
       .dog-card, .deal-header-card, .order-data, .stop-shell, .repeat-card { grid-template-columns: 1fr; }
       .dog-id, .critical-fields { padding-right: 0; border-right: 0; }
       .quote-strip, .no-pattern { grid-template-columns: 1fr; }
@@ -290,6 +309,7 @@
       .dog-tabs { grid-template-columns: 1fr 1fr; }
       .conversion-result { grid-template-columns: 1fr; }.conversion-result > b { text-align: center; }
       .checklist-head { display: grid; }.progress-box { width: 100%; }
+      .final-quiz-head { display: grid; }.quiz-score { width: 100%; }
       .checklist-head h2 { font-size: 44px; }
       .contact-details article, .field-panel, .deal-header-card, .sorting-game, .repeat-card, .gpt-card { padding: 24px; }
       .gpt-card { grid-template-columns: 1fr; }
@@ -346,7 +366,7 @@
           <article class="entity deal">
             <span class="tag">Рабочие поля</span>
             <h3>Сделка</h3>
-            <p>В Сделке заполняем предусмотренные рабочие поля. Отдельных полей для комплектации изделия пока нет; после формирования бланка готовый файл прикрепляется к Сделке.</p>
+            <p>В Сделке заполняем поля, важные для статистики. Подробные данные для бланка изготовления изделия будут находиться в готовом файле, который прикрепляется к Сделке.</p>
             <div class="formula">Поля <span>+</span> Файл</div>
           </article>
         </div>
@@ -436,7 +456,7 @@
       <div class="shell">
         <div class="section-head">
           <div><p class="eyebrow">05 · Карточка Сделки</p><h2>Что заказывают сейчас?</h2></div>
-          <p class="lead">В Сделке заполняем предусмотренные рабочие поля. Комплектацию изделия собираем в переписке, потому что отдельных полей для неё пока нет.</p>
+          <p class="lead">В Сделке заполняем поля, важные для статистики. Комплектацию изделия и остальные подробности собираем в переписке для будущего бланка изготовления.</p>
         </div>
         <div class="deal-header-card">
           <div class="critical-fields"><p class="eyebrow">Заполняем в самом начале</p><h3>Опорные поля Сделки</h3><div class="critical-grid"><span>Клиент</span><span>Ответственный за сделку</span><span>Партнёр</span><span>Дата начала</span><span>Дата завершения</span><span>Ответственный за клиента</span></div></div>
@@ -452,7 +472,7 @@
         <div class="order-data">
           <div class="order-title"><p class="eyebrow">Что собираем в переписке</p><h3>Данные для будущего бланка изготовления изделия</h3></div>
           <div class="order-tags"><span>Вид изделия</span><span>Модель</span><span>Материалы</span><span>Ткань</span><span>Слойность</span><span>Подклад</span><span>Утепление</span><span>Конструктивные особенности</span><span>Пожелания по модели</span><span>Другие договорённости</span></div>
-          <p class="order-file-note"><strong>В Сделке не будет отдельных полей для этих данных.</strong> После формирования бланка изготовления изделия эти сведения будут находиться в готовом файле, который прикрепляется к Сделке.</p>
+          <p class="order-file-note"><strong>В Сделке будут не все отдельные поля для этих данных — только поля, важные для статистики.</strong> Остальные сведения для бланка изготовления изделия будут находиться в готовом файле, который прикрепляется к Сделке.</p>
         </div>
 
         <div class="gpt-card">
@@ -469,7 +489,7 @@
               <li><b>05 · Создать чат клиента</b>Создать отдельный чат с названием: номер клиента и его имя.</li>
               <li><b>06 · Начать работу</b>Загрузить готовый файл досье в новый чат. Дальше вся работа и информация по клиенту ведутся в этом чате.</li>
             </ol>
-            <div class="gpt-prompt"><div class="gpt-prompt-head"><span>Текст запроса</span><button class="copy-prompt" id="copy-prompt" type="button">Скопировать</button></div><p id="gpt-prompt-text">Сделай досье на клиента [имя клиента], номер клиента [номер]. Собери полную информацию в файл.</p></div>
+            <div class="gpt-prompt"><div class="gpt-prompt-head"><span>Текст запроса</span><button class="copy-prompt" id="copy-prompt" type="button">Скопировать</button></div><p id="gpt-prompt-text">Сделай досье на клиента [имя клиента], номер клиента [номер]. Собери полную информацию в файл. Выгрузи файл на рабочий стол в папку «Досье клиентов».</p></div>
             <p class="gpt-app-note"><strong>Важно:</strong> кнопка «Работа / Work» действует только в приложении. Если приложение не загружено, попросите выгрузить досье у того, кто пользуется приложением: Софьи, Ангелины или Юлии.</p>
             <p class="gpt-update-note"><strong>При последующих заказах:</strong> досье клиента необходимо обновлять. После новой долгой переписки добавляем свежую информацию в существующее досье, загружаем обновлённый файл в отдельный чат клиента и продолжаем работу там.</p>
             <p class="gpt-purpose-note"><strong>Зачем нужен чат клиента:</strong> GPT-чат помогает собрать и упорядочить нужные данные для технического задания на лекало и примерочный образец, а также для бланка изготовления каждого изделия. Он также помогает в переписке с клиентом: готовить ответы на сложные вопросы в соответствии с нашими правилами, офертой и другими действующими документами.</p>
@@ -511,6 +531,18 @@
           <article class="check-group deal-check"><h3>Переписка и Сделка <span id="deal-count">0/18</span></h3><label><input type="checkbox">Уже созданная Сделка открыта</label><label><input type="checkbox">Клиент привязан</label><label><input type="checkbox">Ответственный за сделку назначен</label><label><input type="checkbox">Партнёр указан</label><label><input type="checkbox">Дата начала указана</label><label><input type="checkbox">Дата завершения указана</label><label><input type="checkbox">Ответственный за клиента указан</label><label><input type="checkbox">В переписке понятно, какое изделие нужно</label><label><input type="checkbox">Материалы собраны в переписке</label><label><input type="checkbox">Слойность собрана в переписке</label><label><input type="checkbox">Подклад собран в переписке</label><label><input type="checkbox">Модель и особенности собраны в переписке</label><label><input type="checkbox">Пожелания по изделию собраны в переписке</label><label><input type="checkbox">Сумма внесена, когда стала известна</label><label><input type="checkbox">Доставка внесена, когда стала известна</label><label><input type="checkbox">Номер трека внесён после появления</label><label><input type="checkbox">Категория сделки указана по мере появления</label><label><input type="checkbox">Счёт выставлен, Сделка на этапе «Выставлен счёт»</label></article>
         </div>
         <div class="finish-status" id="finish-status"><div class="finish-check">✓</div><div><span>Финальная точка</span><h3>Исходные данные собраны</h3><p>Менеджер знает клиента и собаку, получил необходимые мерки, а материалы, слойность, подклад, модель и пожелания по изделию собрал в переписке. Карточка Контакта заполнена, рабочие поля Сделки внесены, Сделка находится на этапе «Выставлен счёт» — можно принимать оплату.</p></div></div>
+        <div class="final-quiz" id="final-quiz">
+          <div class="final-quiz-head"><div><p class="eyebrow">Проверьте себя</p><h2>Шесть ключевых ситуаций</h2></div><div class="quiz-score"><strong id="quiz-score">0 из 6</strong><span>правильных ответов</span></div></div>
+          <div class="knowledge-grid">
+            <article class="knowledge-card" data-correct="1" data-explanation="Контакт повторно не создаём. Обновляем существующий Контакт и проверяем уже созданную новую Сделку."><span>Ситуация 01</span><h3>Повторный клиент уже есть в CRM. Что делаем?</h3><div class="knowledge-answers"><button type="button" data-option="0">Создаём новый Контакт</button><button type="button" data-option="1">Обновляем Контакт и проверяем уже созданную Сделку</button><button type="button" data-option="2">Работаем только в переписке</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="2" data-explanation="Материалы, слойность, подклад, модель и пожелания собираем в переписке. В Сделке остаются поля для статистики, а остальные сведения попадут в прикреплённый файл бланка."><span>Ситуация 02</span><h3>Где собираем комплектацию изделия?</h3><div class="knowledge-answers"><button type="button" data-option="0">Только в статистических полях Сделки</button><button type="button" data-option="1">В комментарии Контакта</button><button type="button" data-option="2">В переписке с клиентом</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="1" data-explanation="Указываем партнёра, который привёл клиента. Если партнёра нет — «Ателье Софи». Если партнёр пока не выяснен — «вопрос партнер»."><span>Ситуация 03</span><h3>Что указываем в обязательном поле «Партнёр»?</h3><div class="knowledge-answers"><button type="button" data-option="0">Оставляем поле пустым</button><button type="button" data-option="1">Партнёра, который привёл клиента; если его нет — «Ателье Софи»; если выясняется — «вопрос партнер»</button><button type="button" data-option="2">Имя ответственного менеджера</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="0" data-explanation="Адрес доставки — обязательное поле Контакта, как и способ доставки и удобный канал общения."><span>Ситуация 04</span><h3>Адрес доставки обязателен?</h3><div class="knowledge-answers"><button type="button" data-option="0">Да, это обязательное поле</button><button type="button" data-option="1">Нет, только при наличии</button><button type="button" data-option="2">Только после изготовления</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="2" data-explanation="При последующем заказе и после новой долгой переписки существующее досье обновляем и загружаем свежий файл в чат клиента."><span>Ситуация 05</span><h3>Что делать с GPT-досье при повторном заказе?</h3><div class="knowledge-answers"><button type="button" data-option="0">Ничего — старого файла достаточно</button><button type="button" data-option="1">Создать досье на другого клиента</button><button type="button" data-option="2">Обновить досье и файл в чате клиента</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+            <article class="knowledge-card" data-correct="0" data-explanation="В самом начале заполняем клиента, ответственных, партнёра и даты. Сумма, доставка, трек и категория Сделки появляются позже, а подробности изделия собираются в переписке."><span>Ситуация 06</span><h3>Какие поля Сделки заполняем в самом начале?</h3><div class="knowledge-answers"><button type="button" data-option="0">Клиент, ответственный за Сделку, партнёр, даты начала и завершения, ответственный за клиента</button><button type="button" data-option="1">Сумма, доставка, номер трека и категория Сделки</button><button type="button" data-option="2">Материалы, слойность, подклад и модель изделия</button></div><span class="knowledge-result" aria-live="polite"></span></article>
+          </div>
+          <div class="quiz-summary" id="quiz-summary" aria-live="polite"></div>
+        </div>
         <p class="next-lesson-note"><strong>Продолжение следует.</strong> Следующий урок — формирование технического задания на лекало и на примерочный образец.</p>
       </div>
     </section>
@@ -572,6 +604,38 @@
         selection.addRange(range);
         copyPromptButton.textContent = 'Текст выделен';
       }
+    });
+
+    const knowledgeCards = [...document.querySelectorAll('.knowledge-card')];
+    const quizScore = document.querySelector('#quiz-score');
+    const quizSummary = document.querySelector('#quiz-summary');
+    function updateQuizScore() {
+      const answered = knowledgeCards.filter(card => card.dataset.answered === 'true');
+      const correct = answered.filter(card => card.dataset.result === 'correct').length;
+      quizScore.textContent = `${correct} из ${knowledgeCards.length}`;
+      if (answered.length === knowledgeCards.length) {
+        quizSummary.textContent = correct === knowledgeCards.length
+          ? 'Отлично! Все ключевые правила понятны.'
+          : `Правильных ответов: ${correct} из ${knowledgeCards.length}. Посмотрите объяснения в карточках и повторите основные блоки урока.`;
+        quizSummary.classList.add('show');
+      }
+    }
+    knowledgeCards.forEach(card => {
+      const buttons = [...card.querySelectorAll('button')];
+      buttons.forEach(button => button.addEventListener('click', () => {
+        if (card.dataset.answered === 'true') return;
+        const correctOption = card.dataset.correct;
+        const isCorrect = button.dataset.option === correctOption;
+        card.dataset.answered = 'true';
+        card.dataset.result = isCorrect ? 'correct' : 'wrong';
+        buttons.forEach(item => {
+          item.disabled = true;
+          if (item.dataset.option === correctOption) item.classList.add('correct');
+        });
+        if (!isCorrect) button.classList.add('wrong');
+        card.querySelector('.knowledge-result').textContent = `${isCorrect ? 'Верно. ' : 'Обратите внимание. '}${card.dataset.explanation}`;
+        updateQuizScore();
+      }));
     });
 
     const checkboxes = [...document.querySelectorAll('.check-group input')];
