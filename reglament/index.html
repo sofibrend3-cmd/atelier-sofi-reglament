@@ -213,6 +213,34 @@
   .split-card ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
   .split-card li{ font-size:14px; padding-left:16px; position:relative; }
   .split-card li::before{ content:'—'; position:absolute; left:0; color:var(--ink-soft); }
+  .delivery-link{
+    color:var(--brick); font-weight:700; text-underline-offset:3px;
+    text-decoration-thickness:1px;
+  }
+  .delivery-alert{
+    margin-top:16px; padding:16px 18px; border:1px solid rgba(147,36,13,.22);
+    border-radius:12px; background:rgba(255,255,255,.56);
+  }
+  .delivery-alert strong{
+    display:block; color:var(--brick); font-size:12px; text-transform:uppercase;
+    letter-spacing:.05em; margin-bottom:5px;
+  }
+  .delivery-alert p{ font-size:13.5px; }
+  .delivery-check{
+    margin-top:18px; background:var(--paper); border:1px solid var(--line);
+    border-radius:16px; padding:22px 24px; box-shadow:var(--shadow);
+  }
+  .delivery-check h3{ font-size:19px; font-weight:600; margin-bottom:8px; }
+  .delivery-check > p{ color:var(--ink-soft); font-size:14px; }
+  .delivery-check ul{ margin:14px 0 0 20px; display:grid; gap:6px; font-size:14px; }
+  .delivery-check .rule-script{ margin-top:18px; }
+  .region-stack{ display:grid; gap:14px; }
+  .region-list{ display:grid; gap:13px; }
+  .region-list p{ font-size:14px; line-height:1.6; }
+  .region-list strong{ color:var(--brick); }
+  .region-actions{ margin-top:20px; padding:20px 22px; background:var(--brick-soft); border-radius:14px; }
+  .region-actions h3{ font-size:19px; font-weight:600; margin-bottom:10px; }
+  .region-actions ol{ margin-left:20px; display:grid; gap:7px; font-size:14px; }
 
   /* ============ RETURNS quote ============ */
   .quote-block{
@@ -759,9 +787,22 @@
         <h4>₽ Платно</h4>
         <ul>
           <li>Заказ дешевле 5 000 ₽ — по тарифу ТК</li>
-          <li>Отдалённые регионы — отдельно за образец и за изделие</li>
+          <li><a class="delivery-link" href="#delivery-regions">Отдельные регионы — посмотреть список</a></li>
           <li>Доставка за рубеж — отдельно за образец и за изделие</li>
         </ul>
+        <div class="delivery-alert">
+          <strong>Обязательно</strong>
+          <p>Стоимость доставки в отдельные регионы проверять отдельно — и за примерочный образец, и за изделие.</p>
+        </div>
+      </div>
+    </div>
+    <div class="delivery-check">
+      <h3>Перед отправкой условий доставки</h3>
+      <p>Уточните у клиента регион, город или другой населённый пункт, а при необходимости — почтовый индекс.</p>
+      <div class="rule-script">
+        <div class="rs-label">Вопрос клиенту</div>
+        <p>«Подскажите, пожалуйста, в какой регион и населённый пункт потребуется доставка заказа? Мы проверим доступные способы, стоимость и сроки доставки».</p>
+        <button class="copy-btn" onclick="copyScript(this)">📋 Копировать</button>
       </div>
     </div>
   </div>
@@ -844,6 +885,91 @@
       </div>
     </div>
     <button class="print-btn" onclick="window.print()">🖨 Распечатать чек-листы</button>
+  </div>
+</section>
+
+<!-- DELIVERY REGIONS REFERENCE -->
+<section id="delivery-regions">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">Справочный материал · Доставка</span>
+      <h2>Какие регионы проверяем отдельно</h2>
+      <p>Список нужен для быстрого ориентирования. Проверяйте весь регион, включая города, посёлки, сёла и другие населённые пункты, даже если конкретное название не указано ниже.</p>
+    </div>
+
+    <div class="region-stack">
+      <details>
+        <summary>Дальний Восток</summary>
+        <div class="accordion-body region-list">
+          <p><strong>Амурская область:</strong> Благовещенск, Белогорск, Свободный, Тында, Зея, Шимановск, Райчихинск.</p>
+          <p><strong>Еврейская автономная область:</strong> Биробиджан, Облучье.</p>
+          <p><strong>Забайкальский край:</strong> Чита, Краснокаменск, Борзя, Петровск-Забайкальский, Могоча, Шилка.</p>
+          <p><strong>Камчатский край:</strong> Петропавловск-Камчатский, Елизово, Вилючинск, Палана, Усть-Камчатск.</p>
+          <p><strong>Магаданская область:</strong> Магадан, Сусуман, Ола, Сокол, Палатка.</p>
+          <p><strong>Приморский край:</strong> Владивосток, Уссурийск, Находка, Артём, Арсеньев, Большой Камень, Дальнегорск, Дальнереченск, Партизанск, Спасск-Дальний.</p>
+          <p><strong>Республика Бурятия:</strong> Улан-Удэ, Северобайкальск, Гусиноозёрск, Кяхта.</p>
+          <p><strong>Республика Саха (Якутия):</strong> Якутск, Нерюнгри, Мирный, Ленск, Алдан, Удачный, Вилюйск, Нюрба, Олёкминск, Тикси.</p>
+          <p><strong>Сахалинская область:</strong> Южно-Сахалинск, Корсаков, Холмск, Оха, Поронайск, Невельск, Долинск, Углегорск, Курильск, Северо-Курильск.</p>
+          <p><strong>Хабаровский край:</strong> Хабаровск, Комсомольск-на-Амуре, Амурск, Советская Гавань, Николаевск-на-Амуре, Ванино, Охотск.</p>
+          <p><strong>Чукотский автономный округ:</strong> Анадырь, Певек, Билибино, Эгвекинот, Провидения.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Крайний Север и другие удалённые территории</summary>
+        <div class="accordion-body region-list">
+          <p><strong>Ненецкий автономный округ:</strong> Нарьян-Мар, Искателей, Амдерма.</p>
+          <p><strong>Ямало-Ненецкий автономный округ:</strong> Новый Уренгой, Ноябрьск, Салехард, Надым, Губкинский, Лабытнанги, Муравленко, Тарко-Сале.</p>
+          <p><strong>Ханты-Мансийский автономный округ:</strong> Сургут, Нижневартовск, Ханты-Мансийск, Нефтеюганск, Когалым, Нягань, Мегион, Лангепас, Урай.</p>
+          <p><strong>Мурманская область:</strong> Мурманск, Апатиты, Кировск, Мончегорск, Североморск, Кандалакша, Оленегорск.</p>
+          <p><strong>Архангельская область:</strong> Архангельск, Северодвинск, Новодвинск, Котлас, Коряжма, Мирный, Онега, Мезень, Соловецкий.</p>
+          <p><strong>Республика Коми:</strong> Сыктывкар, Ухта, Воркута, Усинск, Печора, Инта.</p>
+          <p><strong>Республика Тыва:</strong> Кызыл, Ак-Довурак, Шагонар, Чадан, Туран.</p>
+          <p><strong>Республика Алтай:</strong> Горно-Алтайск и удалённые населённые пункты республики.</p>
+          <p><strong>Калининградская область:</strong> Калининград, Советск, Черняховск, Балтийск, Гусев, Светлогорск, Зеленоградск.</p>
+          <p><strong>Север Красноярского края:</strong> Норильск, Дудинка, Игарка, Диксон, Хатанга, Туруханск.</p>
+          <p><strong>Север Иркутской области:</strong> Бодайбо, Усть-Кут, Киренск, Усть-Илимск, Железногорск-Илимский.</p>
+          <p><strong>Север Томской области:</strong> Стрежевой, Кедровый, Александровское, Каргасок, Парабель.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Особо дорогие направления</summary>
+        <div class="accordion-body">
+          <ul style="margin-left:20px;display:grid;gap:8px;font-size:14px;">
+            <li>Чукотский автономный округ;</li>
+            <li>Камчатский край;</li>
+            <li>Магаданская область;</li>
+            <li>Республика Саха (Якутия);</li>
+            <li>Сахалинская область и Курильские острова;</li>
+            <li>Ненецкий автономный округ;</li>
+            <li>отдалённые населённые пункты ЯНАО;</li>
+            <li>Норильск, Дудинка, Игарка, Диксон, Хатанга;</li>
+            <li>Нарьян-Мар, Воркута, Инта;</li>
+            <li>островные территории;</li>
+            <li>населённые пункты, куда доставка выполняется самолётом, вертолётом, по воде или только в определённый сезон.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <div class="region-actions">
+      <h3>Если регион или населённый пункт входит в список</h3>
+      <ol>
+        <li>Не обещать клиенту стандартную или бесплатную доставку.</li>
+        <li>Проверить стоимость и доступность доставки через СДЭК, Яндекс или другой доступный сервис.</li>
+        <li>Согласовать стоимость и сроки с клиентом.</li>
+        <li>Только после проверки отправить окончательные условия доставки.</li>
+      </ol>
+    </div>
+
+    <div class="delivery-check">
+      <div class="rule-script" style="margin-top:0;padding-top:0;border-top:none;">
+        <div class="rs-label">Сообщение клиенту</div>
+        <p>«Доставка в ваш населённый пункт рассчитывается отдельно по тарифам транспортной компании. Сейчас мы проверим доступные варианты, стоимость и сроки, после чего сообщим вам точные условия».</p>
+        <button class="copy-btn" onclick="copyScript(this)">📋 Копировать</button>
+      </div>
+    </div>
   </div>
 </section>
 
