@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Производственный бланк изделия в GPT | Ателье Софи</title>
+  <meta name="description" content="Внутренняя инструкция Ателье Софи по формированию и проверке производственного бланка изделия в GPT.">
+  <link rel="icon" href="../mini-dogs/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink:#2d2926; --muted:#746b64; --cream:#f5efe5; --paper:#fffdf9; --line:#ddd2c3;
+      --brand:#983e2c; --brand-dark:#6f291e; --green:#627d68; --green-soft:#edf2eb;
+      --blue:#536b86; --blue-soft:#edf2f7; --gold:#b98945; --gold-soft:#fff7e7; --radius:24px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.58; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3,.serif { font-family:Georgia,'Times New Roman',serif; }
+    a { color:inherit; text-decoration:none; }
+    button,input { font:inherit; }
+    .shell { width:min(1080px,calc(100% - 40px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line); background:rgba(255,253,249,.94); backdrop-filter:blur(12px); }
+    .topbar-inner { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:26px; }
+    .brand { display:flex; align-items:center; gap:12px; color:var(--brand-dark); font:700 22px Georgia,serif; white-space:nowrap; }
+    .brand-mark { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--brand); border-radius:50%; }
+    .nav { display:flex; align-items:center; gap:22px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    .lesson { display:flex; align-items:center; gap:9px; font-size:13px; white-space:nowrap; }
+    .lesson b { display:grid; place-items:center; width:34px; height:34px; color:#fff; background:var(--brand); border-radius:50%; }
+
+    .hero { min-height:610px; display:grid; grid-template-columns:.9fr 1.1fr; background:var(--paper); }
+    .hero-photo { min-height:610px; background:linear-gradient(180deg,rgba(54,37,25,.04),rgba(54,37,25,.24)),url('../primary-client/hero.jpg') left center/cover no-repeat; }
+    .hero-copy { display:flex; flex-direction:column; justify-content:center; padding:62px clamp(34px,6vw,90px); overflow:hidden; }
+    .eyebrow { margin-bottom:17px; color:var(--brand); font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+    h1 { max-width:760px; margin-bottom:23px; color:var(--brand); font-size:clamp(43px,5vw,73px); font-weight:400; line-height:.95; letter-spacing:-.04em; }
+    .hero-lead { max-width:620px; margin-bottom:25px; font-size:19px; }
+    .principle { padding:20px 22px; border-left:4px solid var(--brand); background:var(--cream); font-weight:700; letter-spacing:.025em; }
+    .principle span { color:var(--brand); }
+
+    .route-strip { color:#fff; background:var(--brand-dark); }
+    .route { min-height:104px; display:flex; align-items:center; gap:10px; overflow-x:auto; scrollbar-width:none; }
+    .route span { flex:0 0 auto; padding:11px 14px; border:1px solid rgba(255,255,255,.25); border-radius:999px; font-size:13px; }
+    .route i { opacity:.45; font-style:normal; }
+
+    .blank-preview-section { padding:48px 0; background:var(--paper); }
+    .blank-preview-card { display:grid; grid-template-columns:190px 1fr auto; gap:28px; align-items:center; padding:26px; border:1px solid var(--line); border-radius:var(--radius); background:var(--cream); }
+    .blank-thumb { position:relative; height:188px; overflow:hidden; border:1px solid #cfc6ba; border-radius:12px; background:#fff; box-shadow:0 12px 30px rgba(45,41,38,.11); }
+    .blank-thumb img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .blank-thumb span { position:absolute; right:9px; bottom:9px; padding:5px 8px; border-radius:999px; color:#fff; background:rgba(45,41,38,.78); font-size:11px; }
+    .blank-preview-copy .eyebrow { margin-bottom:10px; }
+    .blank-preview-copy h2 { margin-bottom:10px; font-size:clamp(30px,3.5vw,44px); font-weight:400; line-height:1; }
+    .blank-preview-copy p { max-width:600px; margin:0; color:var(--muted); }
+    .open-blank { min-width:176px; padding:14px 17px; border:0; border-radius:12px; color:#fff; background:var(--brand); font-weight:700; cursor:pointer; transition:transform .15s ease,background .15s ease; }
+    .open-blank:hover { background:var(--brand-dark); transform:translateY(-2px); }
+    .open-blank:focus-visible,.viewer-button:focus-visible,.viewer-close:focus-visible { outline:3px solid rgba(152,62,44,.3); outline-offset:3px; }
+
+    .blank-dialog { width:100vw; max-width:none; height:100vh; max-height:none; margin:0; padding:0; border:0; color:#fff; background:#211f1e; }
+    .blank-dialog::backdrop { background:rgba(33,31,30,.94); }
+    .viewer { height:100%; display:grid; grid-template-rows:auto 1fr auto; }
+    .viewer-top { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:12px 24px; border-bottom:1px solid rgba(255,255,255,.14); }
+    .viewer-title { min-width:0; }
+    .viewer-title strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font:22px Georgia,serif; }
+    .viewer-title span { color:rgba(255,255,255,.62); font-size:12px; }
+    .viewer-close { flex:0 0 auto; width:42px; height:42px; border:1px solid rgba(255,255,255,.35); border-radius:50%; color:#fff; background:transparent; font-size:26px; line-height:1; cursor:pointer; }
+    .viewer-stage { min-height:0; display:grid; place-items:center; padding:20px; overflow:auto; }
+    .viewer-stage img { display:block; max-width:100%; max-height:100%; object-fit:contain; background:#fff; box-shadow:0 18px 50px rgba(0,0,0,.38); }
+    .viewer-controls { min-height:72px; display:flex; align-items:center; justify-content:center; gap:14px; padding:12px 20px; border-top:1px solid rgba(255,255,255,.14); }
+    .viewer-button { min-width:122px; padding:11px 14px; border:1px solid rgba(255,255,255,.3); border-radius:10px; color:#fff; background:rgba(255,255,255,.08); font-weight:700; cursor:pointer; }
+    .viewer-button:disabled { opacity:.35; cursor:default; }
+    .viewer-count { min-width:96px; text-align:center; color:rgba(255,255,255,.72); font-size:13px; }
+
+    .section { padding:78px 0; }
+    .section.paper { background:var(--paper); }
+    .section-head { max-width:920px; margin:0 auto 34px; }
+    .section-head h2 { margin-bottom:14px; font-size:clamp(40px,5vw,62px); font-weight:400; line-height:.98; letter-spacing:-.025em; }
+    .section-head .lead { max-width:760px; margin:0; color:var(--muted); font-size:18px; }
+    .quick-list { max-width:920px; display:grid; gap:10px; margin:0 auto; padding:0; list-style:none; counter-reset:quick; }
+    .quick-list li { counter-increment:quick; display:grid; grid-template-columns:42px 1fr; gap:15px; align-items:center; padding:15px 18px; border:1px solid var(--line); border-radius:14px; background:var(--paper); }
+    .quick-list li::before { content:counter(quick); width:34px; height:34px; display:grid; place-items:center; border-radius:50%; color:#fff; background:var(--brand); font-weight:700; }
+
+    .phase { padding:78px 0; }
+    .phase:nth-of-type(even) { background:var(--paper); }
+    .phase-head { max-width:920px; display:grid; grid-template-columns:120px 1fr; gap:28px; align-items:start; margin:0 auto 28px; }
+    .phase-number { padding-top:8px; color:var(--brand); font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+    .phase-head h2 { margin:0 0 10px; font-size:clamp(35px,4vw,52px); font-weight:400; line-height:1; }
+    .phase-head p { max-width:720px; margin:0; color:var(--muted); }
+    .steps { max-width:920px; display:grid; grid-template-columns:1fr; gap:16px; margin:0 auto; }
+    .step { --accent:var(--brand); position:relative; padding:30px; border:1px solid var(--line); border-left:6px solid var(--accent); border-radius:var(--radius); background:var(--paper); overflow:hidden; }
+    .paper .step,.phase:nth-of-type(even) .step { background:var(--cream); }
+    .step.blue { --accent:var(--blue); } .step.green { --accent:var(--green); } .step.gold { --accent:var(--gold); }
+    .step-top { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+    .step-number { flex:0 0 auto; width:42px; height:42px; display:grid; place-items:center; border-radius:50%; color:#fff; background:var(--accent); font-weight:700; }
+    .step h3 { margin:0; font-size:clamp(27px,3vw,36px); font-weight:400; line-height:1.05; }
+    .step > p { color:var(--muted); }
+    .list { display:grid; grid-template-columns:1fr; gap:8px; margin:0; padding:0; list-style:none; }
+    .list li { position:relative; padding:5px 0 5px 28px; }
+    .list li::before { content:'✓'; position:absolute; left:0; color:var(--accent); font-weight:700; }
+    .note { margin:18px 0 0; padding:16px 18px; border-left:4px solid var(--accent); border-radius:0 12px 12px 0; background:var(--cream); }
+    .paper .note,.phase:nth-of-type(even) .note { background:var(--paper); }
+    .examples { display:grid; gap:9px; margin-top:16px; }
+    .examples span { display:block; padding:11px 13px; border:1px solid #cbd6e1; border-radius:10px; color:var(--blue); background:var(--blue-soft); font-size:14px; }
+    .formula { margin-top:16px; padding:18px 20px; border-radius:14px; color:#fff; background:var(--blue); font:22px Georgia,serif; }
+    .command { margin-top:17px; padding:20px; border-radius:15px; color:#fff; background:var(--green); font:23px Georgia,serif; }
+    .compare { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; margin-top:16px; }
+    .compare div { padding:18px; border:1px solid var(--line); border-radius:14px; background:var(--paper); }
+    .compare b { color:var(--brand); }
+    .compare > strong { color:var(--brand); font-size:22px; }
+
+    .pdf-layout { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px; }
+    .pdf-page { padding:23px; border:1px solid var(--line); border-radius:16px; background:var(--paper); }
+    .pdf-page > span { color:var(--brand); font-size:11px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .pdf-page h4 { margin:13px 0; font:27px Georgia,serif; }
+    .pdf-page ul { margin:0; padding-left:20px; }
+    .specs { display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
+    .specs span { padding:9px 12px; border:1px solid var(--line); border-radius:999px; background:var(--paper); font-size:13px; }
+
+    .final-section { padding:78px 0; background:#e9e0d2; }
+    .final-head { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:28px; }
+    .final-head h2 { max-width:760px; margin:0; font-size:clamp(40px,5vw,60px); font-weight:400; line-height:1; }
+    .progress { flex:0 0 230px; padding:17px 19px; border-radius:15px; background:var(--paper); }
+    .progress strong { font:36px Georgia,serif; }
+    .progress small { margin-left:5px; color:var(--muted); }
+    .track { height:7px; margin-top:11px; border-radius:99px; background:var(--line); overflow:hidden; }
+    .track i { display:block; width:0; height:100%; background:var(--brand); transition:width .25s ease; }
+    .checks { display:grid; gap:9px; }
+    .checks label { display:grid; grid-template-columns:auto 1fr; gap:13px; align-items:start; padding:16px 18px; border:1px solid var(--line); border-radius:13px; background:var(--paper); cursor:pointer; }
+    .checks label:has(input:checked) { border-color:#abc1ad; background:var(--green-soft); }
+    .checks input { width:21px; height:21px; margin:1px 0 0; accent-color:var(--green); }
+    .ready { margin-top:18px; padding:25px; border:1px solid #c9bfae; border-radius:var(--radius); background:rgba(255,255,255,.55); opacity:.58; transition:.25s ease; }
+    .ready.complete { color:#fff; border-color:var(--green); background:var(--green); opacity:1; transform:translateY(-2px); }
+    .ready h3 { margin:0 0 7px; font-size:31px; font-weight:400; }
+    .ready p { margin:0; color:var(--muted); }
+    .ready.complete p { color:rgba(255,255,255,.78); }
+    .closing-rule { padding:70px 0; color:#fff; background:var(--brand-dark); }
+    .closing-rule .inner { max-width:920px; }
+    .closing-rule .eyebrow { color:#efb4a7; }
+    .closing-rule h2 { margin-bottom:18px; font-size:clamp(40px,5vw,58px); font-weight:400; line-height:1; }
+    .closing-rule p { max-width:820px; margin:0 0 12px; color:rgba(255,255,255,.76); font-size:18px; }
+    .closing-rule strong { color:#fff; }
+    footer { color:#fff; background:var(--ink); }
+    .footer-inner { min-height:106px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .footer-inner .brand { color:#fff; }
+    .footer-inner p { margin:0; color:rgba(255,255,255,.58); font-size:13px; }
+
+    @media (max-width:900px) {
+      .nav { display:none; }
+      .hero { grid-template-columns:1fr; }
+      .hero-photo { min-height:42vh; }
+      .hero-copy { padding:52px 30px 58px; }
+      .phase-head { grid-template-columns:1fr; gap:8px; }
+      .blank-preview-card { grid-template-columns:150px 1fr; }
+      .open-blank { grid-column:2; justify-self:start; }
+    }
+    @media (max-width:680px) {
+      .shell { width:min(100% - 28px,1080px); }
+      .topbar-inner { min-height:66px; }
+      .brand { font-size:19px; }
+      .lesson span { display:none; }
+      .hero-photo { min-height:35vh; background-image:linear-gradient(90deg,transparent 70%,var(--paper)),linear-gradient(180deg,rgba(54,37,25,.04),rgba(54,37,25,.2)),url('../primary-client/hero.jpg'); }
+      .hero-copy { padding:42px 20px 48px; }
+      h1 { font-size:clamp(39px,12vw,54px); overflow-wrap:anywhere; }
+      .hero-lead { font-size:17px; }
+      .principle { font-size:14px; }
+      .route { min-height:86px; }
+      .blank-preview-section { padding:34px 0; }
+      .blank-preview-card { grid-template-columns:92px 1fr; gap:16px; padding:18px; }
+      .blank-thumb { height:128px; }
+      .blank-preview-copy h2 { font-size:27px; }
+      .blank-preview-copy p { font-size:14px; }
+      .open-blank { grid-column:1/-1; width:100%; }
+      .viewer-top { min-height:62px; padding:10px 14px; }
+      .viewer-title strong { font-size:17px; }
+      .viewer-stage { padding:10px; }
+      .viewer-controls { min-height:68px; gap:8px; padding:10px; }
+      .viewer-button { min-width:0; flex:1; }
+      .viewer-count { min-width:74px; }
+      .section,.phase,.final-section { padding:58px 0; }
+      .step { padding:23px 20px; border-left-width:5px; }
+      .step-top { align-items:flex-start; }
+      .step h3 { font-size:28px; }
+      .compare,.pdf-layout { grid-template-columns:1fr; }
+      .compare > strong { text-align:center; }
+      .final-head { display:grid; gap:20px; }
+      .progress { width:100%; }
+      .footer-inner { padding:25px 0; flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="../" aria-label="Вернуться к обучению Ателье Софи"><span class="brand-mark">✦</span> Ателье Софи</a>
+      <nav class="nav" aria-label="Разделы инструкции"><a href="#quick">Маршрут</a><a href="#work">16 шагов</a><a href="#final">Проверка PDF</a></nav>
+      <div class="lesson"><b>05</b><span>Обучение</span></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-photo" role="img" aria-label="Собаки в одежде Ателье Софи"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Инструкция для менеджера</p>
+        <h1>Как составить производственный бланк изделия в GPT</h1>
+        <p class="hero-lead">От данных заказа и технического задания на лекало до готового двухстраничного PDF для производства.</p>
+        <div class="principle"><span>ОДИН БЛАНК</span> = ОДНО ИЗДЕЛИЕ ОДНОГО ПИТОМЦА</div>
+      </div>
+    </section>
+
+    <section class="route-strip" aria-label="Путь формирования бланка">
+      <div class="shell route"><span>Заказ</span><i>→</i><span>Лекало</span><i>→</i><span>Материалы</span><i>→</i><span>Размеры</span><i>→</i><span>Проверка</span><i>→</i><span>PDF</span></div>
+    </section>
+
+    <section class="blank-preview-section" aria-labelledby="blank-preview-title">
+      <div class="shell">
+        <div class="blank-preview-card">
+          <div class="blank-thumb" aria-hidden="true"><img src="assets/blank-example-1.jpg" alt=""><span>2 страницы</span></div>
+          <div class="blank-preview-copy"><p class="eyebrow">Визуальный образец</p><h2 id="blank-preview-title">Бланк технического задания на изделие</h2><p>Откройте утверждённый двухстраничный шаблон и посмотрите, как расположен каждый блок.</p></div>
+          <button class="open-blank" type="button" id="open-blank">Посмотреть бланк</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quick">
+      <div class="shell">
+        <div class="section-head"><p class="eyebrow">Быстрый сценарий</p><h2>Путь менеджера</h2><p class="lead">Сначала передаём GPT все подтверждённые данные, затем внимательно проверяем черновик и готовый файл.</p></div>
+        <ol class="quick-list">
+          <li>Собрала данные заказа.</li>
+          <li>Приложила техническое задание на лекало.</li>
+          <li>Надиктовала модель, ткани, подклад, утепление и комплектацию.</li>
+          <li>GPT собрал мерки, резинки и готовые размеры.</li>
+          <li>Проверила все цифры и материалы.</li>
+          <li>Если нужно — голосом внесла исправления.</li>
+          <li>Написала: «Всё правильно, формируй бланк».</li>
+          <li>Проверила готовый PDF.</li>
+          <li>Передала бланк в производство.</li>
+        </ol>
+      </div>
+    </section>
+
+    <div id="work">
+      <section class="phase paper">
+        <div class="shell">
+          <div class="phase-head"><span class="phase-number">Этап 01</span><div><h2>Заказ и лекало</h2><p>Соберите основу конкретного изделия и укажите, от какого размера или лекала оно строится.</p></div></div>
+          <div class="steps">
+            <article class="step">
+              <div class="step-top"><span class="step-number">1</span><h3>Соберите данные по заказу</h3></div>
+              <p>До перехода в чат формирования бланка должна быть понятна комплектация изделия.</p>
+              <ul class="list"><li>название или номер заказа</li><li>имя клиента</li><li>кличка и порода питомца</li><li>вид изделия</li><li>название и номер модели</li><li>коллекция и сезон</li><li>дата заказа и дата отправки</li><li>способ доставки</li></ul>
+              <div class="note">Если модели или коллекции нет, так и говорим: «Модель — нет», «Коллекция — нет», «Цельнокроеный комбинезон». Название не придумываем.</div>
+            </article>
+
+            <article class="step blue">
+              <div class="step-top"><span class="step-number">2</span><h3>Укажите размер и основание</h3></div>
+              <p>Обязательно скажите GPT, от какого размера или лекала строится изделие.</p>
+              <div class="examples"><span>«Базовое лекало Т2К»</span><span>«Размер Б5С с изменениями»</span><span>«Индивидуальное лекало»</span></div>
+              <p style="margin-top:18px">Если уже есть отдельное ТЗ на лекало — приложите его в чат. GPT берёт из него фактические мерки, базовый размер, корректировки, длины, готовые обхваты, воротник, резинки и другие подтверждённые изменения.</p>
+              <div class="note">Можно сказать: «Размер и все изменения смотри в техническом задании на лекало». Не переписывайте таблицу вручную, если файл приложен и хорошо читается.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="phase">
+        <div class="shell">
+          <div class="phase-head"><span class="phase-number">Этап 02</span><div><h2>Материалы и конструкция</h2><p>Передайте точные названия тканей, слойность, утепление и всю комплектацию изделия.</p></div></div>
+          <div class="steps">
+            <article class="step gold">
+              <div class="step-top"><span class="step-number">3</span><h3>Передайте материалы</h3></div>
+              <p>Называйте ткань точно: с названием, цветом и номером.</p>
+              <div class="compare"><div><b>Не так</b><br>«розовая ткань»</div><strong>→</strong><div><b>Правильно</b><br>«Жатка Пыльная роза №302»</div></div>
+              <ul class="list" style="margin-top:18px"><li>основная ткань</li><li>отделочная ткань, если есть</li><li>подклад</li><li>ткань и подклад капюшона</li><li>другие используемые ткани</li></ul>
+              <div class="note">Замену проговариваем прямо: «Вместо Милан Веридан №407 использовать Жатка Айвори №305». Если подклада нет: «Без подклада».</div>
+            </article>
+
+            <article class="step gold">
+              <div class="step-top"><span class="step-number">4</span><h3>Укажите слойность и утепление</h3></div>
+              <ul class="list"><li>количество слоёв: 1, 2 или 3</li><li>тинсулейт отдельно по зонам</li><li>если утепления нет: «Без тинсулейта»</li></ul>
+              <div class="formula">«Тинсулейт: торс 100, лапы 50, капюшон 50»</div>
+              <div class="note">Не переносите автоматически одинаковое утепление на всё изделие.</div>
+            </article>
+
+            <article class="step green">
+              <div class="step-top"><span class="step-number">5</span><h3>Передайте конструкцию и комплектацию</h3></div>
+              <p>Перечислите всё, что должно быть в готовом изделии.</p>
+              <ul class="list"><li>молния</li><li>колечки для поводка — да / нет</li><li>кнопки на штанинах — да / нет</li><li>кнопки для ботиночек</li><li>светоотражающий кант и его цвет</li><li>пояс, карманы, подвески, банты</li><li>манжеты, нахвостник, шлёвки</li><li>другие дополнительные элементы</li></ul>
+              <div class="note">Если элемента нет, лучше сказать прямо: «Колечек для поводка нет».</div>
+            </article>
+
+            <article class="step green">
+              <div class="step-top"><span class="step-number">6</span><h3>Отдельно проговорите капюшон</h3></div>
+              <ul class="list"><li>ткань капюшона</li><li>наличие и вид подклада</li><li>тинсулейт</li><li>кант</li><li>другие изменения</li></ul>
+              <div class="examples"><span>«Капюшон из основной ткани. Подклад — Атлас Синий Изумрудный №923. Тинсулейт 50».</span><span>«Капюшон по модели, но кант убрать».</span></div>
+            </article>
+
+            <article class="step blue">
+              <div class="step-top"><span class="step-number">7</span><h3>Добавьте комментарий для производства</h3></div>
+              <p>Пишите только то, что должен знать и сделать мастер. Не пересказывайте переписку с клиентом.</p>
+              <div class="examples"><span>«Базовое лекало Ф12С. Смотреть техническое задание на лекало».</span><span>«Манжеты: жёсткая часть 4 см, мягкая часть 9 см».</span><span>«Высокие шлёвки 8 см под ошейник шириной 7 см».</span><span>«Большие кнопки».</span></div>
+              <div class="note"><strong>Комментарий отвечает на вопрос:</strong> что нужно сделать? А не почему клиент это попросил?</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="phase paper">
+        <div class="shell">
+          <div class="phase-head"><span class="phase-number">Этап 03</span><div><h2>Размеры и резинки</h2><p>GPT собирает данные из ТЗ на лекало, а менеджер проверяет каждое итоговое значение.</p></div></div>
+          <div class="steps">
+            <article class="step blue">
+              <div class="step-top"><span class="step-number">8</span><h3>GPT сверяет ТЗ на лекало</h3></div>
+              <p>GPT должен отдельно собрать:</p>
+              <ul class="list"><li>фактические мерки питомца</li><li>размеры и корректировки лекала</li><li>резинки</li><li>готовые размеры изделия</li></ul>
+              <div class="compare"><div><b>Фактическая талия</b><br>35 см</div><strong>≠</strong><div><b>Резинка талии</b><br>37 см</div></div>
+              <div class="note">Это разные данные. Готовый обхват изделия по талии может быть третьим значением. GPT не переносит значение резинки в готовый обхват.</div>
+            </article>
+
+            <article class="step">
+              <div class="step-top"><span class="step-number">9</span><h3>Проверьте готовые размеры изделия</h3></div>
+              <ul class="list"><li>общая длина спины</li><li>воротник</li><li>грудь и талия</li><li>длина передней штанины</li><li>длина задней штанины</li><li>резинки</li></ul>
+              <div class="formula">Спина 29 см + воротник 6 см = общая длина 35 см</div>
+              <div class="note">Производство получает уже готовую цифру. Закройщик не должен самостоятельно складывать значения.</div>
+            </article>
+
+            <article class="step green">
+              <div class="step-top"><span class="step-number">10</span><h3>Проверьте резинки</h3></div>
+              <ul class="list"><li>шеи</li><li>талии</li><li>заднюю</li><li>лап</li><li>капюшона</li><li>шляпную</li></ul>
+              <div class="note">Учитывайте пол питомца и наличие подклада, если в ТЗ предусмотрены разные значения. Если резинку скорректировали позже, используем последнюю подтверждённую версию.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="phase">
+        <div class="shell">
+          <div class="phase-head"><span class="phase-number">Этап 04</span><div><h2>Черновик и команда GPT</h2><p>До создания PDF проверьте собранные данные. Ошибку можно исправить короткой голосовой командой.</p></div></div>
+          <div class="steps">
+            <article class="step blue">
+              <div class="step-top"><span class="step-number">11</span><h3>Проверьте черновик</h3></div>
+              <ul class="list"><li>клиент, кличка и порода</li><li>модель, номер, коллекция и сезон</li><li>лекало</li><li>ткани, номера и подклад</li><li>утепление</li><li>колечки, кнопки и кант</li><li>все дополнительные элементы</li><li>корректировки из ТЗ на лекало</li><li>готовые размеры</li><li>резинки</li></ul>
+              <p style="margin-top:18px">Не диктуйте весь заказ заново. Назовите только исправление:</p>
+              <div class="examples"><span>«Исправь ткань на Жатка Шоколад №306».</span><span>«Резинка шеи должна быть 36 см × 4».</span><span>«Обхват резинок на штанинах в готовом изделии — 9 см».</span></div>
+            </article>
+
+            <article class="step green">
+              <div class="step-top"><span class="step-number">12</span><h3>Дайте команду на формирование</h3></div>
+              <p>Только после полной проверки создаётся финальный производственный PDF.</p>
+              <div class="command">«Всё правильно, формируй бланк».</div>
+              <div class="examples"><span>Или: «Формируй бланк без дополнительных уточнений».</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="phase paper">
+        <div class="shell">
+          <div class="phase-head"><span class="phase-number">Этап 05</span><div><h2>Готовый производственный PDF</h2><p>Файл формируется только в утверждённом шаблоне Ателье Софи и проверяется глазами перед передачей.</p></div></div>
+          <div class="steps">
+            <article class="step">
+              <div class="step-top"><span class="step-number">13</span><h3>Проверьте структуру PDF</h3></div>
+              <p>Используется только утверждённый двухстраничный шаблон Ателье Софи. Никаких дополнительных страниц и нового дизайна.</p>
+              <div class="pdf-layout">
+                <div class="pdf-page"><span>Страница 1</span><h4>Заказ и комплектация</h4><ul><li>данные заказа</li><li>материалы и комплектация</li><li>комментарий к заказу и размеру</li><li>резинки</li><li>схема изделия</li><li>техническая комплектация</li></ul></div>
+                <div class="pdf-page"><span>Страница 2</span><h4>Размеры и приёмка</h4><ul><li>размеры питомца</li><li>изделие в готовом виде</li><li>финальная приёмка</li></ul></div>
+              </div>
+            </article>
+
+            <article class="step gold">
+              <div class="step-top"><span class="step-number">14</span><h3>Проверьте оформление бланка</h3></div>
+              <div class="specs"><span>Русский язык</span><span>Основной текст — 8,8 pt</span><span>Важные цифры — 10,5 pt</span><span>Текст по центру ячейки</span></div>
+              <ul class="list" style="margin-top:18px"><li>все значения полностью помещаются</li><li>текст не пересекает линии</li><li>ничего не обрезано</li><li>всё хорошо читается</li></ul>
+            </article>
+
+            <article class="step blue">
+              <div class="step-top"><span class="step-number">15</span><h3>Знайте, что GPT не заполняет</h3></div>
+              <p>При первоначальном создании для следующих этапов могут остаться поля:</p>
+              <ul class="list"><li>закройщик</li><li>швея</li><li>схема изделия и ручные пометки</li><li>техническая комплектация</li><li>финальная приёмка</li></ul>
+              <div class="note">Если менеджер уже передал подтверждённые значения резинок, их нужно внести. Последняя подтверждённая договорённость по конкретному бланку имеет приоритет.</div>
+            </article>
+
+            <article class="step green">
+              <div class="step-top"><span class="step-number">16</span><h3>Откройте и проверьте обе страницы</h3></div>
+              <p>Готовый файл обязательно проверяем глазами. Полный чек-лист — ниже.</p>
+              <div class="note">Только после визуальной проверки файл можно передавать в производство.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="final-section" id="final">
+      <div class="shell">
+        <div class="final-head"><div><p class="eyebrow">Финальная проверка</p><h2>Готов ли PDF к производству?</h2></div><div class="progress"><strong id="progress-value">0%</strong><small>проверено</small><div class="track"><i id="progress-bar"></i></div></div></div>
+        <div class="checks">
+          <label><input type="checkbox"><span>В файле ровно 2 страницы.</span></label>
+          <label><input type="checkbox"><span>Ничего не съехало и ни один блок не переехал на другую страницу.</span></label>
+          <label><input type="checkbox"><span>Текст не обрезан, все цифры читаются.</span></label>
+          <label><input type="checkbox"><span>Названия и номера тканей указаны полностью.</span></label>
+          <label><input type="checkbox"><span>Комментарий полностью помещается.</span></label>
+          <label><input type="checkbox"><span>Схема изделия не повреждена.</span></label>
+          <label><input type="checkbox"><span>Финальная приёмка осталась на второй странице.</span></label>
+          <label><input type="checkbox"><span>В бланке нет английских служебных слов.</span></label>
+        </div>
+        <div class="ready" id="ready"><h3>Бланк готов к производству</h3><p>Передавайте файл только после того, как все пункты отмечены.</p></div>
+      </div>
+    </section>
+
+    <section class="closing-rule">
+      <div class="shell inner"><p class="eyebrow">Главное для менеджера</p><h2>Производство не должно ничего додумывать</h2><p><strong>Задача менеджера</strong> — передать GPT все подтверждённые данные, приложить ТЗ на лекало и внимательно проверить итог.</p><p><strong>Задача GPT</strong> — собрать данные, посчитать конечные значения, перенести их в утверждённый бланк и сформировать готовый PDF.</p></div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><a class="brand" href="../"><span class="brand-mark">✦</span> Ателье Софи</a><p>Внутреннее обучение · Производственный бланк изделия</p><a href="#top">Наверх ↑</a></div></footer>
+
+  <dialog class="blank-dialog" id="blank-dialog" aria-labelledby="viewer-heading">
+    <div class="viewer">
+      <div class="viewer-top">
+        <div class="viewer-title"><strong id="viewer-heading">Бланк технического задания на изделие</strong><span>Визуальный образец утверждённого шаблона</span></div>
+        <button class="viewer-close" type="button" id="viewer-close" aria-label="Закрыть просмотр">×</button>
+      </div>
+      <div class="viewer-stage"><img id="viewer-image" src="assets/blank-example-1.jpg" alt="Первая страница бланка изготовления изделия"></div>
+      <div class="viewer-controls">
+        <button class="viewer-button" type="button" id="viewer-prev">← Назад</button>
+        <span class="viewer-count" id="viewer-count">1 из 2</span>
+        <button class="viewer-button" type="button" id="viewer-next">Вперёд →</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const checks = [...document.querySelectorAll('.checks input')];
+    const value = document.querySelector('#progress-value');
+    const bar = document.querySelector('#progress-bar');
+    const ready = document.querySelector('#ready');
+    function updateProgress() {
+      const done = checks.filter(check => check.checked).length;
+      const percent = Math.round(done / checks.length * 100);
+      value.textContent = `${percent}%`;
+      bar.style.width = `${percent}%`;
+      ready.classList.toggle('complete', done === checks.length);
+    }
+    checks.forEach(check => check.addEventListener('change', updateProgress));
+
+    const dialog = document.querySelector('#blank-dialog');
+    const openBlank = document.querySelector('#open-blank');
+    const closeBlank = document.querySelector('#viewer-close');
+    const viewerImage = document.querySelector('#viewer-image');
+    const viewerCount = document.querySelector('#viewer-count');
+    const viewerPrev = document.querySelector('#viewer-prev');
+    const viewerNext = document.querySelector('#viewer-next');
+    const pages = [
+      { src: 'assets/blank-example-1.jpg', alt: 'Первая страница бланка изготовления изделия' },
+      { src: 'assets/blank-example-2.jpg', alt: 'Вторая страница бланка изготовления изделия' }
+    ];
+    let currentPage = 0;
+
+    function showPage(index) {
+      currentPage = Math.max(0, Math.min(index, pages.length - 1));
+      viewerImage.src = pages[currentPage].src;
+      viewerImage.alt = pages[currentPage].alt;
+      viewerCount.textContent = `${currentPage + 1} из ${pages.length}`;
+      viewerPrev.disabled = currentPage === 0;
+      viewerNext.disabled = currentPage === pages.length - 1;
+    }
+
+    openBlank.addEventListener('click', () => { showPage(0); dialog.showModal(); });
+    closeBlank.addEventListener('click', () => dialog.close());
+    viewerPrev.addEventListener('click', () => showPage(currentPage - 1));
+    viewerNext.addEventListener('click', () => showPage(currentPage + 1));
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    document.addEventListener('keydown', event => {
+      if (!dialog.open) return;
+      if (event.key === 'ArrowLeft') showPage(currentPage - 1);
+      if (event.key === 'ArrowRight') showPage(currentPage + 1);
+    });
+  </script>
+</body>
+</html>
