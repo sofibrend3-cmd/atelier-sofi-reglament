@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ТЗ на примерочный образец или лекало | Ателье Софи</title>
+  <meta name="description" content="Короткая внутренняя инструкция Ателье Софи по формированию и проверке ТЗ на примерочный образец или лекало.">
+  <link rel="icon" href="../mini-dogs/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #2d2926;
+      --muted: #746b64;
+      --cream: #f5efe5;
+      --paper: #fffdf9;
+      --line: #ddd2c3;
+      --brand: #983e2c;
+      --brand-dark: #6f291e;
+      --contact: #627d68;
+      --contact-soft: #edf2eb;
+      --deal: #536b86;
+      --deal-soft: #edf2f7;
+      --gold: #b98945;
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.55; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3, .serif { font-family: Georgia, 'Times New Roman', serif; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(255,253,249,.94); backdrop-filter: blur(12px); }
+    .topbar-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--brand-dark); font: 700 22px Georgia, serif; white-space: nowrap; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--brand); border-radius: 50%; }
+    .nav { display: flex; align-items: center; gap: 24px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    .lesson { display: flex; align-items: center; gap: 9px; font-size: 13px; white-space: nowrap; }
+    .lesson b { display: grid; place-items: center; width: 34px; height: 34px; color: white; background: var(--brand); border-radius: 50%; }
+
+    .hero { min-height: 570px; display: grid; grid-template-columns: .92fr 1.08fr; background: var(--paper); }
+    .hero-photo { min-height: 570px; background: linear-gradient(180deg, rgba(54,37,25,.04), rgba(54,37,25,.2)), url('../primary-client/hero.jpg') left center/cover no-repeat; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 62px clamp(36px, 6vw, 92px); overflow: hidden; }
+    .eyebrow { margin-bottom: 18px; color: var(--brand); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { max-width: 740px; margin-bottom: 22px; color: var(--brand); font-size: clamp(44px, 5.2vw, 76px); font-weight: 400; line-height: .95; letter-spacing: -.04em; }
+    .hero-lead { max-width: 620px; margin-bottom: 26px; font-size: 19px; }
+    .principle { padding: 20px 22px; border-left: 4px solid var(--brand); background: var(--cream); font-weight: 700; letter-spacing: .025em; }
+    .principle span { color: var(--brand); }
+
+    .route-strip { background: var(--brand-dark); color: white; }
+    .route { min-height: 104px; display: flex; align-items: center; gap: 10px; overflow-x: auto; scrollbar-width: none; }
+    .route span { flex: 0 0 auto; padding: 11px 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; font-size: 13px; }
+    .route i { opacity: .48; font-style: normal; }
+
+    .section { padding: 78px 0; }
+    .section-head { max-width: 980px; display: grid; grid-template-columns: 1fr; gap: 16px; margin: 0 auto 34px; }
+    .section-head h2 { margin-bottom: 0; font-size: clamp(40px, 5vw, 62px); font-weight: 400; line-height: .98; }
+    .section-head .lead { max-width: 600px; margin-bottom: 3px; color: var(--muted); font-size: 18px; }
+
+    .steps { max-width: 980px; display: grid; grid-template-columns: 1fr; gap: 18px; margin: 0 auto; }
+    .step { position: relative; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); overflow: hidden; }
+    .step::after { content: ''; position: absolute; right: -55px; bottom: -70px; width: 170px; height: 170px; border-radius: 50%; background: var(--step-color); opacity: .08; }
+    .step:nth-child(1) { --step-color: var(--brand); border-top: 6px solid var(--brand); }
+    .step:nth-child(2) { --step-color: var(--gold); border-top: 6px solid var(--gold); }
+    .step:nth-child(3) { --step-color: var(--deal); border-top: 6px solid var(--deal); }
+    .step:nth-child(4) { --step-color: var(--contact); border-top: 6px solid var(--contact); }
+    .step:nth-child(5) { --step-color: var(--brand-dark); border-top: 6px solid var(--brand-dark); }
+    .step-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .step-number { flex: 0 0 auto; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; color: white; background: var(--step-color); font-weight: 700; }
+    .step h3 { margin: 0; font-size: clamp(28px, 3vw, 38px); font-weight: 400; line-height: 1.05; }
+    .step p { position: relative; z-index: 1; color: var(--muted); }
+    .step-list { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: instruction; }
+    .step-list li { position: relative; min-height: 28px; padding: 3px 0 3px 38px; }
+    .step-list li::before { content: counter(instruction); counter-increment: instruction; position: absolute; left: 0; top: 0; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--step-color); font-size: 12px; font-weight: 700; }
+    .step-voice { display: grid; grid-template-columns: 1fr; gap: 9px; margin: 18px 0; }
+    .step-voice span { display: block; padding: 10px 12px; border: 1px solid #cbd6e1; border-radius: 10px; color: var(--deal); background: var(--deal-soft); font-size: 14px; }
+    .accent-note { position: relative; z-index: 1; margin: 18px 0 0; padding: 15px 17px; border-left: 4px solid var(--step-color); border-radius: 0 12px 12px 0; color: var(--ink); background: var(--cream); }
+    .command { position: relative; z-index: 1; margin-top: 16px; padding: 18px 20px; border-radius: 14px; color: white; background: var(--deal); font: 22px Georgia, serif; }
+    .step-wide { display: grid; gap: 16px; }
+
+    .warning-section { padding: 72px 0; color: white; background: var(--brand-dark); }
+    .warning-card { max-width: 980px; display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .warning-title .eyebrow { color: #efb4a7; }
+    .warning-title h2 { margin-bottom: 14px; font-size: clamp(42px, 5vw, 62px); font-weight: 400; line-height: .98; }
+    .warning-title p { margin-bottom: 0; color: rgba(255,255,255,.7); }
+    .dog-check { padding: 28px; border: 1px solid rgba(255,255,255,.22); border-radius: 18px; background: rgba(255,255,255,.06); }
+    .dog-check > span { display: block; margin-bottom: 16px; color: #efb4a7; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .dog-check ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .dog-check li { position: relative; padding-left: 28px; }
+    .dog-check li::before { content: '✓'; position: absolute; left: 0; color: #efb4a7; font-weight: 700; }
+    .warning-rule { margin: 20px 0 0; padding: 18px 20px; border-left: 4px solid #efb4a7; background: rgba(255,255,255,.08); font: 22px Georgia, serif; }
+
+    .checklist-section { padding: 78px 0; background: #e9e0d2; }
+    .checklist-head { display: flex; justify-content: space-between; gap: 36px; align-items: flex-end; margin-bottom: 30px; }
+    .checklist-head h2 { max-width: 760px; margin: 0; font-size: clamp(42px, 5vw, 60px); font-weight: 400; line-height: 1; }
+    .progress-box { flex: 0 0 250px; padding: 18px 20px; border-radius: 16px; background: var(--paper); }
+    .progress-box strong { font: 38px Georgia, serif; }
+    .progress-box > span { margin-left: 6px; color: var(--muted); font-size: 12px; }
+    .progress-track { height: 7px; margin-top: 12px; border-radius: 99px; background: var(--line); overflow: hidden; }
+    .progress-track i { display: block; width: 0; height: 100%; background: var(--brand); transition: width .25s ease; }
+    .final-checks { display: grid; gap: 10px; }
+    .final-checks label { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); cursor: pointer; }
+    .final-checks label:has(input:checked) { border-color: #abc1ad; background: var(--contact-soft); }
+    .final-checks input { width: 21px; height: 21px; margin: 0; accent-color: var(--contact); }
+    .finish-status { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; margin-top: 18px; padding: 25px; border: 1px solid #c9bfae; border-radius: var(--radius); background: rgba(255,255,255,.48); opacity: .56; transition: .25s ease; }
+    .finish-status.complete { color: white; border-color: var(--contact); background: var(--contact); opacity: 1; transform: translateY(-2px); }
+    .finish-check { display: grid; place-items: center; width: 58px; height: 58px; border: 2px solid currentColor; border-radius: 50%; font-size: 28px; }
+    .finish-status span { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .finish-status h3 { margin: 0; font-size: 31px; font-weight: 400; }
+    .finish-status p { margin: 8px 0 0; color: var(--muted); }
+    .finish-status.complete p { color: rgba(255,255,255,.78); }
+
+    footer { color: white; background: var(--ink); }
+    .footer-inner { min-height: 106px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-inner .brand { color: white; }
+    .footer-inner p { margin: 0; color: rgba(255,255,255,.58); font-size: 13px; }
+
+    @media (max-width: 920px) {
+      .nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 42vh; }
+      .hero-copy { padding: 52px 30px 58px; }
+      .section-head, .warning-card { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 28px, 1180px); }
+      .topbar-inner { min-height: 66px; }
+      .brand { font-size: 19px; }
+      .lesson span { display: none; }
+      .hero-photo { min-height: 35vh; background-image: linear-gradient(90deg, transparent 70%, var(--paper)), linear-gradient(180deg, rgba(54,37,25,.04), rgba(54,37,25,.2)), url('../primary-client/hero.jpg'); }
+      .hero-copy { padding: 42px 20px 48px; }
+      h1 { font-size: clamp(41px, 13vw, 56px); overflow-wrap: anywhere; }
+      .hero-lead { font-size: 17px; }
+      .principle { font-size: 14px; }
+      .route { min-height: 86px; }
+      .section, .checklist-section { padding: 58px 0; }
+      .steps, .step-list { grid-template-columns: 1fr; }
+      .step { padding: 24px; }
+      .step h3 { font-size: 29px; }
+      .warning-section { padding: 56px 0; }
+      .checklist-head { display: grid; gap: 22px; }
+      .progress-box { width: 100%; }
+      .final-checks label { align-items: start; padding: 16px; }
+      .finish-status { grid-template-columns: 1fr; }
+      .footer-inner { padding: 25px 0; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark">✦</span> Ателье Софи</a>
+      <nav class="nav" aria-label="Разделы инструкции"><a href="#steps">5 шагов</a><a href="#two-dogs">Две собаки</a><a href="#checklist">Проверка</a></nav>
+      <div class="lesson"><b>04</b><span>Обучение</span></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-photo" role="img" aria-label="Собаки в одежде Ателье Софи"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Короткая инструкция для менеджера</p>
+        <h1>ТЗ на примерочный образец или лекало</h1>
+        <p class="hero-lead">От надиктовки данных по одной собаке до правильного финального файла в производстве.</p>
+        <div class="principle"><span>ОДНА СОБАКА</span> → ОДНО ТЗ → ПРОВЕРКА → ФИНАЛЬНЫЙ ФАЙЛ</div>
+      </div>
+    </section>
+
+    <section class="route-strip" aria-label="Короткий маршрут">
+      <div class="shell route"><span>Надиктовать</span><i>→</i><span>Проверить ТЗ</span><i>→</i><span>Исправить</span><i>→</i><span>Проверить бланк</span><i>→</i><span>Прикрепить</span></div>
+    </section>
+
+    <section class="section" id="steps">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">Рабочий маршрут</p><h2>Пять шагов</h2></div>
+          <p class="lead">Каждый готовый результат проверяем до передачи дальше. Если нашли ошибку — исправляем и снова проверяем.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-top"><span class="step-number">1</span><h3>Надиктуй данные</h3></div>
+            <p>Зайди в свой чат «ТЗ примерочные, лекала» и аудиосообщением передай:</p>
+            <ol class="step-list">
+              <li><strong>Что формируем:</strong> примерочный образец или лекало</li>
+              <li><strong>Клиент и заказ:</strong> имя клиента и номер заказа</li>
+              <li><strong>Собака:</strong> кличка, порода, пол, вес и возраст</li>
+              <li><strong>Базовый размер</strong></li>
+              <li><strong>Фактические мерки:</strong> шея, грудь, талия, обхваты лап и другие имеющиеся мерки</li>
+              <li><strong>Корректировки:</strong> все необходимые изменения</li>
+            </ol>
+            <div class="accent-note">GPT сверит базовый размер по актуальной таблице и соберёт ТЗ.</div>
+          </article>
+
+          <article class="step">
+            <div class="step-top"><span class="step-number">2</span><h3>Проверь ТЗ</h3></div>
+            <p>Не отправляй результат дальше сразу. Проверь:</p>
+            <ol class="step-list">
+              <li>клиент, номер заказа и питомец</li>
+              <li>порода, пол, вес и базовый размер</li>
+              <li>фактические мерки</li>
+              <li>стандартные размеры</li>
+              <li>все корректировки</li>
+              <li>все конечные размеры и параметры изделия</li>
+              <li>комментарии производству</li>
+            </ol>
+            <div class="accent-note"><strong>Важно:</strong> проверяй не только корректировку «+ / −», но и конечную цифру.</div>
+          </article>
+
+          <article class="step">
+            <div class="step-top"><span class="step-number">3</span><h3>Исправь, если нужно</h3></div>
+            <p>Не нужно формировать всё заново. Просто надиктуй:</p>
+            <div class="step-voice"><span>«Исправь грудь на…»</span><span>«Измени конечный размер на…»</span><span>«Резинку изменить на…»</span><span>«Убери комментарий…»</span></div>
+            <p>После изменений ещё раз проверь ТЗ.</p>
+            <div class="command">Когда всё правильно: «Формируй финальный бланк».</div>
+          </article>
+
+          <article class="step">
+            <div class="step-top"><span class="step-number">4</span><h3>Проверь готовый бланк</h3></div>
+            <p>Готовый файл проверяем отдельно, даже если до этого ТЗ было правильным.</p>
+            <ol class="step-list">
+              <li>нужный клиент и нужная собака</li>
+              <li>правильный номер заказа</li>
+              <li>все размеры и параметры перенесены правильно</li>
+              <li>комментарии на месте</li>
+              <li>ничего не обрезано и не наложилось</li>
+              <li>это последняя версия</li>
+            </ol>
+            <div class="accent-note">Если обнаружена ошибка — надиктуй исправление и получи новый бланк. Скачивай только окончательный проверенный файл.</div>
+          </article>
+
+          <article class="step">
+            <div class="step-top"><span class="step-number">5</span><h3>Прикрепи финальный файл и ещё раз проверь</h3></div>
+            <div class="step-wide">
+              <p>Прикрепи финальный файл в сделке в поле «Лекало», затем открой прикреплённый файл и проверь его ещё раз.</p>
+              <ol class="step-list">
+                <li>это последняя версия файла</li>
+                <li>в файле указаны правильные клиент, номер заказа и собака</li>
+                <li>все размеры, параметры и комментарии на месте</li>
+                <li>передались необходимые папки и вложения</li>
+              </ol>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="warning-section" id="two-dogs">
+      <div class="shell warning-card">
+        <div class="warning-title">
+          <p class="eyebrow">Внимание</p>
+          <h2>Если у клиента больше одной собаки</h2>
+          <p>Отдельные поля для второй собаки пока не настроены. Главный риск — перепутать готовые файлы при прикреплении.</p>
+        </div>
+        <div class="dog-check">
+          <span>Перед прикреплением файла</span>
+          <ul>
+            <li>Открой готовый файл и проверь кличку собаки и номер заказа.</li>
+            <li>Сверь, что в файле стоят мерки и корректировки именно этой собаки.</li>
+            <li>Прикрепи файл к данным нужной собаки и ещё раз проверь название файла.</li>
+          </ul>
+          <p class="warning-rule">Каждая собака → отдельное ТЗ → отдельный финальный файл.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="checklist-section" id="checklist">
+      <div class="shell">
+        <div class="checklist-head">
+          <div><p class="eyebrow">Финальная проверка</p><h2>Перед производством ответь «да» на 5 вопросов</h2></div>
+          <div class="progress-box"><strong id="progress-value">0%</strong><span>проверено</span><div class="progress-track"><i id="progress-bar"></i></div></div>
+        </div>
+        <div class="final-checks">
+          <label><input type="checkbox"><span>Я проверила именно последнюю версию ТЗ?</span></label>
+          <label><input type="checkbox"><span>Все конечные размеры правильные?</span></label>
+          <label><input type="checkbox"><span>Я открыла и проверила готовый бланк?</span></label>
+          <label><input type="checkbox"><span>В сделке прикреплён файл именно этой собаки?</span></label>
+          <label><input type="checkbox"><span>В производство уходят правильный файл и нужные вложения?</span></label>
+        </div>
+        <div class="finish-status" id="finish-status">
+          <div class="finish-check">✓</div>
+          <div><span>Все пять — да</span><h3>ТЗ готово к дальнейшей работе</h3><p>Готовое ТЗ можно передать в производство отдельным файлом. Это же ТЗ прикладываем, когда формируем бланк изготовления изделия.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><a class="brand" href="#top"><span class="brand-mark">✦</span> Ателье Софи</a><p>Внутреннее обучение отдела продаж · ТЗ на примерочный образец или лекало</p><a href="#top">Наверх ↑</a></div></footer>
+
+  <script>
+    const checks = [...document.querySelectorAll('.final-checks input')];
+    const progressValue = document.querySelector('#progress-value');
+    const progressBar = document.querySelector('#progress-bar');
+    const finishStatus = document.querySelector('#finish-status');
+
+    function updateProgress() {
+      const done = checks.filter(check => check.checked).length;
+      const percent = Math.round((done / checks.length) * 100);
+      progressValue.textContent = `${percent}%`;
+      progressBar.style.width = `${percent}%`;
+      finishStatus.classList.toggle('complete', done === checks.length);
+    }
+
+    checks.forEach(check => check.addEventListener('change', updateProgress));
+  </script>
+</body>
+</html>
