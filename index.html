@@ -32,6 +32,8 @@
     .route { display:flex; flex-wrap:wrap; align-items:center; gap:10px 13px; margin-top:36px; }
     .route span { padding:9px 13px; border:1px solid var(--line); background:var(--cream); font-size:14px; }
     .route i { color:var(--wine); font-style:normal; }
+    .stop-cards-link { display:inline-flex;align-items:center;gap:12px;margin-top:24px;padding:12px 16px;border:1px solid var(--wine);color:var(--wine);background:var(--paper);font-size:14px;font-weight:700;text-decoration:none; }
+    .stop-cards-link:hover,.stop-cards-link:focus-visible { color:#fff;background:var(--wine); }
     main { padding:78px 0 94px; }
     .section-head { display:grid; grid-template-columns:1fr .8fr; gap:48px; align-items:end; margin-bottom:36px; }
     .section-head h2 { margin:0; font-size:clamp(38px,5vw,58px); line-height:1; letter-spacing:-.035em; }
@@ -44,6 +46,9 @@
     .module p { margin:0; color:#71665e; line-height:1.65; }
     .module-link { margin-top:auto; padding-top:38px; color:var(--wine); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
     .module-link::after { content:'  →'; }
+    .additional-head { margin:62px 0 25px; padding-top:28px; border-top:1px solid var(--line); }
+    .additional-head h2 { margin:0 0 8px; font-size:clamp(30px,4vw,42px); }
+    .additional-head p { margin:0; color:#71665e; }
     .reference { margin-top:18px; display:grid; grid-template-columns:180px 1fr auto; gap:30px; align-items:center; padding:28px 30px; color:#fff; background:var(--wine-dark); text-decoration:none; }
     .reference-label { color:#f2c1b4; font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
     .reference h3 { margin:0 0 6px; font-size:27px; }
@@ -94,37 +99,38 @@
         <div><small>Ежедневная работа · Время по Барнаулу</small><h2>Рабочий день отдела продаж</h2><p>Распорядок 10:00–19:00: план дня, техническая работа, повторные продажи, клиенты и вечерние итоги. Приоритеты и правила использования освободившегося времени.</p></div>
         <span class="workday-open">Открыть распорядок →</span>
       </a>
-      <p class="hero-text">Выберите нужный раздел: от первого обращения клиента до технического задания, производственного бланка и консультации владельца миниатюрной собаки.</p>
-      <div class="route" aria-label="Порядок обучения"><span>Лид</span><i>→</i><span>Клиент и сделка</span><i>→</i><span>ТЗ и бланк</span><i>→</i><span>Производство</span></div>
+      <p class="hero-text">Начните с четырёх основных уроков: от первого обращения до подготовки технического задания. Дополнительные рабочие инструкции находятся ниже.</p>
+      <div class="route" aria-label="Порядок обучения"><span>Лиды</span><i>→</i><span>Менеджер-контактёр</span><i>→</i><span>Контакт и Сделка</span><i>→</i><span>Техническое задание</span></div>
+      <a class="stop-cards-link" href="./stop-cards/">Стоп-карточки менеджера · распечатать A4 →</a>
     </div>
   </section>
 
   <main>
     <div class="shell">
       <div class="section-head">
-        <h2>Учебные разделы</h2>
-        <p>Каждый раздел открывается отдельно. Можно проходить обучение последовательно или сразу перейти к нужной рабочей ситуации.</p>
+        <h2>Основной путь обучения</h2>
+        <p>Четыре урока в порядке изучения. Третий подробно разбирает карточки и данные, с которыми менеджер работает уже во втором уроке.</p>
       </div>
 
       <div class="modules">
         <a class="module" href="./leads-training/">
-          <span class="module-number">01 · ПЕРВЫЙ ЭТАП</span>
+          <span class="module-number">01 · ЛИДЫ</span>
           <h3>Работа с лидами</h3>
           <p>Первичный контакт, квалификация обращения и понятный следующий шаг в диалоге.</p>
           <span class="module-link">Открыть раздел</span>
         </a>
 
-        <a class="module" href="./primary-client/">
-          <span class="module-number">02 · КЛИЕНТ И СДЕЛКА</span>
-          <h3>Клиент до этапа технического задания</h3>
-          <p>Путь клиента от первого содержательного разговора до готового технического задания в производство.</p>
+        <a class="module" href="./manager-contacter/">
+          <span class="module-number">02 · МЕНЕДЖЕР-КОНТАКТЁР</span>
+          <h3>Менеджер-контактёр</h3>
+          <p>Консультация, сбор данных и состава изделий, согласование заказа, счёт, оплата и передача в технический отдел. Готовые скрипты и чек-лист для печати.</p>
           <span class="module-link">Открыть раздел</span>
         </a>
 
-        <a class="module" href="./mini-dogs/">
-          <span class="module-number">03 · КОНСУЛЬТАЦИЯ</span>
-          <h3>Миниатюрные собаки 1,5–2 кг</h3>
-          <p>Особенности консультации, технические объяснения, готовые скрипты и контрольный чек-лист.</p>
+        <a class="module" href="./primary-client/">
+          <span class="module-number">03 · КЛИЕНТ И СДЕЛКА</span>
+          <h3>Клиент до этапа технического задания</h3>
+          <p>Подробный разбор Контакта и Сделки: обязательные поля, сведения о собаке, место хранения данных об изделии и GPT-досье перед подготовкой ТЗ.</p>
           <span class="module-link">Открыть раздел</span>
         </a>
 
@@ -134,15 +140,25 @@
           <p>Короткий маршрут: надиктовать данные, проверить ТЗ и передать в производство правильный финальный файл.</p>
           <span class="module-link">Открыть раздел</span>
         </a>
+      </div>
+
+      <div class="additional-head"><h2>Дополнительные рабочие разделы</h2><p>Подробные инструкции для отдельных ситуаций и следующих этапов заказа.</p></div>
+      <div class="modules">
+        <a class="module" href="./mini-dogs/">
+          <span class="module-number">КОНСУЛЬТАЦИЯ</span>
+          <h3>Миниатюрные собаки 1,5–2 кг</h3>
+          <p>Особенности консультации, технические объяснения, готовые скрипты и контрольный чек-лист.</p>
+          <span class="module-link">Открыть раздел</span>
+        </a>
 
         <a class="module" href="./production-form/">
-          <span class="module-number">05 · ПРОИЗВОДСТВЕННЫЙ БЛАНК</span>
+          <span class="module-number">ПРОИЗВОДСТВЕННЫЙ БЛАНК</span>
           <h3>Как составить производственный бланк изделия в GPT</h3>
           <p>Полный путь от данных заказа и лекала до проверенного двухстраничного PDF для производства.</p>
           <span class="module-link">Открыть раздел</span>
         </a>
         <a class="module" href="./fitting-consilium/">
-          <span class="module-number">06 · ПРИМЕРКА И КОНСИЛИУМ</span>
+          <span class="module-number">ПРИМЕРКА И КОНСИЛИУМ</span>
           <h3>Примерочный образец → Консилиум → окончательное лекало</h3>
           <p>Два этапа подготовки ТЗ: согласование примерочного образца, корректировки после примерки и чистый документ на окончательное лекало. Два копируемых промпта.</p>
           <span class="module-link">Открыть раздел</span>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Чек-лист менеджера-контактера — Ателье Софи</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#fff;color:#111;font:15px/1.42 Arial,Helvetica,sans-serif}
+    a{color:#111}
+    .toolbar{max-width:920px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #999}
+    .toolbar a{font-size:14px}
+    button{padding:9px 16px;border:1px solid #111;background:#fff;color:#111;font:700 14px Arial,Helvetica,sans-serif;cursor:pointer}
+    button:hover{background:#eee}
+    button:focus-visible,a:focus-visible{outline:2px solid #111;outline-offset:3px}
+    .page{width:min(100% - 32px,800px);margin:28px auto 50px}
+    header{border-bottom:2px solid #111;padding-bottom:13px}
+    .kicker{margin:0 0 5px;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    h1{margin:0;font:700 29px/1.08 Arial,Helvetica,sans-serif}
+    .subtitle{margin:6px 0 0;font-size:13px}
+    .meta{display:grid;grid-template-columns:2fr 1fr 1fr;gap:15px;margin:17px 0 19px}
+    .field{display:flex;align-items:end;gap:6px;font-size:12px;white-space:nowrap}
+    .line{flex:1;height:17px;border-bottom:1px solid #111}
+    section{border-top:1px solid #111;padding:15px 0 13px;break-inside:avoid}
+    .stage-heading{display:flex;align-items:baseline;gap:13px;margin:0 0 9px}
+    .num{font-size:12px;font-weight:700;white-space:nowrap}
+    h2{font-size:19px;line-height:1.16;margin:0}
+    ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+    li{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.28}
+    .square{display:block;flex:0 0 15px;width:15px;height:15px;margin-top:1px;border:1.5px solid #111}
+    .full{grid-column:1/-1}
+    .note{margin:9px 0 0;font-size:11px}
+    .footer{border-top:2px solid #111;padding-top:12px;margin-top:2px;font-size:11px}
+    .footer strong{display:block;font-size:13px;margin-bottom:3px}
+    .footer p{margin:0}
+    @media(max-width:620px){.toolbar{padding:14px 16px}.page{margin:20px auto}.meta,ul{grid-template-columns:1fr}.meta{gap:8px}.stage-heading{gap:8px}h1{font-size:25px}}
+    @media print{
+      @page{size:A4 portrait;margin:13mm}
+      html,body{width:auto;margin:0;background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .toolbar{display:none}
+      .page{width:auto;margin:0}
+      header{padding-bottom:8px}
+      h1{font-size:24px}
+      .meta{margin:12px 0 13px}
+      section{padding:11px 0 10px}
+      .stage-heading{margin-bottom:7px}
+      h2{font-size:17px}
+      ul{gap:6px 17px}
+      li{font-size:11.5px}
+      .note{font-size:10px;margin-top:6px}
+      .footer{padding-top:9px}
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar"><a href="./index.html">← К лендингу «Менеджер-контактер»</a><button type="button" onclick="window.print()">Распечатать чек-лист</button></div>
+  <main class="page">
+    <header><p class="kicker">Ателье Софи · Рабочая памятка</p><h1>Чек-лист менеджера-контактера</h1><p class="subtitle">Три этапа на одном листе. Отмечайте выполненное; подробности храните не здесь.</p></header>
+    <div class="meta"><div class="field">Клиент <span class="line"></span></div><div class="field">Сделка № <span class="line"></span></div><div class="field">Дата <span class="line"></span></div></div>
+
+    <section aria-labelledby="stage-1"><div class="stage-heading"><span class="num">01</span><h2 id="stage-1">Знакомство и консультация</h2></div><ul>
+      <li><span class="square"></span><span>Узнали имя, регион, населённый пункт; кличку, породу, пол, возраст и вес собаки.</span></li>
+      <li><span class="square"></span><span>Поняли, что нужно клиенту, для какого сезона и что собака носит сейчас.</span></li>
+      <li><span class="square"></span><span>Проконсультировали по изделию, посадке, тканям, подкладу и утеплению.</span></li>
+      <li><span class="square"></span><span>Показали подходящие фото/видео и объяснили, на что обратить внимание.</span></li>
+      <li><span class="square"></span><span>Проверили действующие предложения и уместные дополнительные решения.</span></li>
+      <li><span class="square"></span><span>Объяснили путь первичного или повторного заказа; нерешённые технические вопросы направили в «Консилиум».</span></li>
+    </ul></section>
+
+    <section aria-labelledby="stage-2"><div class="stage-heading"><span class="num">02</span><h2 id="stage-2">Данные и формирование заказа</h2></div><ul>
+      <li><span class="square"></span><span>Отправили инструкцию по меркам; получили фактические обхваты шеи, груди и талии без прибавок клиента.</span></li>
+      <li><span class="square"></span><span>Получили информативное фото собаки стоя сбоку и необходимые видео; сомнительное перепроверили.</span></li>
+      <li><span class="square"></span><span>Отметили, на что клиент просит обратить особое внимание.</span></li>
+      <li><span class="square"></span><span>По каждому изделию отдельно согласовали модель, коллекцию, сезон, слойность, утепление и капюшон.</span></li>
+      <li><span class="square"></span><span>По каждому изделию отдельно согласовали застёжку, кольца/шлёвки, кнопки для ботинок, ткань, подклад и аксессуары.</span></li>
+      <li><span class="square"></span><span>Согласовали способ получения, пункт выдачи и данные для доставки.</span></li>
+    </ul><p class="note">Полный состав каждого изделия, мерки, фото/видео и пожелания сохраняйте в переписке и материалах клиента; при длинной истории упорядочивайте данные через GPT-чат.</p></section>
+
+    <section aria-labelledby="stage-3"><div class="stage-heading"><span class="num">03</span><h2 id="stage-3">Счёт, Сделка, оплата и чек</h2></div><ul>
+      <li><span class="square"></span><span>Отправили клиенту полное описание заказа и получили согласование.</span></li>
+      <li><span class="square"></span><span>Выставили и отправили счёт на согласованную сумму.</span></li>
+      <li><span class="square"></span><span>До оплаты заполнили Контакт и обязательные поля уже созданной Сделки.</span></li>
+      <li><span class="square"></span><span>Перенесли согласованное описание без сокращений в комментарии Сделки — отдельно по каждому изделию; поля по изделиям заполнены.</span></li>
+      <li><span class="square"></span><span>Проверили поступление 100% оплаты и соответствие суммы счёту.</span></li>
+      <li><span class="square"></span><span>Отбили чек, зафиксировали оплату и передали готовый заказ техническому отделу.</span></li>
+    </ul></section>
+
+    <div class="footer"><strong>Правило бумажного чек-листа</strong><p>Здесь — только отметки о выполнении. Содержание переписки, звонков и заказа, уточнения и технические материалы сохраняются в рабочих чатах, Контакте и Сделке; при необходимости их собирают и упорядочивают через GPT-чат.</p></div>
+  </main>
+</body>
+</html>
