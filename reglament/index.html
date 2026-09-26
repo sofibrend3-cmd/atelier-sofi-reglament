@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Порядок оформления заказа — Ателье Софи</title>
+<title>Основные правила оформления заказа — Ателье Софи</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -17,6 +17,8 @@
     --line:#E8E1D3;
     --brick:#93240D;
     --brick-soft:#F5E3DB;
+    --tech:#8A6B34;
+    --tech-soft:#F3EBD8;
     --zoneb:#3E5266;
     --zoneb-soft:#E7ECEF;
     --shadow: 0 6px 22px rgba(33,29,25,0.06);
@@ -145,7 +147,35 @@
   .legend-item{ display:flex; align-items:center; gap:9px; font-size:13.5px; font-weight:600;}
   .legend-dot{ width:12px; height:12px; border-radius:3px; }
   .legend-dot.a{ background:var(--brick); }
+  .legend-dot.t{ background:var(--tech); }
   .legend-dot.b{ background:var(--zoneb); }
+
+  .logic-strip{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px; }
+  .logic-card{ background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:22px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+  .logic-card::before{ content:''; position:absolute; inset:0 auto 0 0; width:4px; background:var(--brick); }
+  .logic-card.tech::before{ background:var(--tech); }
+  .logic-card.support::before{ background:var(--zoneb); }
+  .logic-card .role{ font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--brick); margin-bottom:10px; }
+  .logic-card.tech .role{ color:var(--tech); }
+  .logic-card.support .role{ color:var(--zoneb); }
+  .logic-card h3{ font-size:20px; margin-bottom:9px; }
+  .logic-card p{ font-size:14px; color:var(--ink-soft); }
+  .logic-arrow{ font-size:13px; line-height:1.65; color:var(--ink); }
+  .responsible-note{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:20px; }
+  .responsible-card{ border-radius:14px; padding:20px 22px; border:1px solid var(--line); background:var(--paper); box-shadow:var(--shadow); }
+  .responsible-card:first-child{ background:var(--brick-soft); border-color:rgba(147,36,13,.16); }
+  .responsible-card:last-child{ background:var(--zoneb-soft); border-color:rgba(62,82,102,.16); }
+  .responsible-card h3{ font-size:18px; margin-bottom:7px; }
+  .responsible-card p{ font-size:14px; }
+
+  .department-flow{ display:grid; gap:16px; }
+  .department-block{ border:1px solid var(--line); border-radius:16px; background:var(--paper); box-shadow:var(--shadow); overflow:hidden; }
+  .department-head{ padding:14px 18px; color:#fff; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; background:var(--brick); }
+  .department-block.tech .department-head{ background:var(--tech); }
+  .department-block.support .department-head{ background:var(--zoneb); }
+  .stage-row{ display:flex; flex-wrap:wrap; gap:9px; padding:18px; align-items:center; }
+  .stage-pill{ border:1px solid var(--line); background:var(--cream); padding:9px 13px; border-radius:10px; font-size:13.5px; font-weight:600; }
+  .stage-arrow{ color:var(--ink-soft); font-weight:700; }
 
   .step{ display:flex; gap:16px; position:relative; padding-bottom:20px; padding-left:4px; }
   .step:last-child{ padding-bottom:0; }
@@ -159,10 +189,12 @@
   .step-body b{ display:block; font-size:14.5px; margin-bottom:2px; }
   .step-body .step-sub{ font-size:12.5px; color:var(--ink-soft); }
   .step.zone-a .step-num{ background:var(--brick); }
+  .step.zone-t .step-num{ background:var(--tech); }
   .step.zone-b .step-num{ background:var(--zoneb); }
   .step.zone-a::before{ background:#EEDBD2; }
   .step.zone-b::before{ background:#DCE3E7; }
   .step.zone-a .step-body{ border-left:3px solid var(--brick); }
+  .step.zone-t .step-body{ border-left:3px solid var(--tech); }
   .step.zone-b .step-body{ border-left:3px solid var(--zoneb); }
   .step-body.highlight{ border-color:var(--brick); background:var(--brick-soft); }
   .zone-shift{ display:flex; align-items:center; gap:12px; margin:-4px 0 20px 0; padding-left:4px; }
@@ -249,14 +281,6 @@
     margin-bottom:24px; box-shadow:var(--shadow); color:var(--ink);
   }
 
-  /* ============ CHECKLIST ============ */
-  .checklist-card{ background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:26px 28px; box-shadow:var(--shadow); }
-  .checklist-card h4{ font-size:16px; font-weight:700; margin-bottom:16px; color:var(--brick); }
-  .cl-item{ display:flex; gap:12px; align-items:flex-start; padding:9px 0; border-bottom:1px dashed var(--line); font-size:14px; }
-  .cl-item:last-child{ border-bottom:none; }
-  .cl-box{ flex:0 0 17px; height:17px; border:1.5px solid var(--ink-soft); border-radius:4px; margin-top:2px; }
-  .print-btn{ margin-top:20px; background:var(--brick); color:#fff; border:none; padding:10px 20px; border-radius:100px; font-weight:700; font-size:13px; cursor:pointer; }
-
   /* ============ ESCALATION ============ */
   .esc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .esc-card{ background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px; box-shadow:var(--shadow); }
@@ -272,12 +296,10 @@
     .two-col{ grid-template-columns:1fr; }
     .split-row{ grid-template-columns:1fr; }
     .esc-grid{ grid-template-columns:1fr; }
+    .logic-strip{ grid-template-columns:1fr; }
+    .responsible-note{ grid-template-columns:1fr; }
     .fact-row{ flex-direction:column; gap:4px; }
     .fact-row .f-key{ flex:none; }
-  }
-  @media print{
-    .topbar, section:not(#checklists){ display:none; }
-    body{ background:#fff; }
   }
 </style>
 </head>
@@ -285,31 +307,68 @@
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="brandmark">Ателье Софи<span>Порядок оформления заказа</span></div>
+    <div class="brandmark">Ателье Софи<span>Основные правила оформления заказа</span></div>
     <nav class="navlinks">
+      <a href="#logic">Общая логика</a>
       <a href="#limits">Кому шьём</a>
       <a href="#rules">Как шьём · Правила</a>
-      <a href="#channels">Приём заявки</a>
-      <a href="#funnel-new">Воронка · Первичный</a>
-      <a href="#funnel-repeat">Воронка · Повторный</a>
-      <a href="#scripts">Скрипты</a>
-      <a href="#fabric-scripts">Скрипты по тканям</a>
-      <a href="#construction">Конструкция</a>
+      <a href="#funnel-new">Первичный клиент</a>
+      <a href="#funnel-repeat">Повторный клиент</a>
       <a href="#payment">Оплата</a>
       <a href="#delivery">Доставка</a>
+      <a href="#delivery-regions">Регионы</a>
+      <a href="#construction">Конструкция</a>
       <a href="#returns">Возврат</a>
       <a href="#escalation">Эскалация</a>
-      <a href="#checklists">Чек-листы</a>
+      <a href="#scripts">Скрипты</a>
     </nav>
   </div>
 </div>
 
 <div class="hero">
   <div class="eyebrow">Регламент отдела продаж</div>
-  <h1>Порядок оформления заказа</h1>
-  <p class="lede">Индивидуальный пошив одежды и обуви для собак по меркам питомца. Рабочая инструкция для менеджеров отдела продаж и Отдела сопровождения заказа.</p>
+  <h1>ОСНОВНЫЕ ПРАВИЛА ОФОРМЛЕНИЯ ЗАКАЗА</h1>
+  <p class="lede">Общая база правил: как заказ движется между отделами, где заканчивается одна зона ответственности и начинается другая.</p>
   <div class="doc-tag">Ателье Софи · внутренний документ</div>
 </div>
+
+<!-- GENERAL LOGIC -->
+<section id="logic">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">Общая логика</span>
+      <h2>Один заказ — три зоны ответственности</h2>
+      <p>Каждый отдел отвечает за свою часть пути. При переходе заказа меняется ответственный за сделку, но не менеджер, закреплённый за клиентом.</p>
+    </div>
+    <div class="logic-strip">
+      <article class="logic-card">
+        <div class="role">Менеджер-контактер</div>
+        <h3>Согласовать и получить оплату</h3>
+        <div class="logic-arrow">Клиент → потребность → согласование заказа → счёт → оплата</div>
+      </article>
+      <article class="logic-card tech">
+        <div class="role">Технический отдел</div>
+        <h3>Подготовить техническую часть</h3>
+        <div class="logic-arrow">Производственные бланки → примерочный образец → техническое согласование</div>
+      </article>
+      <article class="logic-card support">
+        <div class="role">Отдел сопровождения</div>
+        <h3>Сопроводить изготовление и получение</h3>
+        <div class="logic-arrow">Изготовление → готовность → отправка → получение → обратная связь → завершение сделки</div>
+      </article>
+    </div>
+    <div class="responsible-note">
+      <article class="responsible-card">
+        <h3>Ответственный за сделку</h3>
+        <p><strong>Меняется</strong> по мере перехода заказа между отделами. Сделка должна находиться у сотрудника, который сейчас отвечает за следующий этап.</p>
+      </article>
+      <article class="responsible-card">
+        <h3>Ответственный за клиента</h3>
+        <p><strong>Остаётся закреплённым менеджером клиента.</strong> Это отдельное поле, его не меняют при передаче заказа в другой отдел.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- LIMITS: КОМУ ШЬЁМ -->
 <section id="limits">
@@ -467,31 +526,28 @@
 <section id="funnel-new">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">04 · Процесс</span>
-      <h2>Воронка «Первичный клиент»</h2>
-      <p>Единая воронка в Bitrix24. Зона окрашена по тому, кто ведёт этап.</p>
+      <span class="sec-num">Путь сделки</span>
+      <h2>Первичный клиент</h2>
+      <p>Полный путь первого заказа: от входящего обращения до завершения сделки.</p>
     </div>
     <div class="funnel-legend">
-      <div class="legend-item"><span class="legend-dot a"></span>Ведёт менеджер продаж</div>
-      <div class="legend-item"><span class="legend-dot b"></span>Ведёт Отдел сопровождения заказа</div>
+      <div class="legend-item"><span class="legend-dot a"></span>Менеджер-контактер</div>
+      <div class="legend-item"><span class="legend-dot t"></span>Технический отдел</div>
+      <div class="legend-item"><span class="legend-dot b"></span>Отдел сопровождения</div>
     </div>
-
-    <div class="flow">
-      <div class="step zone-a"><div class="step-num">1</div><div class="step-body"><b>Назначен ответственный</b><div class="step-sub">Заполнены поля: партнёр, категория сделки</div></div></div>
-      <div class="step zone-a"><div class="step-num">2</div><div class="step-body"><b>Выявление потребности</b><div class="step-sub">Свойства ткани; правила — только если клиент сам спросит</div></div></div>
-      <div class="step zone-a"><div class="step-num">3</div><div class="step-body"><b>Создан бланк</b><div class="step-sub">Модель, комплектация, цифры без «чуть-чуть»</div></div></div>
-      <div class="step zone-a"><div class="step-num">4</div><div class="step-body"><b>Выставлен счёт</b><div class="step-sub">Выставляется клиенту к оплате</div></div></div>
-      <div class="step zone-a"><div class="step-num">5</div><div class="step-body"><b>Оплата получена</b><div class="step-sub">Чек пробит вручную</div></div></div>
-      <div class="step zone-a"><div class="step-num">6</div><div class="step-body"><b>Изготовление примерочного</b><div class="step-sub">1–2 дня</div></div></div>
-      <div class="step zone-a"><div class="step-num">7</div><div class="step-body"><b>Отправлен примерочный</b><div class="step-sub">Экспресс-доставка, 2–4 дня</div></div></div>
-      <div class="step zone-a"><div class="step-num">8</div><div class="step-body highlight"><b>Согласование с клиентом</b><div class="step-sub">Примерка на собаку, лекало фиксируется</div></div></div>
-
-      <div class="zone-shift"><span class="zs-line"></span><span class="zs-text">заказ передаётся в Отдел сопровождения</span></div>
-
-      <div class="step zone-b"><div class="step-num">9</div><div class="step-body"><b>Отдали в изготовление</b><div class="step-sub">Заказ уходит в производство по утверждённому лекалу</div></div></div>
-      <div class="step zone-b"><div class="step-num">10</div><div class="step-body"><b>Готово к отправке</b><div class="step-sub">Контроль качества, сверка комплектации и параметров, видеосъёмка, трек-номер</div></div></div>
-      <div class="step zone-b"><div class="step-num">11</div><div class="step-body"><b>ОС при получении</b><div class="step-sub">Обратная связь от клиента, в т.ч. первичный приём претензий</div></div></div>
-      <div class="step zone-b"><div class="step-num">12</div><div class="step-body"><b>Сделка завершена</b><div class="step-sub">Заказ закрыт</div></div></div>
+    <div class="department-flow">
+      <div class="department-block">
+        <div class="department-head">Менеджер-контактер</div>
+        <div class="stage-row"><span class="stage-pill">Входящий</span><span class="stage-arrow">→</span><span class="stage-pill">Начата работа</span><span class="stage-arrow">→</span><span class="stage-pill">Выявление потребности</span><span class="stage-arrow">→</span><span class="stage-pill">Счёт выставлен</span><span class="stage-arrow">→</span><span class="stage-pill">Оплата получена</span></div>
+      </div>
+      <div class="department-block tech">
+        <div class="department-head">Технический отдел</div>
+        <div class="stage-row"><span class="stage-pill">Создание бланков</span><span class="stage-arrow">→</span><span class="stage-pill">Изготовление примерочного</span><span class="stage-arrow">→</span><span class="stage-pill">Отправлен примерочный</span><span class="stage-arrow">→</span><span class="stage-pill">Согласование с клиентом</span></div>
+      </div>
+      <div class="department-block support">
+        <div class="department-head">Отдел сопровождения</div>
+        <div class="stage-row"><span class="stage-pill">Отдали в изготовление</span><span class="stage-arrow">→</span><span class="stage-pill">Готово к отправке</span><span class="stage-arrow">→</span><span class="stage-pill">Обратная связь при получении</span><span class="stage-arrow">→</span><span class="stage-pill">Сделка завершена</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -500,28 +556,29 @@
 <section id="funnel-repeat">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">05 · Процесс</span>
-      <h2>Воронка «Повторный клиент»</h2>
-      <p>Отдельная воронка «Повторные» в Bitrix24. Нет этапов примерочного образца и согласования лекала — шьётся сразу по сохранённому лекалу клиента.</p>
+      <span class="sec-num">Путь сделки</span>
+      <h2>Повторный клиент</h2>
+      <p>Путь повторного заказа короче: технический отдел создаёт бланки, после чего заказ передаётся в сопровождение.</p>
     </div>
     <div class="funnel-legend">
-      <div class="legend-item"><span class="legend-dot a"></span>Ведёт менеджер продаж</div>
-      <div class="legend-item"><span class="legend-dot b"></span>Ведёт Отдел сопровождения заказа</div>
+      <div class="legend-item"><span class="legend-dot a"></span>Менеджер-контактер</div>
+      <div class="legend-item"><span class="legend-dot t"></span>Технический отдел</div>
+      <div class="legend-item"><span class="legend-dot b"></span>Отдел сопровождения</div>
     </div>
 
-    <div class="flow">
-      <div class="step zone-a"><div class="step-num">1</div><div class="step-body"><b>Повторная</b><div class="step-sub">Сделка открыта как повторная — клиент уже заказывал ранее</div></div></div>
-      <div class="step zone-a"><div class="step-num">2</div><div class="step-body"><b>Выявление потребности</b></div></div>
-      <div class="step zone-a"><div class="step-num">3</div><div class="step-body"><b>Создан бланк</b><div class="step-sub">Проверка — не изменились ли параметры собаки</div></div></div>
-      <div class="step zone-a"><div class="step-num">4</div><div class="step-body"><b>Выставлен счёт</b><div class="step-sub">Выставляется клиенту к оплате</div></div></div>
-      <div class="step zone-a"><div class="step-num">5</div><div class="step-body highlight"><b>Оплата получена</b></div></div>
-
-      <div class="zone-shift"><span class="zs-line"></span><span class="zs-text">заказ передаётся в Отдел сопровождения</span></div>
-
-      <div class="step zone-b"><div class="step-num">6</div><div class="step-body"><b>Отдали в изготовление</b><div class="step-sub">По сохранённому лекалу — без примерочного образца</div></div></div>
-      <div class="step zone-b"><div class="step-num">7</div><div class="step-body"><b>Готово к отправке</b><div class="step-sub">Контроль качества, сверка комплектации и параметров, видеосъёмка, трек-номер</div></div></div>
-      <div class="step zone-b"><div class="step-num">8</div><div class="step-body"><b>ОС при получении</b><div class="step-sub">Обратная связь от клиента</div></div></div>
-      <div class="step zone-b"><div class="step-num">9</div><div class="step-body"><b>Сделка завершена</b><div class="step-sub">Заказ закрыт</div></div></div>
+    <div class="department-flow">
+      <div class="department-block">
+        <div class="department-head">Менеджер-контактер</div>
+        <div class="stage-row"><span class="stage-pill">Повторное</span><span class="stage-arrow">→</span><span class="stage-pill">Первичное касание</span><span class="stage-arrow">→</span><span class="stage-pill">Выявление потребности</span><span class="stage-arrow">→</span><span class="stage-pill">Выставлен счёт</span><span class="stage-arrow">→</span><span class="stage-pill">Оплата получена</span></div>
+      </div>
+      <div class="department-block tech">
+        <div class="department-head">Технический отдел</div>
+        <div class="stage-row"><span class="stage-pill">Создание бланков</span></div>
+      </div>
+      <div class="department-block support">
+        <div class="department-head">Отдел сопровождения</div>
+        <div class="stage-row"><span class="stage-pill">Отдали в изготовление</span><span class="stage-arrow">→</span><span class="stage-pill">Готово к отправке</span><span class="stage-arrow">→</span><span class="stage-pill">Обратная связь при получении</span><span class="stage-arrow">→</span><span class="stage-pill">Сделка завершена</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -852,42 +909,6 @@
   </div>
 </section>
 
-<!-- CHECKLISTS -->
-<section id="checklists">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">12 · Печатная версия</span>
-      <h2>Чек-листы</h2>
-      <p>Для быстрой самопроверки на каждом этапе.</p>
-    </div>
-    <div class="two-col">
-      <div class="checklist-card">
-        <h4>Для менеджера отдела продаж</h4>
-        <div class="cl-item"><div class="cl-box"></div>Проверены ограничения по породе, возрасту, весу и стране доставки</div>
-        <div class="cl-item"><div class="cl-box"></div>Заполнены партнёр и категория сделки</div>
-        <div class="cl-item"><div class="cl-box"></div>Выбрана модель, клиент проинформирован о свойствах выбранной ткани</div>
-        <div class="cl-item"><div class="cl-box"></div>Бланк заказа заполнен только измеримыми цифрами</div>
-        <div class="cl-item"><div class="cl-box"></div>Счёт выставлен, оплата получена, чек пробит</div>
-        <div class="cl-item"><div class="cl-box"></div>Образец отправлен, согласование с клиентом получено</div>
-        <div class="cl-item"><div class="cl-box"></div>Лекало утверждено и зафиксировано</div>
-        <div class="cl-item"><div class="cl-box"></div>Заказ передан в Отдел сопровождения</div>
-      </div>
-      <div class="checklist-card">
-        <h4>Для Отдела сопровождения заказа</h4>
-        <div class="cl-item"><div class="cl-box"></div>Назначен ответственный по заказу</div>
-        <div class="cl-item"><div class="cl-box"></div>Контроль качества и сверка комплектации с бланком</div>
-        <div class="cl-item"><div class="cl-box"></div>Сверены параметры изделия (длина спины, длина передней и задней штанины)</div>
-        <div class="cl-item"><div class="cl-box"></div>Проведена видеосъёмка готового изделия</div>
-        <div class="cl-item"><div class="cl-box"></div>Оформлена доставка, получен трек-номер</div>
-        <div class="cl-item"><div class="cl-box"></div>Изделие отправлено клиенту</div>
-        <div class="cl-item"><div class="cl-box"></div>Принята обратная связь при получении</div>
-        <div class="cl-item"><div class="cl-box"></div>Сделка закрыта</div>
-      </div>
-    </div>
-    <button class="print-btn" onclick="window.print()">🖨 Распечатать чек-листы</button>
-  </div>
-</section>
-
 <!-- DELIVERY REGIONS REFERENCE -->
 <section id="delivery-regions">
   <div class="wrap">
@@ -978,6 +999,28 @@
 </footer>
 
 <script>
+// Собираем разделы в рабочем порядке, не дублируя сохранённые справочные материалы.
+const footer = document.querySelector('footer');
+[
+  'logic',
+  'limits',
+  'rules',
+  'channels',
+  'funnel-new',
+  'funnel-repeat',
+  'payment',
+  'delivery',
+  'delivery-regions',
+  'construction',
+  'returns',
+  'escalation',
+  'scripts',
+  'fabric-scripts'
+].forEach(function(id){
+  const section = document.getElementById(id);
+  if (section) footer.before(section);
+});
+
 function copyScript(btn){
   const clone = btn.previousElementSibling.cloneNode(true);
   clone.querySelectorAll('a').forEach(function(a){ a.textContent = a.href; });

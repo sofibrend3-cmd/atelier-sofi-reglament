@@ -11,22 +11,220 @@
     .client-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}.client-path{padding:23px;background:var(--sage);border-left:4px solid #58705a}.client-path h3{font-size:27px;margin:0 0 8px}.client-path p{margin:10px 0 0;color:var(--muted)}
     .print-cta{display:inline-flex;align-items:center;gap:18px;margin-top:24px;padding:15px 19px;background:var(--wine);color:#fff;text-decoration:none;font-weight:700}.print-cta small{display:block;margin-top:2px;font-size:12px;font-weight:400;color:#f6e8e3}.print-cta:hover{background:var(--dark)}
     .scripts{background:var(--paper);border-top:1px solid var(--line)}.scripts-intro{max-width:780px;color:var(--muted);margin:0 0 30px}.script-group{margin-top:34px}.script-group h3{font-size:30px;margin:0 0 15px}.script-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.script-card{padding:22px 24px;background:var(--cream);border:1px solid var(--line)}.script-card header{display:flex;align-items:start;justify-content:space-between;gap:14px;margin-bottom:12px}.script-card h4{margin:0;font:400 23px/1.12 Georgia,serif}.script-card button{flex:none;border:1px solid var(--wine);background:transparent;color:var(--wine);padding:7px 10px;font-size:12px;font-weight:700;cursor:pointer}.script-card button:hover{background:var(--wine);color:#fff}.script-text{margin:0;color:var(--ink);line-height:1.55;white-space:pre-line;overflow-wrap:anywhere}.script-hint{margin:12px 0 0;color:var(--muted);font-size:12px}.copy-feedback{display:block;min-height:17px;margin-top:7px;color:var(--wine);font-size:12px}
-    @media(max-width:820px){.section-head{display:block}.section-head p{margin-top:12px}.funnel,.six{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.topbar .shell{padding:14px 0;flex-wrap:wrap}.product-list{grid-template-columns:1fr 1fr}.client-paths{grid-template-columns:1fr}}
-    @media(max-width:600px){.shell{width:calc(100% - 32px)}.hero,section{padding:48px 0}.hero-summary{grid-template-columns:1fr}.funnel,.cards,.six,.split,.compare,.script-grid{grid-template-columns:1fr}.wide{grid-column:auto}.stage-title{grid-template-columns:1fr;gap:6px}.stage-no{font-size:52px}.funnel a{min-height:140px}.product-list{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.timeline div{min-height:100px;padding:15px}.topbar nav{gap:11px}footer{flex-direction:column;padding:27px 16px}.script-card header{flex-wrap:wrap}}
+    .work-templates{background:var(--paper);border-top:1px solid var(--line)}.template-storage{margin:0 0 22px;padding:28px;background:var(--blue);border-left:5px solid #63788f}.template-storage h3{margin:0 0 10px;font-size:31px}.template-storage>p{max-width:900px;margin:0;color:var(--muted)}.storage-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.storage-step{padding:18px;background:var(--paper);border:1px solid var(--line)}.storage-step b{display:block;margin-bottom:7px;color:var(--wine)}.storage-step p{margin:0;color:var(--muted);font-size:14px}.attachment-list{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:18px 0 0;padding:0;list-style:none}.attachment-list li{padding:11px 13px;background:var(--paper);border:1px solid var(--line);font-size:14px}.attachment-list li:before{content:'✓';margin-right:9px;color:var(--wine);font-weight:700}.data-sources{margin:0 0 22px}.data-sources>h3{margin:0 0 13px;font-size:31px}.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.source-card{padding:23px 25px;border:1px solid var(--line);background:var(--cream)}.source-card.site{border-top:5px solid var(--wine)}.source-card.client{border-top:5px solid #58705a}.source-card h4{margin:0 0 10px;font:400 25px/1.12 Georgia,serif}.source-card p{margin:0;color:var(--muted)}.source-card a{color:var(--wine);font-weight:700}.template-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}.template-card{background:var(--cream)}.template-card header{padding-bottom:15px;border-bottom:1px solid var(--line)}.template-card h3{margin:0;font-size:29px}.template-card .script-text{font:14px/1.55 Arial,Helvetica,sans-serif;white-space:pre-wrap}.template-card button{padding:9px 12px}.clean-principle{margin:20px 0;padding:24px 28px;background:var(--dark);color:#fff;border-radius:16px;font:400 clamp(23px,3vw,34px)/1.2 Georgia,serif}.clean-principle strong{color:#f0b6a4}.clean-rules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.clean-rule{padding:20px 22px;background:var(--cream);border:1px solid var(--line)}.clean-rule h3{margin:0 0 8px;font-size:23px}.clean-rule p{margin:0;color:var(--muted)}.clean-check{margin-top:16px;padding:22px 24px;background:var(--sage);border-left:4px solid #58705a}.clean-check p{margin:0}.clean-example{margin-top:18px;border:1px solid var(--line);background:var(--cream)}.clean-example summary{padding:18px 22px;cursor:pointer;color:var(--wine);font-weight:700}.clean-example[open] summary{border-bottom:1px solid var(--line)}.clean-example .script-text{padding:22px 24px;font:14px/1.55 Arial,Helvetica,sans-serif;white-space:pre-wrap}.template-note{margin:10px 0 0;color:var(--muted);font-size:13px}
+    @media(max-width:820px){.section-head{display:block}.section-head p{margin-top:12px}.funnel,.six{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.topbar .shell{padding:14px 0;flex-wrap:wrap}.product-list{grid-template-columns:1fr 1fr}.client-paths,.template-grid,.clean-rules,.storage-flow,.source-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){.shell{width:calc(100% - 32px)}.hero,section{padding:48px 0}.hero-summary{grid-template-columns:1fr}.funnel,.cards,.six,.split,.compare,.script-grid,.attachment-list{grid-template-columns:1fr}.wide{grid-column:auto}.stage-title{grid-template-columns:1fr;gap:6px}.stage-no{font-size:52px}.funnel a{min-height:140px}.product-list{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.timeline div{min-height:100px;padding:15px}.topbar nav{gap:11px}footer{flex-direction:column;padding:27px 16px}.script-card header{flex-wrap:wrap}.clean-principle{padding:20px}.clean-example .script-text{padding:18px}.template-card{padding:19px}.template-storage{padding:21px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.funnel a{transition:none}}
   </style>
 </head>
 <body id="top">
-  <header class="topbar"><div class="shell"><a class="brand" href="../">✦ Ателье Софи</a><nav aria-label="Разделы страницы"><a href="#route">Маршрут</a><a href="#stage-1">Консультация</a><a href="#stage-2">Заказ</a><a href="#stage-3">Оплата</a><a href="#handoff">Передача</a><a href="#scripts">Скрипты</a></nav></div></header>
+  <header class="topbar"><div class="shell"><a class="brand" href="../">✦ Ателье Софи</a><nav aria-label="Разделы страницы"><a href="#route">Маршрут</a><a href="#stage-1">Консультация</a><a href="#stage-2">Заказ</a><a href="#templates">Шаблоны</a><a href="#stage-3">Оплата</a><a href="#handoff">Передача</a><a href="#scripts">Скрипты</a></nav></div></header>
   <main>
-    <div class="hero"><div class="shell"><p class="eyebrow">Рабочий гайд · Отдел продаж</p><h1>Менеджер-контактер</h1><h2>Клиентская часть заказа</h2><p class="hero-lead">Ведёт клиента от первого знакомства до полностью собранного, оформленного и оплаченного заказа, готового к передаче в технический отдел.</p><a class="print-cta" href="./checklist.html"><span>Чек-лист для печати<small>Все три этапа на одном чёрно-белом листе A4</small></span><span aria-hidden="true">↗</span></a><div class="hero-summary"><p><strong>Главная задача — не просто получить оплату.</strong><br>Клиент должен понимать изделие и дальнейший путь; следующий сотрудник — получить все данные для работы.</p><span aria-hidden="true">↗</span></div><div class="quick-nav"><a href="#stage-1">01 · Знакомство</a><a href="#stage-2">02 · Данные и заказ</a><a href="#stage-3">03 · Счёт и оплата</a><a href="#ready">Готовность 100%</a></div></div></div>
+    <div class="hero"><div class="shell"><p class="eyebrow">Рабочий гайд · Отдел продаж</p><h1>Менеджер-контактер</h1><h2>Клиентская часть заказа</h2><p class="hero-lead">Ведёт клиента от первого знакомства до полностью собранного, оформленного и оплаченного заказа, готового к передаче в технический отдел.</p><a class="print-cta" href="./checklist.html"><span>Чек-лист для печати<small>Все три этапа на одном чёрно-белом листе A4</small></span><span aria-hidden="true">↗</span></a><div class="hero-summary"><p><strong>ЦКП менеджера-контактера</strong><br>Довольный клиент и полностью собранный, согласованный и оплаченный заказ, переданный техническому отделу без дополнительных уточнений. Для этого менеджер проводит максимально качественную консультацию, закрывает потребности клиента и, когда это уместно, повышает средний чек за счёт полезной комплектации и дополнительных изделий.</p><span aria-hidden="true">↗</span></div><div class="quick-nav"><a href="#stage-1">01 · Знакомство</a><a href="#stage-2">02 · Данные и заказ</a><a href="#templates">Рабочие шаблоны</a><a href="#stage-3">03 · Счёт и оплата</a><a href="#ready">Готовность 100%</a></div></div></div>
     <section id="route"><div class="shell"><div class="section-head"><h2>Один заказ — три этапа</h2><p>Знакомство, точный состав заказа и финансовое оформление — до передачи техническому отделу.</p></div><div class="funnel"><a href="#stage-1"><small>01</small><strong>Знакомство<br>и консультация</strong><b>→</b></a><a href="#stage-2"><small>02</small><strong>Сбор данных<br>и формирование заказа</strong><b>→</b></a><a href="#stage-3"><small>03</small><strong>Счёт → Сделка<br>→ оплата → чек</strong><b>→</b></a></div><div class="funnel-end">ЗАКАЗ ГОТОВ → ПЕРЕДАЧА В ТЕХНИЧЕСКИЙ ОТДЕЛ</div></div></section>
     <section class="stage alt" id="stage-1"><div class="shell"><div class="stage-title"><span class="stage-no">01</span><div><p class="eyebrow">Понять клиента и его собаку</p><h2>Знакомство и консультация</h2></div></div><p class="goal">Клиент понимает не только что он покупает, но и <strong>как Ателье Софи будет работать с его заказом</strong>.</p><div class="cards"><article class="card"><h3>Знакомство</h3><ul><li>Имя клиента, регион и населённый пункт</li><li>Кличка, порода, пол, возраст и актуальный вес собаки</li><li>Что клиент хочет и на чём особенно фокусируется</li></ul></article><article class="card"><h3>Потребность</h3><ul><li>Какие изделия нужны</li><li>Для какого сезона и условий прогулок</li><li>Что собака носит сейчас</li><li>Какие требования и пожелания важны клиенту</li></ul></article><article class="card"><h3>Экспертная консультация</h3><ul><li>Подходящие изделия и особенности посадки</li><li>Ткани, подклады и степени утепления</li><li>Конструкция и комплектация выбранной модели</li></ul><p class="mini">По вопросам и возражениям опираемся на актуальную информацию <a href="https://ateliersofi.ru/" target="_blank" rel="noopener noreferrer">сайта Ателье Софи</a>. Если ответа нет или требуется техническое решение — задаём вопрос в чате «Консилиум».</p></article><article class="card"><h3>Показываем наглядно</h3><ul><li>Фото изделий на собаках и видео посадки в движении</li><li>Как изделие надевать и снимать</li><li>Примеры на собаках похожей комплекции, когда это уместно</li></ul><p class="mini">Не отправляем всё пачкой: коротко объясняем, на что смотреть.</p></article><article class="card wide"><h3>Коммерческие возможности</h3><p>Помогаем полнее закрыть потребность, повысить средний чек и лояльность клиента. Проверяем действующие предложения: «Секретную комнату» для новых клиентов, систему лояльности, заказ через сайт и бонусы за регистрацию питомца. Если уместно, предлагаем дополнительные изделия или комплектацию — только в рамках актуальных условий.</p></article><div class="client-paths wide"><div class="client-path"><h3>Первичный клиент</h3><div class="path"><span>Разбор информации</span><i>→</i><span>Заказ и техническое задание</span><i>→</i><span>Оплата</span><i>→</i><span>Примерочный образец</span><i>→</i><span>Примерка и согласование посадки</span><i>→</i><span>Основное изделие</span></div><p>Объясняем, зачем нужен примерочный образец и что происходит после примерки.</p></div><div class="client-path"><h3>Повторный клиент</h3><div class="path"><span>Разбор информации</span><i>→</i><span>Заказ и техническое задание</span><i>→</i><span>Оплата</span><i>→</i><span>Основное изделие</span></div><p>Если готового лекала нет, технический отдел уточняет необходимость примерочного этапа.</p></div></div></div><div class="result"><strong>РЕЗУЛЬТАТ ЭТАПА 1</strong><p>Клиент и собака понятны · потребность выявлена · консультация и применимые коммерческие возможности отработаны · дальнейший путь объяснён.</p></div></div></section>
     <section class="stage" id="stage-2"><div class="shell"><div class="stage-title"><span class="stage-no">02</span><div><p class="eyebrow">От разговора — к конкретному заказу</p><h2>Сбор данных и формирование заказа</h2></div></div><p class="goal">После консультации собираем точные исходные данные и согласуем <strong>каждое изделие отдельно</strong>.</p><div class="cards"><article class="card"><h3>Мерки и материалы о собаке</h3><ul><li>Отправлена актуальная инструкция по снятию мерок</li><li>Получены фактические обхваты шеи, груди и талии</li><li>Мерки сняты с плотно прижатой к телу шерстью, без самостоятельных прибавок клиента</li><li>Актуальные вес и возраст известны</li><li>Получены информативное фото собаки стоя сбоку и необходимые видео</li><li>Сомнительные данные перепроверены</li></ul><p class="mini">Нужен фактический размер собаки — исходная точка для дальнейшего изготовления изделия.</p></article><article class="card"><h3>Особое внимание клиента</h3><p>Кратко отмечаем, на что клиент просит обратить особое внимание. Если вопрос нельзя решить в консультации или требуется техническое решение, задаём конкретный вопрос в чате «Консилиум».</p></article><article class="card wide"><h3>По каждому изделию — свой состав</h3><ul class="product-list"><li>Вид одежды</li><li>Модель и коллекция</li><li>Сезон</li><li>Слойность</li><li>Утепление: торс, лапы, капюшон</li><li>Капюшон: состав; если совпадает — «такой же»</li><li>Застёжка: молния или кнопки (кнопки — редко)</li><li>Кольца для поводка или шлёвки для ошейника</li><li>Кнопки для пристёгивания ботинок; штанины по всей длине лапы</li><li>Ткань верха: вид, цвет, номер</li><li>Подклад: вид, цвет, номер</li><li>Аксессуары и декор, если есть: бантики, пояски, мех, опушка, хвостник</li><li>Индивидуальные пожелания к изделию</li></ul></article><article class="card wide"><h3>Получение заказа</h3><ul><li>Удобный способ получения</li><li>Удобный филиал или пункт получения и его адрес</li><li>Данные для оформления доставки: фамилия, имя, отчество и телефон</li></ul></article></div><div class="result"><strong>РЕЗУЛЬТАТ ЭТАПА 2</strong><p>Фактические мерки, фото/видео, особые пожелания, состав каждого изделия и получение согласованы.</p></div></div></section>
+    <section class="work-templates" id="templates"><div class="shell"><p class="eyebrow">Рабочие инструменты этапа 2</p><div class="section-head"><h2>Сбор и формирование заказа</h2><p>Используйте шаблоны как чек-листы: сначала соберите все необходимые данные, затем заполните информацию по шаблону для передачи следующему отделу.</p></div>
+    <div class="template-storage"><h3>Куда прикреплять заполненную информацию по шаблонам</h3><p>Проверенную и подтверждённую информацию прикрепляем <strong>в комментариях к текущей Сделке</strong>. Каждый комментарий обязательно закрепляем, чтобы технический отдел сразу видел актуальные данные и не возвращался к менеджеру-контактеру с повторными вопросами.</p>
+      <div class="storage-flow">
+        <div class="storage-step"><b>01 · Для составления лекала</b><p>Информацию по шаблону «Составление лекала» размещаем одним самостоятельным закреплённым комментарием. К нему прикрепляем все фото и видео, необходимые для составления лекала и примерочного образца.</p></div>
+        <div class="storage-step"><b>02 · Для формирования бланка заказа</b><p>Информацию по шаблону «Составление бланка заказа» размещаем отдельным закреплённым комментарием на каждое изделие. Три изделия — три отдельных комментария.</p></div>
+        <div class="storage-step"><b>03 · Только актуальная версия</b><p>Перед закреплением проверяем, что данные согласованы с клиентом, не противоречат переписке и относятся именно к этой Сделке и этому изделию.</p></div>
+      </div>
+      <ul class="attachment-list" aria-label="Что прикрепить к комментарию для составления лекала">
+        <li>Фото или видео измерения обхвата шеи</li>
+        <li>Фото или видео измерения обхвата груди</li>
+        <li>Фото или видео измерения обхвата талии</li>
+        <li>Фото или видео измерения запястья передней лапы</li>
+        <li>Информативное фото питомца стоя сбоку</li>
+        <li>Необходимое видео питомца для оценки телосложения</li>
+      </ul>
+      <p class="template-note">На фото сбоку должны быть хорошо видны тело и лапы: техническому отделу важно оценить пропорции, длину штанин и индивидуальные особенности телосложения. Мерки можно подтвердить отдельными фотографиями или одним понятным видео, где последовательно виден каждый замер.</p>
+    </div>
+    <div class="data-sources"><h3>Откуда брать информацию для бланка заказа</h3><div class="source-grid">
+      <article class="source-card site"><h4>Проверяем на сайте Ателье Софи</h4><p>С актуального сайта <a href="https://ateliersofi.ru/" target="_blank" rel="noopener noreferrer">ateliersofi.ru</a> берём: номер и название модели; ткань верха — название, цвет и номер; подклад — название и вид ткани, цвет и номер; расположение светоотражающих элементов.</p></article>
+      <article class="source-card client"><h4>Берём из обсуждения с клиентом</h4><p>Из подтверждённой переписки или разговора берём: заказ; данные клиента и питомца; пол; вид одежды; сезон; дату отправки и доставку; утепление — тинсулейт; застёжку; кнопки на штанинах; решение для поводка; аксессуары; комментарий клиента к размеру.</p></article>
+    </div></div>
+    <div class="template-grid">
+      <article class="script-card template-card"><header><h3>Составление лекала</h3><button type="button" class="copy-script">Скопировать шаблон</button></header><pre class="script-text">СОСТАВЛЕНИЕ ЛЕКАЛА
+
+Заказ №:
+Клиент:
+Кличка:
+Порода:
+Пол:
+Возраст:
+Точный вес:
+Сезон лекала:
+Дата оплаты:
+
+Фактические мерки:
+
+Шея:
+Грудь:
+Талия:
+Запястье передней лапы:
+
+Фото собаки: прикреплено / нет
+Видео собаки: прикреплено / нет
+
+Комментарий клиента / на что обратить внимание:</pre><small class="copy-feedback" aria-live="polite"></small></article>
+      <article class="script-card template-card"><header><h3>Составление бланка заказа</h3><button type="button" class="copy-script">Скопировать шаблон</button></header><pre class="script-text">СОСТАВЛЕНИЕ БЛАНКА ЗАКАЗА
+
+Заказ название:
+Клиент:
+Питомец / кличка:
+Порода:
+Пол:
+
+Вид одежды: комбинезон / обувь
+Сезон: демисезон / зима / лето
+
+Дата оплаты:
+Дата отправки:
+Доставка:
+
+МОДЕЛЬ
+
+№ модели:
+Название модели:
+Коллекция:
+
+ТКАНЬ ВЕРХА
+
+По модели / замена:
+
+Если замена:
+Вместо: [название ткани] / [цвет] / №
+На: [название ткани] / [цвет] / №
+
+ПОДКЛАД
+
+Комбинезон: [ткань] / [цвет] / №
+Капюшон: [ткань] / [цвет] / №
+
+УТЕПЛЕНИЕ — ТИНСУЛЕЙТ
+
+Торс:
+Лапы:
+Капюшон:
+
+ЗАСТЁЖКА
+
+Молния / кнопки
+
+СВЕТООТРАЖАЮЩИЕ ЭЛЕМЕНТЫ
+
+По модели / изменения:
+Цвет:
+Расположение:
+
+КНОПКИ НА ШТАНИНЫ
+
+Да / нет
+Комментарий: носить с обувью / без обуви
+
+ДЛЯ ПОВОДКА
+
+Колечки для поводка / шлёвки для ошейника / не нужны
+
+АКСЕССУАРЫ
+
+Бантик:
+Поясок:
+Нахвостник:
+Дополнительный капюшон:
+Мех:
+Другие аксессуары:
+
+КОММЕНТАРИЙ К ЗАКАЗУ:
+
+КОММЕНТАРИЙ КЛИЕНТА К РАЗМЕРУ:</pre><small class="copy-feedback" aria-live="polite"></small></article>
+    </div>
+    <p class="clean-principle"><strong>Убираем белый шум.</strong> Следующему отделу всё должно быть понятно с первого прочтения.</p>
+    <div class="clean-rules" aria-label="Правила составления чистого бланка">
+      <article class="clean-rule"><h3>1 · Коллекция</h3><p>Если коллекции нет, пишем: <strong>«Коллекция: нет»</strong>.</p></article>
+      <article class="clean-rule"><h3>2 · Ткань верха</h3><p>Нет замены — удаляем «Если замена / Вместо / На». Оставляем только факт: <strong>«Мембрана Оранжевый №1204»</strong> или <strong>«По модели»</strong>.</p></article>
+      <article class="clean-rule"><h3>3 · Удаляем подсказки</h3><p>В готовом бланке не остаются скобки, прочерки, варианты выбора и служебные пояснения.</p></article>
+      <article class="clean-rule"><h3>4 · Подклад</h3><p>Указываем ткань, цвет и номер: <strong>«атлас фиолетовый №922»</strong>. Если капюшон совпадает: <strong>«такой же, как в комбинезоне»</strong>.</p></article>
+      <article class="clean-rule"><h3>5 · Светоотражающие элементы</h3><p>Коротко и конкретно: по модели, цвет, расположение.</p></article>
+      <article class="clean-rule"><h3>6 · Аксессуары</h3><p>Не оставляем пустой перечень. Если их нет, пишем: <strong>«Без аксессуаров»</strong>.</p></article>
+      <article class="clean-rule"><h3>7 · Комментарии</h3><p>«Комментарий к заказу» содержит полезную информацию об изделии. В «Комментарий клиента к размеру» записываем только слова клиента об особенностях собаки или прежних проблемах с посадкой. Технические решения и статус лекала сюда не переносим.</p></article>
+      <article class="clean-rule"><h3>Главный принцип</h3><p>Шаблон — чек-лист менеджера. В следующий отдел уходит очищенный бланк только с фактическими данными конкретного заказа.</p></article>
+    </div>
+    <div class="clean-check"><p><strong>Перед отправкой спросите себя:</strong> «Следующему отделу всё понятно с первого прочтения?»</p></div>
+    <details class="clean-example"><summary>Посмотреть пример готового чистого бланка</summary><pre class="script-text">СОСТАВЛЕНИЕ БЛАНКА ЗАКАЗА
+
+Заказ: 3972 Оксана
+Клиент: 3972 Оксана
+Питомец / кличка: Молли
+Порода: мальтипу
+Пол: девочка
+
+Вид одежды: комбинезон
+Сезон: зима
+
+Дата оплаты: 23.09.26
+Дата отправки: 13.09.26
+Доставка: Ozon
+
+МОДЕЛЬ
+
+№ модели: арт. 186
+Название модели: базовая (однотонная)
+Коллекция: нет
+
+ТКАНЬ ВЕРХА
+
+Мембрана Оранжевый №1204
+
+ПОДКЛАД
+
+Комбинезон: атлас фиолетовый №922
+Капюшон: такой же, как в комбинезоне
+
+УТЕПЛЕНИЕ — ТИНСУЛЕЙТ
+
+Торс: 150
+Лапы: 50
+Капюшон: 50
+
+ЗАСТЁЖКА
+
+Молния
+
+СВЕТООТРАЖАЮЩИЕ ЭЛЕМЕНТЫ
+
+По модели
+Цвет: оранжевый
+Расположение: воротник
+
+КНОПКИ НА ШТАНИНЫ
+
+Нет
+Комментарий: носить без обуви
+
+ДЛЯ ПОВОДКА
+
+Колечки для поводка
+
+АКСЕССУАРЫ
+
+Без аксессуаров
+
+КОММЕНТАРИЙ К ЗАКАЗУ
+
+Прикреплено фото модели и подклада.
+
+КОММЕНТАРИЙ КЛИЕНТА К РАЗМЕРУ
+
+Собачка сильно вытянутая. В предыдущих изделиях была проблема с длиной лап; клиент просит обратить внимание на длину штанин.</pre></details>
+    <p class="template-note">Эти шаблоны помогают менеджеру ничего не забыть. Они не заменяют проверку фактических данных заказа и не должны переноситься в производство вместе со служебными подсказками.</p>
+    </div></section>
     <section class="stage alt" id="stage-3"><div class="shell"><div class="stage-title"><span class="stage-no">03</span><div><p class="eyebrow">Порядок обязателен</p><h2>Счёт → Сделка → оплата → чек</h2></div></div><div class="timeline" aria-label="Порядок оформления"><div>Согласовать заказ и отправить клиенту полное описание</div><div>Выставить и отправить счёт</div><div>Подготовить Сделку и проверить данные</div><div>Получить 100% оплату, проверить сумму и поступление</div><div>Отбить чек и зафиксировать оплату</div><div>Передать готовый заказ в технический отдел</div></div><div class="split"><div><h3>До оплаты</h3><p>Все изделия, количество и комплектация согласованы; открытых вопросов, влияющих на заказ, нет. Счёт соответствует заказу и отправлен клиенту. Сделку заполняем <strong>до оплаты</strong>, не откладывая оформление на потом.</p></div><div><h3>Контакт и Сделка</h3><p>В существующем Контакте проверены обязательные сведения о клиенте и собаке. В уже созданной Сделке заполнены обязательные и соответствующие изделиям поля, комментарии и данные о получении.</p></div></div><div class="notice"><p><strong>Описание заказа — сначала клиенту, затем в Сделку.</strong> Перед оплатой отправляем клиенту полное описание заказа для согласования. После согласования копируем это сообщение в комментарий к Сделке без сокращений и потери деталей. Если изделий несколько, разделяем описание на «Изделие 1», «Изделие 2», «Изделие 3» и прикрепляем комментарий отдельно по каждому изделию. Соответствующие поля по изделиям в Сделке также заполняем. Переписка и звонки остаются источником исходных данных; будущий готовый бланк изготовления прикрепляется к Сделке.</p></div><div class="result"><strong>РЕЗУЛЬТАТ ЭТАПА 3</strong><p>Счёт выставлен · Сделка подготовлена и проверена · поступила 100% оплата · чек отбит и оплата зафиксирована.</p></div></div></section>
     <section id="ready"><div class="shell"><div class="section-head"><h2>Когда работа выполнена на 100%</h2><p>Шесть контрольных точек перед передачей заказа.</p></div><div class="six"><article><small>01</small><h3>Клиент</h3><p>Знакомство состоялось, потребность выявлена, консультация проведена, дальнейший путь понятен.</p></article><article><small>02</small><h3>Собака</h3><p>Возраст, вес, обхваты шеи, груди и талии, информативные фото и видео получены.</p></article><article><small>03</small><h3>Заказ</h3><p>Каждое изделие и его комплектация согласованы отдельно, полное описание отправлено клиенту.</p></article><article><small>04</small><h3>Коммерция</h3><p>Применимые предложения, лояльность и уместные дополнительные решения обсуждены при консультации.</p></article><article><small>05</small><h3>CRM</h3><p>Контакт обновлён, поля Сделки заполнены; согласованное описание каждого изделия скопировано в отдельный комментарий.</p></article><article><small>06</small><h3>Финансы</h3><p>Счёт выставлен, Сделка подготовлена до оплаты, 100% оплата проверена и чек отбит.</p></article></div></div></section>
     <section class="handoff" id="handoff"><div class="shell"><p class="eyebrow">Точка передачи</p><h2>Заказ готов к передаче в технический отдел</h2><div class="handoff-grid"><span>Полная консультация</span><span>Собранный заказ</span><span>Заполненная Сделка</span><span>100% оплата</span><span>Отбитый чек</span></div><p class="handoff-outcome">Контактер завершил клиентскую часть. Технические решения и дальнейшие производственные документы — следующий этап.</p><p class="handoff-next">Дальше: формирование лекала и бланка изготовления изделия.</p></div></section>
-    <section class="scripts" id="scripts"><div class="shell"><p class="eyebrow">Рабочая библиотека</p><div class="section-head"><h2>Готовые сообщения по этапам</h2><p>Короткие формулировки для переписки. Выбирайте нужную по ситуации и заменяйте данные в квадратных скобках.</p></div><p class="scripts-intro">Не отправляйте все вопросы подряд. Сначала слушайте ответ клиента, затем задавайте следующий уместный вопрос. При звонке используйте те же формулировки своими словами.</p>
+    <section class="scripts" id="scripts"><div class="shell"><p class="eyebrow">Рабочая библиотека</p><div class="section-head"><h2>Готовые сообщения по этапам</h2><p>Короткие формулировки для переписки. Выбирайте нужную по ситуации и заменяйте данные в квадратных скобках.</p></div><p class="scripts-intro">Не отправляйте все вопросы подряд. Сначала слушайте ответ клиента, затем задавайте следующий уместный вопрос. При звонке используйте те же формулировки своими словами.</p><div class="notice"><p><strong>Скрипты по самым частым вопросам и возражениям — в процессе написания.</strong> Раздел будет дополняться утверждёнными формулировками для рабочих ситуаций.</p></div>
       <div class="script-group"><h3>01 · Знакомство и консультация</h3><div class="script-grid">
         <article class="script-card"><header><h4>Первое знакомство</h4><button type="button" class="copy-script">Скопировать</button></header><p class="script-text">Здравствуйте, я [имя], Ателье Софи. Подскажите, как я могу к вам обращаться? Как зовут вашу собачку, какая у неё порода, возраст и вес? Какое изделие вы хотели бы подобрать?</p><p class="script-hint">Если имя клиента уже известно, не спрашивайте его повторно.</p><small class="copy-feedback" aria-live="polite"></small></article>
         <article class="script-card"><header><h4>Город и климат</h4><button type="button" class="copy-script">Скопировать</button></header><p class="script-text">Подскажите, пожалуйста, в каком городе вы живёте? Хочу учесть особенности вашего климата. Так я смогу посоветовать максимально подходящие ткани.</p><small class="copy-feedback" aria-live="polite"></small></article>
@@ -76,12 +274,14 @@ https://ateliersofi.ru/page/publicnaia-oferta
       const card=button.closest('.script-card');
       const value=card.querySelector('.script-text').textContent.trim();
       const feedback=card.querySelector('.copy-feedback');
+      const originalLabel=button.dataset.label||button.textContent;
+      button.dataset.label=originalLabel;
       try{
         if(navigator.clipboard&&window.isSecureContext) await navigator.clipboard.writeText(value);
         else{const area=document.createElement('textarea');area.value=value;area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.select();if(!document.execCommand('copy'))throw Error('copy failed');area.remove()}
-        feedback.textContent='Скопировано. Замените данные в квадратных скобках.';
+        feedback.textContent=card.classList.contains('template-card')?'Шаблон скопирован. Заполните и очистите его перед передачей.':'Скопировано. Замените данные в квадратных скобках.';
         button.textContent='Скопировано ✓';
-        setTimeout(()=>button.textContent='Скопировать',2400);
+        setTimeout(()=>button.textContent=originalLabel,2400);
       }catch(error){feedback.textContent='Не удалось скопировать автоматически. Выделите текст сообщения вручную.'}
     }));
   </script>
