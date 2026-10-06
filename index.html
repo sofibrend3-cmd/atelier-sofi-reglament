@@ -49,6 +49,18 @@
     .additional-head { margin:62px 0 25px; padding-top:28px; border-top:1px solid var(--line); }
     .additional-head h2 { margin:0 0 8px; font-size:clamp(30px,4vw,42px); }
     .additional-head p { margin:0; color:#71665e; }
+    .objections-hub { margin-top:62px; padding:38px; border:1px solid var(--wine-dark); background:var(--wine-dark); color:#fff; }
+    .objections-head { display:grid; grid-template-columns:1fr .8fr; gap:36px; align-items:end; margin-bottom:26px; }
+    .objections-head small { display:block; margin-bottom:10px; color:#f2c1b4; font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+    .objections-head h2 { margin:0; font-size:clamp(34px,5vw,52px); line-height:1; }
+    .objections-head p { margin:0; color:#f6ebe5; }
+    .objection-card { display:grid; grid-template-columns:90px 1fr auto; gap:26px; align-items:center; padding:24px; border:1px solid #ffffff5c; background:#fffdf90d; text-decoration:none; }
+    .objection-card:hover,.objection-card:focus-visible { background:#fff; color:var(--wine-dark); outline:none; }
+    .objection-number { display:grid; place-items:center; width:62px; height:62px; border:1px solid currentColor; border-radius:50%; font:400 24px/1 Georgia,serif; }
+    .objection-card h3 { margin:0 0 7px; font-size:29px; }
+    .objection-card p { margin:0; color:#f6ebe5; }
+    .objection-card:hover p,.objection-card:focus-visible p { color:#71665e; }
+    .objection-open { font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
     .reference { margin-top:18px; display:grid; grid-template-columns:180px 1fr auto; gap:30px; align-items:center; padding:28px 30px; color:#fff; background:var(--wine-dark); text-decoration:none; }
     .reference-label { color:#f2c1b4; font-size:12px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
     .reference h3 { margin:0 0 6px; font-size:27px; }
@@ -64,6 +76,9 @@
       .section-head { grid-template-columns:1fr; gap:18px; }
       .reference { grid-template-columns:1fr auto; }
       .reference-label { grid-column:1/-1; }
+      .objections-head { grid-template-columns:1fr; gap:14px; }
+      .objection-card { grid-template-columns:72px 1fr; }
+      .objection-open { grid-column:2; }
     }
     @media (max-width:620px) {
       .shell { width:min(100% - 32px,1160px); }
@@ -79,6 +94,10 @@
       main { padding:62px 0 72px; }
       .module { min-height:320px; padding:25px; }
       .module h3 { font-size:30px; }
+      .objections-hub { padding:26px 22px; }
+      .objection-card { grid-template-columns:1fr; padding:22px; }
+      .objection-number { width:48px; height:48px; }
+      .objection-open { grid-column:auto; }
       .reference { grid-template-columns:1fr; padding:26px; }
       .reference-arrow { display:none; }
       footer { flex-direction:column; padding:30px 20px; text-align:center; }
@@ -141,14 +160,20 @@
 
       </div>
 
+      <section class="objections-hub" aria-labelledby="objections-title">
+        <div class="objections-head">
+          <div><small>Отдельная рабочая база</small><h2 id="objections-title">Работа с возражениями</h2></div>
+          <p>Готовые алгоритмы и формулировки для сложных вопросов клиентов. Раздел будет пополняться новыми ситуациями.</p>
+        </div>
+        <a class="objection-card" href="./client-objections/">
+          <span class="objection-number">01</span>
+          <span><h3>Клиент говорит: «Комбинезон промокает»</h3><p>Уточняем путь попадания влаги, проверяем посадку и корректно объясняем разницу между непромокаемой тканью и готовым изделием.</p></span>
+          <span class="objection-open">Открыть инструкцию →</span>
+        </a>
+      </section>
+
       <div class="additional-head"><h2>Дополнительные разделы</h2><p>Практические материалы по отдельным случаям. Раздел будет пополняться.</p></div>
       <div class="modules">
-        <a class="module" href="./client-objections/">
-          <span class="module-number">РАБОТА С ВОЗРАЖЕНИЯМИ · 01</span>
-          <h3>«Комбинезон промокает»</h3>
-          <p>Как уточнить причину, объяснить свойства ткани, проверить посадку и при необходимости передать обращение на производство.</p>
-          <span class="module-link">Открыть инструкцию</span>
-        </a>
         <a class="module" href="./shoes-manager-guide/">
           <span class="module-number">КОНСУЛЬТАЦИЯ</span>
           <h3>Обувь — бегунок менеджера</h3>
