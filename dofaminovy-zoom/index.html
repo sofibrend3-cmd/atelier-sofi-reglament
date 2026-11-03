@@ -33,7 +33,7 @@
     .cover-copy::after{width:260px;height:260px;left:-120px;bottom:-120px;background:var(--pink)}
     .eyebrow{position:relative;margin:0 0 22px;color:var(--wine);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
     h1,h2,h3,p{margin-top:0}
-    h1{position:relative;margin-bottom:28px;font-family:Georgia,serif;font-size:clamp(58px,7.5vw,108px);font-weight:400;line-height:.86;letter-spacing:-.06em}
+    h1{position:relative;margin-bottom:28px;padding:.08em .08em .08em 0;font-family:Georgia,serif;font-size:clamp(58px,7.5vw,108px);font-weight:400;line-height:1;letter-spacing:-.035em}
     .lead{position:relative;max-width:650px;margin-bottom:28px;color:var(--muted);font-size:21px}
     .opening{padding:18px 0 52px}
     .opening-box{display:grid;grid-template-columns:repeat(3,1fr);min-height:280px;overflow:hidden;border:1px solid var(--line);background:#fff}
@@ -42,6 +42,7 @@
     .group{scroll-margin-top:90px}
     .group+.group{margin-top:76px}
     .group-head{display:grid;grid-template-columns:210px 1fr;gap:30px;align-items:end;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+    .group-head.no-kicker{grid-template-columns:1fr}
     .group-kicker{color:var(--wine);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
     .group-head h2{margin:0;font-family:Georgia,serif;font-size:clamp(36px,5vw,58px);font-weight:400;line-height:1}
     .products{display:grid;gap:18px}
@@ -93,7 +94,7 @@
         <div class="cover-copy">
           <p class="eyebrow">Коллекция Ателье Софи</p>
           <h1>Дофаминовый зум</h1>
-          <p class="lead">Яркие зимние комбинезоны: мягкие шубки, сияющие ткани и сочные сочетания мембраны. Все модели коллекции собраны на одной странице.</p>
+          <p class="lead">Яркие комбинезоны: мягкие шубки, сияющие ткани и сочные сочетания мембраны.</p>
         </div>
       </div>
     </section>
@@ -109,23 +110,23 @@
 
   <script>
     const groups=[
-      {kicker:'Мягкая линия',title:'Микки-комфортик',products:[
-        {name:'Микки-комфортик — Синий',article:'161',price:'14 500 ₽',description:'Комбинезон с мягкой синей шубкой и ушками Микки. Яркий образ для зимних прогулок.',materials:'Ткань «Сияние», мех синий №1302',lining:'Атлас тёмно-синий №9524',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['comfort-blue-2.jpg','comfort-blue-1.jpg','comfort-blue-3.jpg']},
-        {name:'Микки-комфортик — Красный',article:'162',price:'14 500 ₽',description:'Красный комбинезон с мягкой шубкой и узнаваемыми ушками Микки. Тёплая выразительная модель для холодного сезона.',materials:'Ткань «Сияние», мех красный №1301',lining:'Атлас красный №9702',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['comfort-red-1.jpg','comfort-red-2.jpg','comfort-red-3.jpg']},
-        {name:'Микки-комфортик — Зелёный',article:'163',price:'14 500 ₽',description:'Сочная зелёная шубка сочетается с тёмно-изумрудными деталями и ушками Микки.',materials:'Ткань «Сияние», мех зелёный №1303',lining:'Атлас бутылочный №9420',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['comfort-green-1.jpg','comfort-green-2.jpg','comfort-green-3.jpg']},
-        {name:'Дьяволёнок-комфортик',article:'',price:'14 500 ₽',description:'Красная утеплённая модель с мягкой шубкой и чёрными рожками.',materials:'Ткань «Сияние» алый №501, мех красный №1301',lining:'Атлас красный №9702',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['devil-comfort-1.jpg','devil-comfort-2.jpg']},
-        {name:'Дьяволёнок',article:'',price:'11 300 ₽',description:'Сияющая красно-серебристая модель с контрастными чёрными рожками.',materials:'«Милан» серебро №401, «Сияние» алый №501',lining:'Атлас красный №9702',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['devil-drip-1.jpg']}
+      {kicker:'',title:'Микки-комфортик',products:[
+        {name:'Микки-комфортик — Синий',article:'161',price:'14 500 ₽',season:'Зима',description:'Комбинезон с мягкой синей шубкой и ушками Микки. Яркий образ для зимних прогулок.',materials:'Курточная ткань «Сияние», мех синий №1302',lining:'Атлас тёмно-синий №9524',photos:['comfort-blue-2.jpg','comfort-blue-1.jpg','comfort-blue-3.jpg']},
+        {name:'Микки-комфортик — Красный',article:'162',price:'14 500 ₽',season:'Зима',description:'Красный комбинезон с мягкой шубкой и узнаваемыми ушками Микки. Тёплая выразительная модель для холодного сезона.',materials:'Курточная ткань «Сияние», мех красный №1301',lining:'Атлас красный №9702',photos:['comfort-red-1.jpg','comfort-red-2.jpg','comfort-red-3.jpg']},
+        {name:'Микки-комфортик — Зелёный',article:'163',price:'14 500 ₽',season:'Зима',description:'Сочная зелёная шубка сочетается с тёмно-изумрудными деталями и ушками Микки.',materials:'Курточная ткань «Сияние», мех зелёный №1303',lining:'Атлас бутылочный №9420',photos:['comfort-green-1.jpg','comfort-green-2.jpg','comfort-green-3.jpg']},
+        {name:'Дьяволёнок-комфортик',article:'',price:'14 500 ₽',season:'Зима',description:'Красная утеплённая модель с мягкой шубкой и чёрными рожками.',materials:'Курточная ткань «Сияние», алый №501; мех красный №1301',lining:'Атлас красный №9702',photos:['devil-comfort-1.jpg','devil-comfort-2.jpg']},
+        {name:'Дьяволёнок',article:'',price:'11 300 ₽',season:'Зима, демисезон',description:'Сияющая красно-серебристая модель с контрастными чёрными рожками.',materials:'Курточная ткань «Милан», серебро №401; курточная ткань «Сияние», алый №501',lining:'Атлас красный №9702',photos:['devil-drip-1.jpg']}
       ]},
       {kicker:'Сияющая линия',title:'Микки-дрип',products:[
-        {name:'Микки-дрип — Фуксия',article:'157',price:'11 300 ₽',description:'Фуксия и серебро в выразительной модели с ушками Микки.',materials:'«Милан» серебро №401, «Сияние» малина №504',lining:'Атлас ярко-розовый №9820',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['drip-fuchsia-1.jpg','drip-fuchsia-2.jpg','drip-fuchsia-3.jpg','drip-fuchsia-4.jpg','drip-fuchsia-5.jpg','drip-fuchsia-6.jpg','drip-fuchsia-7.jpg','drip-fuchsia-8.jpg','drip-fuchsia-9.jpg','drip-fuchsia-10.jpg','drip-fuchsia-11.jpg','drip-fuchsia-12.jpg']},
-        {name:'Микки-дрип — Сапфировый',article:'158',price:'11 300 ₽',description:'Глубокий сапфировый оттенок и серебристый «Милан» создают холодное сияющее сочетание.',materials:'«Милан» серебро №401, «Сияние» тёмный сапфир №502',lining:'Атлас тёмно-синий №9524',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['drip-sapphire-1.jpg','drip-sapphire-2.jpg','drip-sapphire-3.jpg','drip-sapphire-4.jpg','drip-sapphire-5.jpg','drip-sapphire-6.jpg','drip-sapphire-7.jpg','drip-sapphire-8.jpg','drip-sapphire-9.jpg','drip-sapphire-10.jpg']},
-        {name:'Микки-дрип — Алый',article:'159',price:'11 300 ₽',description:'Алый цвет, серебристые вставки и ушки Микки — яркая модель для зимы.',materials:'«Милан» серебро №401, «Сияние» алый №501',lining:'Атлас красный №9702',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['drip-scarlet-1.jpg','drip-scarlet-2.jpg','drip-scarlet-3.jpg','drip-scarlet-4.jpg','drip-scarlet-5.jpg','drip-scarlet-7.jpg','drip-scarlet-9.jpg','drip-scarlet-10.jpg','drip-scarlet-11.jpg','drip-scarlet-12.jpg','drip-scarlet-13.jpg']},
-        {name:'Микки-дрип — Изумрудный',article:'160',price:'11 300 ₽',description:'Тёмный изумруд соединён с серебром и дополнен ушками Микки.',materials:'«Милан» серебро №401, «Сияние» тёмный изумруд №503',lining:'Атлас бутылочный №9420',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['drip-emerald-1.jpg','drip-emerald-2.jpg','drip-emerald-3.jpg','drip-emerald-4.jpg','drip-emerald-5.jpg','drip-emerald-6.jpg','drip-emerald-7.jpg','drip-emerald-8.jpg']}
+        {name:'Микки-дрип — Фуксия',article:'157',price:'11 300 ₽',season:'Зима, демисезон',description:'Фуксия и серебро в выразительной модели с ушками Микки.',materials:'Курточная ткань «Милан», серебро №401; курточная ткань «Сияние», малина №504',lining:'Атлас ярко-розовый №9820',photos:['drip-fuchsia-1.jpg','drip-fuchsia-2.jpg','drip-fuchsia-3.jpg','drip-fuchsia-4.jpg','drip-fuchsia-5.jpg','drip-fuchsia-6.jpg','drip-fuchsia-7.jpg','drip-fuchsia-8.jpg','drip-fuchsia-9.jpg','drip-fuchsia-10.jpg','drip-fuchsia-11.jpg','drip-fuchsia-12.jpg']},
+        {name:'Микки-дрип — Сапфировый',article:'158',price:'11 300 ₽',season:'Зима, демисезон',description:'Глубокий сапфировый оттенок и серебристый «Милан» создают холодное сияющее сочетание.',materials:'Курточная ткань «Милан», серебро №401; курточная ткань «Сияние», тёмный сапфир №502',lining:'Атлас тёмно-синий №9524',photos:['drip-sapphire-1.jpg','drip-sapphire-2.jpg','drip-sapphire-3.jpg','drip-sapphire-4.jpg','drip-sapphire-5.jpg','drip-sapphire-6.jpg','drip-sapphire-7.jpg','drip-sapphire-8.jpg','drip-sapphire-9.jpg','drip-sapphire-10.jpg']},
+        {name:'Микки-дрип — Алый',article:'159',price:'11 300 ₽',season:'Зима, демисезон',description:'Алый цвет, серебристые вставки и ушки Микки — яркая модель для зимы и демисезона.',materials:'Курточная ткань «Милан», серебро №401; курточная ткань «Сияние», алый №501',lining:'Атлас красный №9702',photos:['drip-scarlet-1.jpg','drip-scarlet-2.jpg','drip-scarlet-3.jpg','drip-scarlet-4.jpg','drip-scarlet-5.jpg','drip-scarlet-7.jpg','drip-scarlet-9.jpg','drip-scarlet-10.jpg','drip-scarlet-11.jpg','drip-scarlet-12.jpg','drip-scarlet-13.jpg']},
+        {name:'Микки-дрип — Изумрудный',article:'160',price:'11 300 ₽',season:'Зима, демисезон',description:'Тёмный изумруд соединён с серебром и дополнен ушками Микки.',materials:'Курточная ткань «Милан», серебро №401; курточная ткань «Сияние», тёмный изумруд №503',lining:'Атлас бутылочный №9420',photos:['drip-emerald-1.jpg','drip-emerald-2.jpg','drip-emerald-3.jpg','drip-emerald-4.jpg','drip-emerald-5.jpg','drip-emerald-6.jpg','drip-emerald-7.jpg','drip-emerald-8.jpg']}
       ]},
       {kicker:'Яркая мембрана',title:'Цвет включён',products:[
-        {name:'Оранжевая имба',article:'164',price:'11 200 ₽',description:'Контрастный оранжево-голубой комбинезон из мембраны для заметных прогулок.',materials:'Мембрана оранжевая №1204 и лазурная №1209',lining:'Атлас жёлтый №9911A',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['membrane-orange-1.jpg','membrane-orange-2.jpg','membrane-orange-3.jpg']},
-        {name:'Мятный слэй',article:'165',price:'11 200 ₽',description:'Светло-зелёная мембрана с малиновыми акцентами и яркой окантовкой.',materials:'Мембрана светло-зелёная №1205 и малиновая №1214',lining:'Атлас розовый №9814',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['membrane-mint-1.jpg','membrane-mint-2.jpg','membrane-mint-3.jpg']},
-        {name:'Лимонный краш',article:'166',price:'11 200 ₽',description:'Лимонно-салатовый комбинезон из мембраны с розовой окантовкой.',materials:'Мембрана жёлтая №1203 и лайм №1206',lining:'Атлас малиновый №918',insulation:'Тинсулейт 150 на туловище, 50 на лапах и капюшоне',photos:['membrane-lemon-1.jpg','membrane-lemon-2.jpg','membrane-lemon-3.jpg']}
+        {name:'Оранжевая имба',article:'164',price:'11 200 ₽',season:'Зима, демисезон',description:'Контрастный оранжево-голубой комбинезон из мембраны для заметных прогулок. Для собачек весом более 4 кг.',materials:'Курточная мембранная ткань: оранжевая №1204 и лазурная №1209',lining:'Атлас жёлтый №9911A',photos:['membrane-orange-1.jpg','membrane-orange-2.jpg','membrane-orange-3.jpg','membrane-orange-4.jpg','membrane-orange-5.jpg','membrane-orange-6.jpg','membrane-orange-7.jpg','membrane-orange-8.jpg','membrane-orange-9.jpg','membrane-orange-10.jpg']},
+        {name:'Мятный слэй',article:'165',price:'11 200 ₽',season:'Зима, демисезон',description:'Светло-зелёная мембрана с малиновыми акцентами и яркой окантовкой. Для собачек весом более 4 кг.',materials:'Курточная мембранная ткань: светло-зелёная №1205 и малиновая №1214',lining:'Атлас розовый №9814',photos:['membrane-mint-1.jpg','membrane-mint-2.jpg','membrane-mint-3.jpg','membrane-mint-4.jpg','membrane-mint-5.jpg','membrane-mint-6.jpg','membrane-mint-7.jpg','membrane-mint-8.jpg','membrane-mint-9.jpg','membrane-mint-10.jpg','membrane-mint-11.jpg','membrane-mint-12.jpg']},
+        {name:'Лимонный краш',article:'166',price:'11 200 ₽',season:'Зима, демисезон',description:'Лимонно-салатовый комбинезон из мембраны с розовой окантовкой. Для собачек весом более 4 кг.',materials:'Курточная мембранная ткань: жёлтая №1203 и лайм №1206',lining:'Атлас малиновый №918',photos:['membrane-lemon-1.jpg','membrane-lemon-2.jpg','membrane-lemon-3.jpg','membrane-lemon-4.jpg','membrane-lemon-5.jpg','membrane-lemon-6.jpg','membrane-lemon-7.jpg','membrane-lemon-8.jpg','membrane-lemon-9.jpg']}
       ]}
     ];
 
@@ -137,7 +138,7 @@
       const section=document.createElement('section');
       section.className='group';
       section.id=`group-${groupIndex+1}`;
-      section.innerHTML=`<div class="group-head"><span class="group-kicker">${esc(group.kicker)}</span><h2>${esc(group.title)}</h2></div><div class="products"></div>`;
+      section.innerHTML=`<div class="group-head${group.kicker?'':' no-kicker'}">${group.kicker?`<span class="group-kicker">${esc(group.kicker)}</span>`:''}<h2>${esc(group.title)}</h2></div><div class="products"></div>`;
       const list=section.querySelector('.products');
       group.products.forEach((product,productIndex)=>{
         const card=document.createElement('article');
@@ -155,8 +156,8 @@
             <h3>${esc(product.name)}</h3>
             <p class="description">${esc(product.description)}</p>
             <dl class="details">
-              <div class="detail"><dt>Сезон</dt><dd>Зима</dd></div>
-              <div class="detail"><dt>Материалы</dt><dd>Курточные непромокаемые ткани</dd></div>
+              <div class="detail"><dt>Сезон</dt><dd>${esc(product.season)}</dd></div>
+              <div class="detail"><dt>Материалы</dt><dd>${esc(product.materials)}</dd></div>
               <div class="detail"><dt>Подклад</dt><dd>${esc(product.lining)}. При необходимости подберём вариант под вашу собачку и климат вашего региона.</dd></div>
               <div class="detail"><dt>Утепление</dt><dd>Подберем утепление, которое нужно именно вашей собачке в вашем регионе.</dd></div>
             </dl>
