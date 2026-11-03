@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f1e9">
+  <meta name="theme-color" content="#faf8f6">
   <title>Мембрана 3000/3000 — Ателье Софи</title>
   <meta name="description" content="Свойства, однотонные варианты и принты ткани Мембрана 3000/3000 для одежды питомцев Ателье Софи.">
   <meta property="og:title" content="Мембрана 3000/3000 — Ателье Софи">
@@ -12,8 +12,8 @@
   <meta property="og:image" content="https://sofibrend3-cmd.github.io/atelier-sofi-reglament/fabric-membrane-3000/assets/look-01.jpg">
   <style>
     :root{
-      --paper:#f5f1e9;--white:#fff;--ink:#101827;--muted:#68707d;--line:#d9d3c8;
-      --navy:#12243d;--blue:#cde9f0;--lime:#d9ee63;--pink:#ee6c83;--radius:26px;
+      --paper:#faf8f6;--white:#fff;--ink:#2d2724;--muted:#776b65;--line:#ded4ce;
+      --navy:#8f281b;--blue:#f3eeeb;--lime:#f3eeeb;--pink:#f1e7e3;--terracotta:#b6533f;--radius:26px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -22,58 +22,57 @@
     a{color:inherit}
     button{font:inherit}
     .shell{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    .topbar{position:sticky;top:0;z-index:20;background:rgba(245,241,233,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,24,39,.12)}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(250,248,246,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{text-decoration:none;font-family:Georgia,serif;font-size:24px;letter-spacing:.02em}
     .nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
     .nav a{text-decoration:none}
     .nav .nav-cta{padding:11px 17px;border:1px solid var(--ink);border-radius:999px}
     .hero{padding:42px 0 28px}
-    .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;min-height:620px;border:1px solid var(--line);border-radius:34px;overflow:hidden;background:var(--white)}
+    .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;min-height:620px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--white)}
     .hero-copy{padding:clamp(34px,6vw,76px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-    .eyebrow{margin:0 0 20px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow{margin:0 0 20px;color:var(--terracotta);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
     h1,h2,h3,p{margin-top:0}
-    h1{font-family:Georgia,serif;font-size:clamp(48px,7.2vw,92px);line-height:.91;letter-spacing:-.055em;margin-bottom:26px}
+    h1{color:var(--navy);font-family:Georgia,serif;font-size:clamp(48px,7.2vw,92px);line-height:.91;letter-spacing:-.055em;margin-bottom:26px}
     .lead{font-size:clamp(18px,2vw,23px);line-height:1.42;max-width:550px;color:#333e4e;margin-bottom:30px}
-    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:3px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800}
     .hero-media{position:relative;background:#f8f8f6;min-height:420px}
     .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .hero-label{position:absolute;left:22px;bottom:22px;background:rgba(255,255,255,.9);padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;backdrop-filter:blur(8px)}
+    .hero-label{position:absolute;left:22px;bottom:22px;background:rgba(255,255,255,.92);padding:10px 14px;border:1px solid var(--line);font-size:12px;font-weight:800;backdrop-filter:blur(8px)}
     .section{padding:86px 0}
     .section-tight{padding:42px 0 84px}
     .section-head{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-bottom:34px}
     .section-head h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,68px);line-height:1;letter-spacing:-.035em;margin-bottom:0}
     .section-head p{font-size:18px;color:var(--muted);margin-bottom:4px;max-width:560px}
     .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .fact{min-height:190px;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--white);display:flex;flex-direction:column;justify-content:space-between}
-    .fact:nth-child(1){background:var(--blue)}.fact:nth-child(3){background:var(--lime)}
+    .fact{min-height:190px;padding:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;display:flex;flex-direction:column;justify-content:space-between}
     .fact-num{font-size:12px;font-weight:800;letter-spacing:.14em}
     .fact h3{font-size:23px;line-height:1.12;margin:0}
-    .info-panel{display:grid;grid-template-columns:1fr 1fr;border-radius:30px;overflow:hidden;background:var(--navy);color:#fff}
-    .info-title{padding:clamp(32px,5vw,60px);background:linear-gradient(145deg,#162d4c,#0d1829)}
+    .info-panel{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--white);color:var(--ink)}
+    .info-title{padding:clamp(32px,5vw,60px);border-right:1px solid var(--line);background:var(--soft,#f1ebe7)}
     .info-title h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,64px);line-height:1;margin-bottom:18px}
-    .info-title p{color:#c7d1df;margin-bottom:0;font-size:17px}
+    .info-title p{color:var(--muted);margin-bottom:0;font-size:17px}
     .info-list{padding:clamp(30px,5vw,58px);display:grid;gap:0}
-    .info-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+    .info-item{padding:20px 0;border-bottom:1px solid var(--line)}
     .info-item:first-child{padding-top:0}.info-item:last-child{border-bottom:0;padding-bottom:0}
-    .info-item strong{display:block;font-size:19px;margin-bottom:5px}.info-item span{color:#c7d1df}
+    .info-item strong{display:block;font-size:19px;margin-bottom:5px}.info-item span{color:var(--muted)}
     .look-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .look-card{position:relative;border:0;padding:0;border-radius:24px;overflow:hidden;background:#fff;cursor:zoom-in;aspect-ratio:3/2}
+    .look-card{position:relative;border:1px solid var(--line);padding:0;overflow:hidden;background:#fff;cursor:zoom-in;aspect-ratio:3/2}
     .look-card img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
     .look-card:hover img{transform:scale(1.018)}
-    .look-card span,.swatch-card span{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);padding:8px 11px;border-radius:999px;font-size:12px;font-weight:800}
+    .look-card span,.swatch-card span{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);padding:8px 11px;border:1px solid var(--line);font-size:12px;font-weight:800}
     .gallery-note{display:flex;gap:12px;align-items:flex-start;margin:0 0 26px;color:var(--muted)}
     .gallery-note::before{content:'i';flex:0 0 24px;height:24px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
     .swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .swatch-card{position:relative;border:0;padding:0;border-radius:18px;overflow:hidden;background:#ddd;cursor:zoom-in;aspect-ratio:3/4}
+    .swatch-card{position:relative;border:1px solid var(--line);padding:0;overflow:hidden;background:#ddd;cursor:zoom-in;aspect-ratio:3/4}
     .swatch-card img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
     .swatch-card:hover img{transform:scale(1.025)}
-    .prints{background:#e7e1d7}
+    .prints{background:#f3eeeb;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .cta{padding:82px 0}
-    .cta-box{padding:clamp(38px,7vw,90px);border-radius:34px;background:var(--pink);color:#24121b;text-align:center}
+    .cta-box{padding:clamp(38px,7vw,90px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white);color:var(--ink);text-align:center}
     .cta-box h2{font-family:Georgia,serif;font-size:clamp(40px,6vw,76px);line-height:.98;max-width:850px;margin:0 auto 22px;letter-spacing:-.04em}
     .cta-box p{font-size:19px;max-width:680px;margin:0 auto 28px}
-    .cta-box .button{background:#1a1520}
+    .cta-box .button{background:var(--navy)}
     footer{padding:26px 0 42px;color:var(--muted);font-size:14px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
     .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(7,11,18,.94)}
@@ -82,10 +81,10 @@
     .lightbox-close{position:absolute;right:22px;top:18px;border:1px solid rgba(255,255,255,.5);border-radius:50%;width:46px;height:46px;background:rgba(0,0,0,.3);color:#fff;font-size:28px;cursor:pointer}
     .lightbox-caption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.55);padding:8px 13px;border-radius:999px;font-size:13px;white-space:nowrap}
     @media (max-width:900px){
-      .nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:44px 28px}.hero-media{min-height:460px}.section-head{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.info-panel{grid-template-columns:1fr}.swatch-grid{grid-template-columns:repeat(3,1fr)}
+      .nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:44px 28px}.hero-media{min-height:460px}.section-head{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.info-panel{grid-template-columns:1fr}.info-title{border-right:0;border-bottom:1px solid var(--line)}.swatch-grid{grid-template-columns:repeat(3,1fr)}
     }
     @media (max-width:620px){
-      .shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.nav-cta{padding:8px 12px!important;font-size:12px}.hero{padding-top:14px}.hero-grid{border-radius:24px;min-height:0}.hero-copy{padding:34px 22px}.hero-media{min-height:330px}.section{padding:62px 0}.section-tight{padding:28px 0 62px}.facts{grid-template-columns:1fr 1fr;gap:8px}.fact{min-height:150px;padding:18px}.fact h3{font-size:18px}.look-grid{grid-template-columns:1fr}.swatch-grid{grid-template-columns:repeat(2,1fr);gap:8px}.swatch-card{border-radius:14px}.info-title,.info-list{padding:30px 22px}.cta{padding:56px 0}.cta-box{border-radius:24px;padding:44px 22px}.footer-inner{flex-direction:column}
+      .shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.nav-cta{padding:8px 12px!important;font-size:12px}.hero{padding-top:14px}.hero-grid{min-height:0}.hero-copy{padding:34px 22px}.hero-media{min-height:330px}.section{padding:62px 0}.section-tight{padding:28px 0 62px}.facts{grid-template-columns:1fr 1fr;gap:8px}.fact{min-height:150px;padding:18px}.fact h3{font-size:18px}.look-grid{grid-template-columns:1fr}.swatch-grid{grid-template-columns:repeat(2,1fr);gap:8px}.info-title,.info-list{padding:30px 22px}.cta{padding:56px 0}.cta-box{padding:44px 22px}.footer-inner{flex-direction:column}
     }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.look-card img,.swatch-card img{transition:none}}
   </style>
@@ -93,7 +92,7 @@
 <body id="top">
   <header class="topbar">
     <div class="shell topbar-inner">
-      <a class="brand" href="../vitrina/" aria-label="Перейти ко всей витрине Atelier Sofi">Atelier Sofi · Витрина</a>
+      <a class="brand" href="../vitrina/" aria-label="Перейти ко всей витрине Ателье Софи">Ателье Софи · Витрина</a>
       <nav class="nav" aria-label="Навигация по странице">
         <a href="../vitrina/">Вся витрина</a><a href="#about">О ткани</a><a href="#looks">В изделии</a><a href="#colors">Расцветки</a><a class="nav-cta" href="#choose">Как выбрать</a>
       </nav>
@@ -211,7 +210,7 @@
     </section>
   </main>
 
-  <footer><div class="shell footer-inner"><a href="../vitrina/">← Вся витрина Atelier Sofi</a><span>Индивидуальный пошив одежды для питомцев</span></div></footer>
+  <footer><div class="shell footer-inner"><a href="../vitrina/">← Вся витрина Ателье Софи</a><span>Индивидуальный пошив одежды для питомцев</span></div></footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
     <button class="lightbox-close" type="button" aria-label="Закрыть">×</button>
