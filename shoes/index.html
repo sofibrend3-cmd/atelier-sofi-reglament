@@ -58,6 +58,10 @@
     .search:focus{border-color:var(--wine);box-shadow:0 0 0 3px rgba(143,40,27,.1)}
     .series-note{display:none;margin:0 0 24px;padding:20px 22px;border-left:3px solid var(--terracotta);background:rgba(255,255,255,.72);color:var(--muted)}
     .series-note.show{display:block}
+    .article-index{display:none;grid-template-columns:repeat(3,1fr);gap:8px;margin:-10px 0 24px}
+    .article-index.show{display:grid}
+    .article-index span{display:flex;justify-content:space-between;gap:14px;padding:12px 14px;border:1px solid var(--line);background:#fff;font-size:14px}
+    .article-index strong{color:var(--wine)}
     .color-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .color-card{overflow:hidden;border:1px solid var(--line);background:#fff}
     .color-main{position:relative;aspect-ratio:4/5;background:#f7f7f5;cursor:zoom-in;border:0;padding:0;width:100%;overflow:hidden}
@@ -89,7 +93,7 @@
     .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(20,16,14,.94)}
     .lightbox.open{display:flex}.lightbox img{max-width:min(96vw,1500px);max-height:88vh;object-fit:contain}.lightbox-close{position:absolute;right:22px;top:18px;width:46px;height:46px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(0,0,0,.3);color:#fff;font-size:28px;cursor:pointer}.lightbox-caption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);max-width:90vw;padding:8px 13px;border-radius:999px;background:rgba(0,0,0,.58);color:#fff;font-size:13px;text-align:center}
     @media(max-width:980px){.nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-media{min-height:540px}.type-grid{grid-template-columns:1fr}.type-card{min-height:190px}.catalog-tools{grid-template-columns:1fr}.search{min-width:0;width:100%}.color-grid{grid-template-columns:repeat(2,1fr)}.agt-panel{grid-template-columns:1fr}.agt-media{min-height:480px}}
-    @media(max-width:620px){.shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.nav-cta{padding:8px 12px!important;font-size:12px}.hero{padding-top:14px}.hero-grid{min-height:0}.hero-copy{padding:38px 22px}.hero-media{min-height:430px;grid-template-columns:1fr 1fr;grid-template-rows:1.2fr .8fr}.hero-media img:first-child{grid-column:1/-1;grid-row:auto}.availability-box{grid-template-columns:1fr;padding:22px}.section,.agt{padding:62px 0}.section-head{grid-template-columns:1fr}.catalog{padding:60px 0}.tabs{display:grid;grid-template-columns:1fr 1fr}.tab:last-child{grid-column:1/-1}.color-grid{grid-template-columns:1fr}.color-main{aspect-ratio:5/4}.agt-copy{padding:38px 22px}.agt-media{min-height:340px}.cta{padding-bottom:58px}.footer-inner{flex-direction:column}}
+    @media(max-width:620px){.shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.nav-cta{padding:8px 12px!important;font-size:12px}.hero{padding-top:14px}.hero-grid{min-height:0}.hero-copy{padding:38px 22px}.hero-media{min-height:430px;grid-template-columns:1fr 1fr;grid-template-rows:1.2fr .8fr}.hero-media img:first-child{grid-column:1/-1;grid-row:auto}.availability-box{grid-template-columns:1fr;padding:22px}.section,.agt{padding:62px 0}.section-head{grid-template-columns:1fr}.catalog{padding:60px 0}.tabs{display:grid;grid-template-columns:1fr 1fr}.tab:last-child{grid-column:1/-1}.article-index{grid-template-columns:1fr}.color-grid{grid-template-columns:1fr}.color-main{aspect-ratio:5/4}.agt-copy{padding:38px 22px}.agt-media{min-height:340px}.cta{padding-bottom:58px}.footer-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.color-main img{transition:none}}
   </style>
 </head>
@@ -117,7 +121,7 @@
         </div>
       </div>
       <div class="shell availability" id="availability">
-        <div class="availability-box"><span class="availability-mark">!</span><div><strong>Обувь доступна только из наличия</strong><p>Перед выбором обязательно уточните у менеджера наличие нужного размера и цвета.</p></div></div>
+        <div class="availability-box"><span class="availability-mark">!</span><div><strong>Наличие размера и цвета обязательно уточняйте у менеджера</strong><p>Стандартные размеры 1 и 2 — в ограниченном количестве: второго размера практически не осталось, первого ещё немного есть. Больше остатков в размерах 3, 4, 5 и АГТ, но не во всех цветах.</p></div></div>
       </div>
     </section>
 
@@ -126,8 +130,8 @@
         <div class="section-head"><h2>Как разделены модели</h2><p>Высота защитной заливки связана с сезоном, а АГТ — с формой лапы. В каталоге ниже фотографии уже собраны по этим сериям и цветам.</p></div>
         <div class="type-grid">
           <article class="type-card"><span>01 · Демисезон</span><div><h3>Повышенная заливка</h3><p>Для защиты лап в сезон дорожных реагентов.</p></div></article>
-          <article class="type-card"><span>02 · Зима</span><div><h3>Невысокая заливка и утепление</h3><p>Зимняя серия с утеплённым серым подкладом.</p></div></article>
-          <article class="type-card"><span>03 · Посадка</span><div><h3>Размеры АГТ</h3><p>Для удлинённых тонких лап. Отдельная серия с разной высотой застёжки.</p></div></article>
+          <article class="type-card"><span>02 · Зима</span><div><h3>Обычная и утеплённая</h3><p>Зимняя обувь с невысокой заливкой. Утеплённый вариант дополнен войлочной стелькой.</p></div></article>
+          <article class="type-card"><span>03 · Зима и посадка</span><div><h3>Зимние утеплённые АГТ</h3><p>Для удлинённых тонких лап. Отдельная серия с разной высотой застёжки.</p></div></article>
         </div>
       </div>
     </section>
@@ -137,13 +141,19 @@
         <div class="section-head"><h2>Расцветки и фотографии</h2><p>Выберите серию. На карточке АГТ указан артикул цвета; для остальных серий артикулы будут добавлены после согласования.</p></div>
         <div class="catalog-tools">
           <div class="tabs" aria-label="Серия обуви">
-            <button class="tab" type="button" data-series="demi" aria-pressed="true">Демисезонная</button>
-            <button class="tab" type="button" data-series="winter" aria-pressed="false">Зимняя утеплённая</button>
-            <button class="tab" type="button" data-series="agt" aria-pressed="false">АГТ</button>
+            <button class="tab" type="button" data-series="agt" aria-pressed="true">АГТ · с артикулами</button>
+            <button class="tab" type="button" data-series="demi" aria-pressed="false">Демисезонная</button>
+            <button class="tab" type="button" data-series="winter" aria-pressed="false">Зимняя серия</button>
           </div>
           <input class="search" id="search" type="search" placeholder="Найти цвет или артикул" aria-label="Поиск по цвету или артикулу">
         </div>
-        <p class="series-note" id="agt-note">В серии АГТ цвета с артикулами 1520–1526 имеют светоотражающие застёжки. Розовый 1321 и кирпичный / терракотовый 1320 идут отдельным пулом без светоотражающих застёжек.</p>
+        <p class="series-note" id="agt-note">АГТ — зимняя утеплённая обувь для вытянутых лап. Чёрный, серый, слива, красный, изумрудный, жёлтый и сапфировый имеют светоотражающие застёжки. Розовый и кирпичный / терракотовый идут отдельным пулом без светоотражающих застёжек.</p>
+        <p class="series-note" id="winter-note">Зимняя обувь бывает обычной и утеплённой — с войлочной стелькой. Визуально модели одинаковые. Утеплённая обувь может выглядеть немного объёмнее снаружи из-за дополнительной стельки, при этом внутренняя колодка и размер остаются теми же.</p>
+        <div class="article-index" id="article-index" aria-label="Артикулы обуви АГТ">
+          <span>Чёрный <strong>15040</strong></span><span>Серый <strong>150401</strong></span><span>Слива <strong>150402</strong></span>
+          <span>Красный <strong>150403</strong></span><span>Изумрудный <strong>150404</strong></span><span>Жёлтый <strong>150405</strong></span>
+          <span>Сапфировый <strong>150406</strong></span><span>Розовый <strong>130401</strong></span><span>Кирпичный / терракотовый <strong>13040</strong></span>
+        </div>
         <div class="color-grid" id="color-grid"></div>
         <div class="empty" id="empty">По этому запросу ничего не найдено.</div>
       </div>
@@ -151,12 +161,12 @@
 
     <section class="agt" id="agt">
       <div class="shell agt-panel">
-        <div class="agt-copy"><p class="eyebrow">Отдельная посадка</p><h2>Что такое АГТ</h2><p>Размеры АГТ рассчитаны на удлинённые и тонкие лапы — такую форму часто встречаем у пуделей, мальтипу и папильонов.</p><ul class="agt-list"><li>Разная высота застёжки помогает подобрать посадку.</li><li>Светоотражающий эффект показан на фотографиях со вспышкой.</li><li>Нужный размер и цвет проверяются только по фактическому наличию.</li></ul></div>
+        <div class="agt-copy"><p class="eyebrow">Зимняя утеплённая серия</p><h2>Что такое АГТ</h2><p>Размеры АГТ рассчитаны на удлинённые и тонкие лапы — такую форму часто встречаем у пуделей, мальтипу и папильонов.</p><ul class="agt-list"><li>Разная высота застёжки помогает подобрать посадку.</li><li>Светоотражающий эффект показан на фотографиях со вспышкой.</li><li>Нужный размер и цвет проверяются только по фактическому наличию.</li></ul></div>
         <div class="agt-media"><img src="assets/img-9825.webp" alt="Сапфировая обувь АГТ со светоотражающими элементами при съёмке со вспышкой"></div>
       </div>
     </section>
 
-    <section class="cta"><div class="shell cta-box"><h2>Сначала проверяем наличие, затем подбираем размер</h2><p>Обувь не отшивается под заказ. Менеджер проверит, какие размеры и цвета есть в наличии сейчас.</p></div></section>
+    <section class="cta"><div class="shell cta-box"><h2>Сначала проверяем наличие, затем подбираем размер</h2><p>Размеры 1 и 2 ограничены, второго практически не осталось. Размеры 3, 4, 5 и АГТ представлены шире, но наличие конкретного цвета и размера обязательно уточняйте у менеджера.</p></div></section>
   </main>
 
   <footer><div class="shell footer-inner"><span>Ателье Софи</span><a href="../vitrina/">Вернуться ко всей витрине</a></div></footer>
@@ -186,27 +196,29 @@
         {name:'Серый',images:[9121,9124,9127]}
       ],
       agt:[
-        {name:'Чёрный',article:'1520',reflective:true,images:[9195,9199,9201,9203],flash:[9830]},
-        {name:'Серый',article:'1521',reflective:true,images:[9207,9208,9210,9213,9215],flash:[9814,9823,9832]},
-        {name:'Слива',article:'1522',reflective:true,images:[9135,9136,9138,9142],flash:[9812,9819]},
-        {name:'Красный',article:'1523',reflective:true,images:[9170,9176,9177,9178],flash:[9809,9817,9828]},
-        {name:'Изумрудный',article:'1524',reflective:true,images:[9184,9185,9188,9191],flash:[9805,9822,9829]},
-        {name:'Жёлтый',article:'1525',reflective:true,images:[9159,9162,9166,9169],flash:[9802,9816,9826]},
-        {name:'Сапфировый',article:'1526',reflective:true,images:[9144,9146,9149,9152,9155],flash:[9806,9820,9825]},
-        {name:'Розовый',article:'1321',reflective:false,images:[9229,9233,9234,9237,9240]},
-        {name:'Кирпичный / терракотовый',article:'1320',reflective:false,images:[9218,9221,9225,9226]}
+        {name:'Чёрный',article:'15040',reflective:true,images:[9195,9199,9201,9203],flash:[9830]},
+        {name:'Серый',article:'150401',reflective:true,images:[9207,9208,9210,9213,9215],flash:[9814,9823,9832]},
+        {name:'Слива',article:'150402',reflective:true,images:[9135,9136,9138,9142],flash:[9812,9819]},
+        {name:'Красный',article:'150403',reflective:true,images:[9170,9176,9177,9178],flash:[9809,9817,9828]},
+        {name:'Изумрудный',article:'150404',reflective:true,images:[9184,9185,9188,9191],flash:[9805,9822,9829]},
+        {name:'Жёлтый',article:'150405',reflective:true,images:[9159,9162,9166,9169],flash:[9802,9816,9826]},
+        {name:'Сапфировый',article:'150406',reflective:true,images:[9144,9146,9149,9152,9155],flash:[9806,9820,9825]},
+        {name:'Розовый',article:'130401',reflective:false,images:[9229,9233,9234,9237,9240]},
+        {name:'Кирпичный / терракотовый',article:'13040',reflective:false,images:[9218,9221,9225,9226]}
       ]
     };
-    const labels={demi:'Демисезонная обувь',winter:'Зимняя утеплённая обувь',agt:'Обувь АГТ'};
+    const labels={demi:'Демисезонная обувь',winter:'Зимняя обувь',agt:'Обувь АГТ'};
     const grid=document.getElementById('color-grid');
     const search=document.getElementById('search');
     const empty=document.getElementById('empty');
     const note=document.getElementById('agt-note');
+    const winterNote=document.getElementById('winter-note');
+    const articleIndex=document.getElementById('article-index');
     const tabs=[...document.querySelectorAll('.tab')];
     const lightbox=document.getElementById('lightbox');
     const lightboxImage=document.getElementById('lightbox-image');
     const lightboxCaption=document.getElementById('lightbox-caption');
-    let active='demi';
+    let active='agt';
 
     function file(number,flash=false){return `assets/${flash?'img':'dscf'}-${number}.webp`}
     function openImage(src,caption){lightboxImage.src=src;lightboxImage.alt=caption;lightboxCaption.textContent=caption;lightbox.classList.add('open');document.body.style.overflow='hidden'}
@@ -216,14 +228,16 @@
       const items=series[active].filter(item=>!query||item.name.toLowerCase().includes(query)||(item.article||'').includes(query));
       grid.innerHTML='';
       note.classList.toggle('show',active==='agt');
+      winterNote.classList.toggle('show',active==='winter');
+      articleIndex.classList.toggle('show',active==='agt');
       items.forEach(item=>{
         const photos=[...item.images.map(number=>({number,flash:false})),...(item.flash||[]).map(number=>({number,flash:true}))];
-        const article=item.article?`Артикул ${item.article}`:'Артикул будет добавлен';
+        const article=item.article?`<span class="article">Артикул ${item.article}</span>`:'';
         const badge=active==='agt'?(item.reflective?'Светоотражающие застёжки':'Без светоотражающих застёжек'):labels[active];
-        const description=active==='demi'?'Повышенная заливка · сезон реагентов':active==='winter'?'Невысокая заливка · серый утеплённый подклад':item.reflective?'Серия АГТ · фото со вспышкой отмечены точкой':'Отдельный пул АГТ';
+        const description=active==='demi'?'Повышенная заливка · сезон реагентов':active==='winter'?'Невысокая заливка · обычная или с войлочной стелькой':item.reflective?'Серия АГТ · фото со вспышкой отмечены точкой':'Отдельный пул АГТ';
         const card=document.createElement('article');
         card.className='color-card';
-        card.innerHTML=`<button class="color-main" type="button" data-src="${file(photos[0].number,photos[0].flash)}" data-caption="${labels[active]} · ${item.name}"><img src="${file(photos[0].number,photos[0].flash)}" loading="lazy" alt="${labels[active]} цвета ${item.name}"><span class="badge ${item.reflective?'reflective':''}">${badge}</span></button><div class="color-copy"><h3>${item.name}</h3><span class="article">${article}</span><p>${description}</p><div class="thumbs">${photos.slice(1).map(photo=>`<button class="thumb" type="button" data-src="${file(photo.number,photo.flash)}" data-caption="${labels[active]} · ${item.name}${photo.flash?' · со вспышкой':''}" aria-label="Открыть фотографию ${item.name}"><img src="${file(photo.number,photo.flash)}" loading="lazy" alt="${labels[active]} цвета ${item.name}${photo.flash?' при съёмке со вспышкой':''}">${photo.flash?'<span class="flash-dot" title="Фото со вспышкой"></span>':''}</button>`).join('')}</div></div>`;
+        card.innerHTML=`<button class="color-main" type="button" data-src="${file(photos[0].number,photos[0].flash)}" data-caption="${labels[active]} · ${item.name}"><img src="${file(photos[0].number,photos[0].flash)}" loading="lazy" alt="${labels[active]} цвета ${item.name}"><span class="badge ${item.reflective?'reflective':''}">${badge}</span></button><div class="color-copy"><h3>${item.name}</h3>${article}<p>${description}</p><div class="thumbs">${photos.slice(1).map(photo=>`<button class="thumb" type="button" data-src="${file(photo.number,photo.flash)}" data-caption="${labels[active]} · ${item.name}${photo.flash?' · со вспышкой':''}" aria-label="Открыть фотографию ${item.name}"><img src="${file(photo.number,photo.flash)}" loading="lazy" alt="${labels[active]} цвета ${item.name}${photo.flash?' при съёмке со вспышкой':''}">${photo.flash?'<span class="flash-dot" title="Фото со вспышкой"></span>':''}</button>`).join('')}</div></div>`;
         grid.appendChild(card);
       });
       empty.classList.toggle('show',items.length===0);
