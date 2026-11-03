@@ -33,15 +33,6 @@
     h1,h2,h3,p{margin-top:0}
     h1{margin-bottom:28px;color:var(--wine);font-family:Georgia,serif;font-size:clamp(58px,9vw,118px);line-height:.88;letter-spacing:-.055em;font-weight:400}
     .lead{max-width:760px;margin-bottom:0;color:var(--ink);font-size:clamp(18px,2.1vw,24px);line-height:1.5}
-    .intro{padding:72px 0 34px}
-    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:end}
-    .intro h2{margin-bottom:0;font-family:Georgia,serif;font-weight:400;font-size:clamp(42px,6vw,76px);line-height:.96;letter-spacing:-.045em}
-    .intro p{margin-bottom:0;color:var(--muted);font-size:18px;max-width:560px}
-    .types{padding:24px 0 64px}
-    .type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .type{min-height:170px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;display:flex;flex-direction:column;justify-content:space-between}
-    .type span{color:var(--terracotta);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-    .type h3{margin:0;font-family:Georgia,serif;font-size:31px;font-weight:400}
     .catalog{padding:74px 0 92px;background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .catalog-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}
     .catalog-head h2{margin-bottom:0;font-family:Georgia,serif;font-size:clamp(42px,6vw,74px);font-weight:400;line-height:1;letter-spacing:-.04em}
@@ -68,8 +59,8 @@
     .empty.show{display:block}
     footer{padding:28px 0 42px;color:var(--muted);font-size:14px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
-    @media(max-width:900px){.intro-grid{grid-template-columns:1fr}.type-grid{grid-template-columns:1fr}.type{min-height:135px}.catalog-card{grid-template-columns:240px 1fr}.open{grid-column:1/-1;min-height:62px;border-left:0;border-top:1px solid var(--line)}.tools{grid-template-columns:1fr}.filters{justify-content:flex-start}}
-    @media(max-width:620px){.shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.topbar-note{display:none}.hero{padding-top:20px}.hero-box{min-height:360px}.hero-copy{padding:52px 0}.intro{padding-top:58px}.catalog{padding:58px 0}.catalog-head{display:block}.count{margin-top:12px}.filters{display:grid;grid-template-columns:1fr 1fr}.filter{min-height:46px;padding:0 12px}.catalog-card{grid-template-columns:1fr}.catalog-image{min-height:230px}.catalog-copy{padding:25px}.catalog-copy h3{font-size:32px}.footer-inner{flex-direction:column}}
+    @media(max-width:900px){.catalog-card{grid-template-columns:240px 1fr}.open{grid-column:1/-1;min-height:62px;border-left:0;border-top:1px solid var(--line)}.tools{grid-template-columns:1fr}.filters{justify-content:flex-start}}
+    @media(max-width:620px){.shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.topbar-note{display:none}.hero{padding-top:20px}.hero-box{min-height:360px}.hero-copy{padding:52px 0}.catalog{padding:58px 0}.catalog-head{display:block}.count{margin-top:12px}.filters{display:grid;grid-template-columns:1fr 1fr}.filter{min-height:46px;padding:0 12px}.catalog-card{grid-template-columns:1fr}.catalog-image{min-height:230px}.catalog-copy{padding:25px}.catalog-copy h3{font-size:32px}.footer-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.catalog-card{transition:none}}
   </style>
 </head>
@@ -87,23 +78,8 @@
         <div class="hero-copy">
           <p class="eyebrow">Единый каталог Ателье Софи</p>
           <h1>Витрина</h1>
-          <p class="lead">Модели, ткани и коллекции — с фотографиями, характеристиками и подробными описаниями в одном месте.</p>
+          <p class="lead">Модели, ткани и коллекции — с фотографиями, характеристиками и ценами.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="intro">
-      <div class="shell intro-grid">
-        <h2>Всё, что можно рассмотреть подробнее</h2>
-        <p>Каждая позиция витрины ведёт на отдельную страницу. Там можно увидеть материал или модель вблизи, сравнить варианты и прочитать важные характеристики.</p>
-      </div>
-    </section>
-
-    <section class="types" aria-label="Разделы витрины">
-      <div class="shell type-grid">
-        <article class="type"><span>Раздел 01</span><h3>Модели</h3></article>
-        <article class="type"><span>Раздел 02</span><h3>Ткани</h3></article>
-        <article class="type"><span>Раздел 03</span><h3>Коллекции</h3></article>
       </div>
     </section>
 
@@ -114,12 +90,13 @@
           <p class="count" id="count">Сейчас в витрине: 3 страницы</p>
         </div>
         <div class="tools">
-          <input class="search" id="search" type="search" placeholder="Найти ткань, модель или коллекцию" aria-label="Поиск по витрине">
+          <input class="search" id="search" type="search" placeholder="Найти модель, ткань, коллекцию или обувь" aria-label="Поиск по витрине">
           <div class="filters" aria-label="Фильтр каталога">
             <button class="filter" type="button" data-filter="all" aria-pressed="true">Все</button>
             <button class="filter" type="button" data-filter="model" aria-pressed="false">Модели</button>
             <button class="filter" type="button" data-filter="fabric" aria-pressed="false">Ткани</button>
             <button class="filter" type="button" data-filter="collection" aria-pressed="false">Коллекции</button>
+            <button class="filter" type="button" data-filter="shoes" aria-pressed="false">Обувь</button>
           </div>
         </div>
 
@@ -136,7 +113,7 @@
             </div>
             <span class="open">Открыть коллекцию →</span>
           </a>
-          <a class="catalog-card" data-type="model" data-search="обувь ботинки демисезонная зимняя утепленная агт реагенты светоотражающие застежки" href="../shoes/">
+          <a class="catalog-card" data-type="shoes" data-search="обувь ботинки демисезонная зимняя утепленная агт реагенты светоотражающие застежки" href="../shoes/">
             <div class="catalog-image">
               <img src="../shoes/assets/dscf-9135.webp" alt="Обувь АГТ Ателье Софи цвета слива">
               <span class="tag">Обувь</span>
