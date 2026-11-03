@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e9">
+  <title>Мембрана 3000/3000 — Ателье Софи</title>
+  <meta name="description" content="Свойства, однотонные варианты и принты ткани Мембрана 3000/3000 для одежды питомцев Ателье Софи.">
+  <meta property="og:title" content="Мембрана 3000/3000 — Ателье Софи">
+  <meta property="og:description" content="Посмотрите свойства ткани, расцветки и готовые изделия.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sofibrend3-cmd.github.io/atelier-sofi-reglament/fabric-membrane-3000/assets/look-01.jpg">
+  <style>
+    :root{
+      --paper:#f5f1e9;--white:#fff;--ink:#101827;--muted:#68707d;--line:#d9d3c8;
+      --navy:#12243d;--blue:#cde9f0;--lime:#d9ee63;--pink:#ee6c83;--radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.55}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    button{font:inherit}
+    .shell{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(245,241,233,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,24,39,.12)}
+    .topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{text-decoration:none;font-family:Georgia,serif;font-size:24px;letter-spacing:.02em}
+    .nav{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+    .nav a{text-decoration:none}
+    .nav .nav-cta{padding:11px 17px;border:1px solid var(--ink);border-radius:999px}
+    .hero{padding:42px 0 28px}
+    .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;min-height:620px;border:1px solid var(--line);border-radius:34px;overflow:hidden;background:var(--white)}
+    .hero-copy{padding:clamp(34px,6vw,76px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .eyebrow{margin:0 0 20px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-family:Georgia,serif;font-size:clamp(48px,7.2vw,92px);line-height:.91;letter-spacing:-.055em;margin-bottom:26px}
+    .lead{font-size:clamp(18px,2vw,23px);line-height:1.42;max-width:550px;color:#333e4e;margin-bottom:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:800}
+    .hero-media{position:relative;background:#f8f8f6;min-height:420px}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-label{position:absolute;left:22px;bottom:22px;background:rgba(255,255,255,.9);padding:10px 14px;border-radius:999px;font-size:12px;font-weight:800;backdrop-filter:blur(8px)}
+    .section{padding:86px 0}
+    .section-tight{padding:42px 0 84px}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-bottom:34px}
+    .section-head h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,68px);line-height:1;letter-spacing:-.035em;margin-bottom:0}
+    .section-head p{font-size:18px;color:var(--muted);margin-bottom:4px;max-width:560px}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .fact{min-height:190px;padding:26px;border:1px solid var(--line);border-radius:22px;background:var(--white);display:flex;flex-direction:column;justify-content:space-between}
+    .fact:nth-child(1){background:var(--blue)}.fact:nth-child(3){background:var(--lime)}
+    .fact-num{font-size:12px;font-weight:800;letter-spacing:.14em}
+    .fact h3{font-size:23px;line-height:1.12;margin:0}
+    .info-panel{display:grid;grid-template-columns:1fr 1fr;border-radius:30px;overflow:hidden;background:var(--navy);color:#fff}
+    .info-title{padding:clamp(32px,5vw,60px);background:linear-gradient(145deg,#162d4c,#0d1829)}
+    .info-title h2{font-family:Georgia,serif;font-size:clamp(38px,5vw,64px);line-height:1;margin-bottom:18px}
+    .info-title p{color:#c7d1df;margin-bottom:0;font-size:17px}
+    .info-list{padding:clamp(30px,5vw,58px);display:grid;gap:0}
+    .info-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+    .info-item:first-child{padding-top:0}.info-item:last-child{border-bottom:0;padding-bottom:0}
+    .info-item strong{display:block;font-size:19px;margin-bottom:5px}.info-item span{color:#c7d1df}
+    .look-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .look-card{position:relative;border:0;padding:0;border-radius:24px;overflow:hidden;background:#fff;cursor:zoom-in;aspect-ratio:3/2}
+    .look-card img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .look-card:hover img{transform:scale(1.018)}
+    .look-card span,.swatch-card span{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.92);padding:8px 11px;border-radius:999px;font-size:12px;font-weight:800}
+    .gallery-note{display:flex;gap:12px;align-items:flex-start;margin:0 0 26px;color:var(--muted)}
+    .gallery-note::before{content:'i';flex:0 0 24px;height:24px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+    .swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .swatch-card{position:relative;border:0;padding:0;border-radius:18px;overflow:hidden;background:#ddd;cursor:zoom-in;aspect-ratio:3/4}
+    .swatch-card img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+    .swatch-card:hover img{transform:scale(1.025)}
+    .prints{background:#e7e1d7}
+    .cta{padding:82px 0}
+    .cta-box{padding:clamp(38px,7vw,90px);border-radius:34px;background:var(--pink);color:#24121b;text-align:center}
+    .cta-box h2{font-family:Georgia,serif;font-size:clamp(40px,6vw,76px);line-height:.98;max-width:850px;margin:0 auto 22px;letter-spacing:-.04em}
+    .cta-box p{font-size:19px;max-width:680px;margin:0 auto 28px}
+    .cta-box .button{background:#1a1520}
+    footer{padding:26px 0 42px;color:var(--muted);font-size:14px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
+    .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(7,11,18,.94)}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:min(96vw,1500px);max-height:88vh;border-radius:14px;object-fit:contain}
+    .lightbox-close{position:absolute;right:22px;top:18px;border:1px solid rgba(255,255,255,.5);border-radius:50%;width:46px;height:46px;background:rgba(0,0,0,.3);color:#fff;font-size:28px;cursor:pointer}
+    .lightbox-caption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.55);padding:8px 13px;border-radius:999px;font-size:13px;white-space:nowrap}
+    @media (max-width:900px){
+      .nav a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:44px 28px}.hero-media{min-height:460px}.section-head{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}.info-panel{grid-template-columns:1fr}.swatch-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:620px){
+      .shell{width:min(100% - 24px,1180px)}.topbar-inner{min-height:62px}.brand{font-size:20px}.nav-cta{padding:8px 12px!important;font-size:12px}.hero{padding-top:14px}.hero-grid{border-radius:24px;min-height:0}.hero-copy{padding:34px 22px}.hero-media{min-height:330px}.section{padding:62px 0}.section-tight{padding:28px 0 62px}.facts{grid-template-columns:1fr 1fr;gap:8px}.fact{min-height:150px;padding:18px}.fact h3{font-size:18px}.look-grid{grid-template-columns:1fr}.swatch-grid{grid-template-columns:repeat(2,1fr);gap:8px}.swatch-card{border-radius:14px}.info-title,.info-list{padding:30px 22px}.cta{padding:56px 0}.cta-box{border-radius:24px;padding:44px 22px}.footer-inner{flex-direction:column}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.look-card img,.swatch-card img{transition:none}}
+  </style>
+</head>
+<body id="top">
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top">Ателье Софи</a>
+      <nav class="nav" aria-label="Навигация по странице">
+        <a href="#about">О ткани</a><a href="#looks">В изделии</a><a href="#colors">Расцветки</a><a class="nav-cta" href="#choose">Как выбрать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Витрина ткани · Ателье Софи</p>
+          <h1>Мембрана<br>3000/3000</h1>
+          <p class="lead">Плотная, износостойкая и дышащая ткань с высокой водонепроницаемостью. Не грубеет на морозе, представлена в однотонных расцветках и ярких принтах.</p>
+          <a class="button" href="#colors">Посмотреть расцветки ↓</a>
+        </div>
+        <div class="hero-media">
+          <img src="assets/look-01.jpg" alt="Комбинезон Ателье Софи из мембраны с цветочным принтом">
+          <span class="hero-label">Ткань в готовом изделии</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-head"><h2>Почему выбирают мембрану</h2><p>Рабочая ткань для тех случаев, когда особенно важны стойкость материала и защита от влажной погоды.</p></div>
+        <div class="facts">
+          <article class="fact"><span class="fact-num">01</span><h3>Высокая водонепроницаемость</h3></article>
+          <article class="fact"><span class="fact-num">02</span><h3>Высокая износостойкость</h3></article>
+          <article class="fact"><span class="fact-num">03</span><h3>Дышащая ткань</h3></article>
+          <article class="fact"><span class="fact-num">04</span><h3>Не грубеет на морозе</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="shell info-panel">
+        <div class="info-title"><h2>Что важно учесть</h2><p>Менеджер поможет проверить, подходит ли эта ткань под вес питомца, сезон и задачу.</p></div>
+        <div class="info-list">
+          <div class="info-item"><strong>Плотнее и толще</strong><span>Мембрана плотнее и тяжелее других тканей из нашей витрины.</span></div>
+          <div class="info-item"><strong>Для миниатюрных собак</strong><span>Питомцам до 2–2,5 кг обычно рекомендуем более тонкую и лёгкую ткань.</span></div>
+          <div class="info-item"><strong>Некоторые варианты — под заказ</strong><span>Актуальное наличие конкретной расцветки необходимо уточнить у менеджера.</span></div>
+          <div class="info-item"><strong>Ткань и готовое изделие</strong><span>Ткань обладает высокой водонепроницаемостью, но готовый комбинезон не является полностью герметичным: в изделии есть швы и открытые участки.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="looks">
+      <div class="shell">
+        <div class="section-head"><h2>Как выглядит в готовом изделии</h2><p>Один и тот же принт по-разному раскрывается на деталях комбинезона. Нажмите на фотографию, чтобы рассмотреть её крупнее.</p></div>
+        <div class="look-grid">
+          <button class="look-card zoomable" data-full="assets/look-02.jpg" data-caption="Готовое изделие · вариант 01"><img src="assets/look-02.jpg" loading="lazy" alt="Комбинезон из мембраны с принтом динозавров"><span>Готовое изделие 01</span></button>
+          <button class="look-card zoomable" data-full="assets/look-03.jpg" data-caption="Готовое изделие · вариант 02"><img src="assets/look-03.jpg" loading="lazy" alt="Комбинезон из мембраны с камуфляжным принтом"><span>Готовое изделие 02</span></button>
+          <button class="look-card zoomable" data-full="assets/look-04.jpg" data-caption="Готовое изделие · вариант 03"><img src="assets/look-04.jpg" loading="lazy" alt="Комбинезон из мембраны с ярким графическим принтом"><span>Готовое изделие 03</span></button>
+          <button class="look-card zoomable" data-full="assets/look-05.jpg" data-caption="Готовое изделие · вариант 04"><img src="assets/look-05.jpg" loading="lazy" alt="Комбинезон из мембраны с розовым принтом с кошками"><span>Готовое изделие 04</span></button>
+          <button class="look-card zoomable" data-full="assets/look-06.jpg" data-caption="Готовое изделие · вариант 05"><img src="assets/look-06.jpg" loading="lazy" alt="Комбинезон из мембраны с разноцветными брызгами"><span>Готовое изделие 05</span></button>
+          <button class="look-card zoomable" data-full="assets/look-07.jpg" data-caption="Готовое изделие · вариант 06"><img src="assets/look-07.jpg" loading="lazy" alt="Комбинезон из мембраны в кораллово-серую полоску"><span>Готовое изделие 06</span></button>
+          <button class="look-card zoomable" data-full="assets/look-08.jpg" data-caption="Готовое изделие · вариант 07"><img src="assets/look-08.jpg" loading="lazy" alt="Комбинезон из мембраны с принтом оленей"><span>Готовое изделие 07</span></button>
+          <button class="look-card zoomable" data-full="assets/look-09.jpg" data-caption="Готовое изделие · вариант 08"><img src="assets/look-09.jpg" loading="lazy" alt="Комбинезон из мембраны с волнистым принтом"><span>Готовое изделие 08</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colors">
+      <div class="shell">
+        <div class="section-head"><h2>Однотонные варианты</h2><p>Цвет на экране может немного отличаться от ткани вживую. Наличие нужного варианта уточнит менеджер.</p></div>
+        <p class="gallery-note">Номера на этой странице нужны только для удобства обсуждения фотографии с менеджером и не являются артикулами ткани.</p>
+        <div class="swatch-grid">
+          <button class="swatch-card zoomable" data-full="assets/solid-01.jpg" data-caption="Однотонный вариант · фото 01"><img src="assets/solid-01.jpg" loading="lazy" alt="Жёлтая однотонная мембрана"><span>Фото 01</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-02.jpg" data-caption="Однотонный вариант · фото 02"><img src="assets/solid-02.jpg" loading="lazy" alt="Чёрная однотонная мембрана"><span>Фото 02</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-03.jpg" data-caption="Однотонный вариант · фото 03"><img src="assets/solid-03.jpg" loading="lazy" alt="Тёмная однотонная мембрана"><span>Фото 03</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-04.jpg" data-caption="Однотонный вариант · фото 04"><img src="assets/solid-04.jpg" loading="lazy" alt="Тёмно-синяя однотонная мембрана"><span>Фото 04</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-05.jpg" data-caption="Однотонный вариант · фото 05"><img src="assets/solid-05.jpg" loading="lazy" alt="Бордовая однотонная мембрана"><span>Фото 05</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-06.jpg" data-caption="Однотонный вариант · фото 06"><img src="assets/solid-06.jpg" loading="lazy" alt="Красная однотонная мембрана"><span>Фото 06</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-07.jpg" data-caption="Однотонный вариант · фото 07"><img src="assets/solid-07.jpg" loading="lazy" alt="Голубая однотонная мембрана"><span>Фото 07</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-08.jpg" data-caption="Однотонный вариант · фото 08"><img src="assets/solid-08.jpg" loading="lazy" alt="Синяя однотонная мембрана"><span>Фото 08</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-09.jpg" data-caption="Однотонный вариант · фото 09"><img src="assets/solid-09.jpg" loading="lazy" alt="Тёмно-синяя однотонная мембрана"><span>Фото 09</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-10.jpg" data-caption="Однотонный вариант · фото 10"><img src="assets/solid-10.jpg" loading="lazy" alt="Зелёная однотонная мембрана"><span>Фото 10</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-11.jpg" data-caption="Однотонный вариант · фото 11"><img src="assets/solid-11.jpg" loading="lazy" alt="Салатовая однотонная мембрана"><span>Фото 11</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-12.jpg" data-caption="Однотонный вариант · фото 12"><img src="assets/solid-12.jpg" loading="lazy" alt="Оранжевая однотонная мембрана"><span>Фото 12</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-13.jpg" data-caption="Однотонный вариант · фото 13"><img src="assets/solid-13.jpg" loading="lazy" alt="Ярко-розовая однотонная мембрана"><span>Фото 13</span></button>
+          <button class="swatch-card zoomable" data-full="assets/solid-14.jpg" data-caption="Однотонный вариант · фото 14"><img src="assets/solid-14.jpg" loading="lazy" alt="Малиновая однотонная мембрана"><span>Фото 14</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section prints" id="prints">
+      <div class="shell">
+        <div class="section-head"><h2>Принты</h2><p>На фотографиях рядом с рисунком размещена линейка, чтобы было удобно оценить реальный масштаб принта.</p></div>
+        <div class="swatch-grid">
+          <button class="swatch-card zoomable" data-full="assets/print-01.jpg" data-caption="Принт · фото 01"><img src="assets/print-01.jpg" loading="lazy" alt="Цветочный принт мембраны с линейкой"><span>Фото 01</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-02.jpg" data-caption="Принт · фото 02"><img src="assets/print-02.jpg" loading="lazy" alt="Принт мембраны с оленями и линейкой"><span>Фото 02</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-03.jpg" data-caption="Принт · фото 03"><img src="assets/print-03.jpg" loading="lazy" alt="Принт мембраны с динозаврами и линейкой"><span>Фото 03</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-04.jpg" data-caption="Принт · фото 04"><img src="assets/print-04.jpg" loading="lazy" alt="Принт мембраны с разноцветными брызгами и линейкой"><span>Фото 04</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-05.jpg" data-caption="Принт · фото 05"><img src="assets/print-05.jpg" loading="lazy" alt="Принт мембраны с яркими медведями и линейкой"><span>Фото 05</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-06.jpg" data-caption="Принт · фото 06"><img src="assets/print-06.jpg" loading="lazy" alt="Волнистый принт мембраны с линейкой"><span>Фото 06</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-07.jpg" data-caption="Принт · фото 07"><img src="assets/print-07.jpg" loading="lazy" alt="Принт мембраны с динозаврами в голубых рамках и линейкой"><span>Фото 07</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-08.jpg" data-caption="Принт · фото 08"><img src="assets/print-08.jpg" loading="lazy" alt="Розовый принт мембраны с кошками и линейкой"><span>Фото 08</span></button>
+          <button class="swatch-card zoomable" data-full="assets/print-09.jpg" data-caption="Принт · фото 09"><img src="assets/print-09.jpg" loading="lazy" alt="Кораллово-серый принт мембраны в полоску с линейкой"><span>Фото 09</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="choose">
+      <div class="shell cta-box">
+        <p class="eyebrow">Следующий шаг</p>
+        <h2>Выберите понравившееся фото</h2>
+        <p>Отправьте менеджеру номер фотографии. Менеджер проверит актуальное наличие и поможет подобрать ткань под вес питомца, сезон и Вашу задачу.</p>
+        <a class="button" href="#colors">Вернуться к расцветкам ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>Ателье Софи</span><span>Индивидуальный пошив одежды для питомцев</span></div></footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+    <button class="lightbox-close" type="button" aria-label="Закрыть">×</button>
+    <img src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+  <script>
+    const box=document.getElementById('lightbox');
+    const boxImg=box.querySelector('img');
+    const boxCaption=box.querySelector('.lightbox-caption');
+    const closeBox=()=>{box.classList.remove('open');document.body.style.overflow='';boxImg.src=''};
+    document.querySelectorAll('.zoomable').forEach(card=>card.addEventListener('click',()=>{
+      boxImg.src=card.dataset.full;boxImg.alt=card.querySelector('img').alt;boxCaption.textContent=card.dataset.caption;
+      box.classList.add('open');document.body.style.overflow='hidden';box.querySelector('.lightbox-close').focus();
+    }));
+    box.querySelector('.lightbox-close').addEventListener('click',closeBox);
+    box.addEventListener('click',event=>{if(event.target===box)closeBox()});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&box.classList.contains('open'))closeBox()});
+  </script>
+</body>
+</html>
