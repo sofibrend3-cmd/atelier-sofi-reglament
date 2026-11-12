@@ -16,6 +16,13 @@
     .brand { display:inline-flex; align-items:center; gap:12px; color:var(--wine-dark); font:700 23px/1 Georgia,'Times New Roman',serif; text-decoration:none; }
     .brand-mark { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--wine-dark); border-radius:50%; font-size:15px; }
     .topbar-label { color:var(--wine); font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+    .topbar { position:sticky; top:0; z-index:20; }
+    .topbar-tools { display:flex; align-items:center; gap:22px; }
+    .delivery-shortcut { display:inline-flex; align-items:center; justify-content:center; padding:11px 17px; border-radius:8px; background:var(--wine); color:#fff; font-size:14px; font-weight:700; text-decoration:none; white-space:nowrap; }
+    .delivery-shortcut:hover { background:var(--wine-dark); }
+    .delivery-shortcut:focus-visible { outline:3px solid var(--wine); outline-offset:4px; }
+    .delivery-feature { border-radius:14px; margin-top:28px; }
+    @media (max-width:620px) { .topbar { gap:10px; } .topbar-tools { gap:0; } .delivery-shortcut { padding:10px; font-size:12px; } }
     .hero { padding:90px 0 68px; border-bottom:1px solid var(--line); background:var(--paper); }
     .eyebrow { margin:0 0 22px; color:var(--wine); font-size:13px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
     h1,h2,h3 { font-family:Georgia,'Times New Roman',serif; font-weight:400; }
@@ -107,13 +114,18 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./" aria-label="Ателье Софи, главная страница обучения"><span class="brand-mark">✦</span><span>Ателье Софи</span></a>
-    <span class="topbar-label">Обучение менеджеров</span>
+    <div class="topbar-tools"><span class="topbar-label">Обучение менеджеров</span><a class="delivery-shortcut" href="./delivery/">Расчёт доставки</a></div>
   </header>
 
   <section class="hero">
     <div class="shell">
       <p class="eyebrow">Единая база знаний</p>
       <h1>Обучение менеджеров</h1>
+      <a class="reference delivery-feature" href="./delivery/">
+        <span class="reference-label">Счёт на доставку</span>
+        <span><h3>Расчёт доставки СДЭК и Ozon</h3><p>Выберите город и коробку — смотрите ориентировочную сумму с запасом 50 ₽.</p></span>
+        <span class="reference-arrow" aria-hidden="true">→</span>
+      </a>
       <a class="workday-start" href="./workday/">
         <div><small>Ежедневная работа · Время по Барнаулу</small><h2>Рабочий день отдела продаж</h2><p>Распорядок 10:00–19:00: план дня, техническая работа, повторные продажи, клиенты и вечерние итоги. Приоритеты и правила использования освободившегося времени.</p></div>
         <span class="workday-open">Открыть распорядок →</span>
@@ -125,11 +137,6 @@
       </a>
       <p class="hero-text">Начните с трёх основных уроков: от первого обращения до подготовки клиента и сделки. Ниже собраны дополнительные материалы, которые мы будем пополнять.</p>
       <div class="route" aria-label="Порядок обучения"><span>Лиды</span><i>→</i><span>Менеджер-контактёр</span><i>→</i><span>Контакт и Сделка</span></div>
-      <a class="reference" href="./delivery/">
-        <span class="reference-label">Счёт на доставку</span>
-        <span><h3>Расчёт доставки СДЭК и Ozon</h3><p>Найдите город и нужную коробку: вес, размеры и ориентировочная сумма с запасом 50 ₽. Экспресс показан отдельно.</p></span>
-        <span class="reference-arrow" aria-hidden="true">→</span>
-      </a>
       <a class="stop-cards-link" href="./stop-cards/">Стоп-карточки менеджера · распечатать A4 →</a>
     </div>
   </section>
